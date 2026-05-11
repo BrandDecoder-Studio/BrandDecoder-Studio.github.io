@@ -48,6 +48,7 @@
         .hero h1 span { color: var(--accent-blue); }
         .hero p.lead { font-size: 1.4rem; color: var(--text-sub); max-width: 800px; margin-bottom: 40px; font-weight: 400; }
         
+        /* 恢復原版的厚重宣言區塊 */
         .hero-manifesto {
             background: #fff; border: 1px solid var(--border); padding: 40px; border-radius: 16px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.03); max-width: 900px; margin-bottom: 50px; border-left: 8px solid var(--accent-blue);
@@ -62,7 +63,7 @@
         .section-h h2 { font-size: 2.8rem; font-weight: 900; margin-bottom: 15px; }
         .section-h p { color: var(--text-sub); font-size: 1.1rem; max-width: 800px; margin: 0 auto;}
 
-        /* --- 夢想閉環：SOP 視覺化 --- */
+        /* --- 夢想閉環：SOP 視覺化 (用來展示獲客與變現邏輯) --- */
         .loop-container { background: var(--bg-soft); padding: 80px 5%; border-radius: 40px; margin: 50px 0; border: 1px solid var(--border); }
         .loop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; position: relative; }
         .loop-item { background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); position: relative; z-index: 2; border: 1px solid var(--border); }
@@ -71,16 +72,17 @@
         .loop-item p { color: var(--text-sub); font-size: 1rem; }
         .loop-arrow { position: absolute; top: 50%; transform: translateY(-50%); color: var(--border); font-size: 2rem; z-index: 1; }
 
-        .sys-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .sys-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: 0.4s; }
+        /* --- 五大核心服務的厚重卡片 --- */
+        .sys-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .sys-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: 0.4s; display: flex; flex-direction: column;}
         .sys-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
-        .video-box { width: 100%; height: 230px; background: #eef2f6; display: flex; flex-direction: column; justify-content: center; align-items: center; border-bottom: 1px solid var(--border); color: #94a3b8; }
+        .video-box { width: 100%; height: 180px; background: #eef2f6; display: flex; flex-direction: column; justify-content: center; align-items: center; border-bottom: 1px solid var(--border); color: #94a3b8; }
         .video-box i { font-size: 3rem; margin-bottom: 10px; }
-        .sys-body { padding: 30px; }
-        .sys-body h3 { font-size: 1.2rem; font-weight: 900; margin-bottom: 15px; }
-        .sys-body p { font-size: 0.95rem; color: var(--text-sub); margin-bottom: 20px; height: 100px; }
+        .sys-body { padding: 30px; flex-grow: 1; }
+        .sys-body h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 15px; color: var(--text-main); }
+        .sys-body p { font-size: 1rem; color: var(--text-sub); margin-bottom: 0; }
 
-        .cta { text-align: center; padding: 120px 5%; background: linear-gradient(180deg, #fff 0%, #f1f5f9 100%); }
+        .cta { text-align: center; padding: 120px 5%; background: linear-gradient(180deg, #fff 0%, #f1f5f9 100%); border-top: 1px solid var(--border);}
         .btn-lg-line { background: var(--line-green); color: #fff; padding: 22px 60px; border-radius: 100px; font-size: 1.4rem; font-weight: 900; display: inline-flex; align-items: center; gap: 15px; box-shadow: 0 20px 40px rgba(6, 199, 85, 0.25); text-decoration: none; transition: 0.3s; }
         .btn-lg-line:hover { transform: scale(1.05); background: #05A546; }
 
@@ -88,7 +90,7 @@
 
         @media (max-width: 992px) {
             .hero h1 { font-size: 3rem; }
-            .loop-grid, .sys-grid { grid-template-columns: 1fr; }
+            .loop-grid { grid-template-columns: 1fr; }
             .loop-arrow { display: none; }
         }
     </style>
@@ -106,13 +108,13 @@
     <section class="hero">
         <div class="hero-tag">THE DIGITAL MONOPOLY BLUEPRINT</div>
         <h1>只要你有「想法」，剩下的<br>我們幫你<span>實現成真。</span></h1>
-        <p class="lead">這不是一場課程，這是一次將靈感轉化為「全自動生產線」的商業賦能。</p>
+        <p class="lead">這不是一場理論課程，這是一次將靈感轉化為「全自動獲利生產線」的商業賦能。</p>
         
         <div class="hero-manifesto">
             <h3>這是一場關於「商業主權」的革命</h3>
             <p>
-                <strong>不寫程式、不碰資料庫、不需任何美術設計基礎。</strong><br>
-                在《品牌解碼室》，我們不談虛浮的科技名詞。我們只做一件事：<strong>把您的商業才華，封裝進一套 24 小時為您精準獲客、自動成交的 AI 閉環系統中。</strong>
+                <strong>不寫複雜程式、不碰生硬的資料庫。</strong><br>
+                在《品牌解碼室》，我們不談虛浮的科技名詞。我們結合 20 年的品牌實戰經驗，只做一件事：<strong>把您的商業才華，封裝進一套 24 小時為您精準獲客、自動成交的 AI 閉環系統中。</strong>
             </p>
         </div>
 
@@ -130,23 +132,23 @@
         <div class="loop-container">
             <div class="loop-grid">
                 <div class="loop-item">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    <h4>1. 靈感解碼</h4>
-                    <p>無論您是教瑜珈、命理還是室內設計。只要你有想法，我們就為其注入 AI 靈魂，打造出專屬的品牌大腦。</p>
+                    <i class="fa-solid fa-film"></i>
+                    <h4>1. 內容全自動量產</h4>
+                    <p>利用專屬的影音工廠，將您的想法自動轉化為高品質的影音素材，突破個人體力與時間的產能極限。</p>
                 </div>
                 <div class="loop-arrow" style="left: 31%;"><i class="fa-solid fa-chevron-right"></i></div>
                 
                 <div class="loop-item">
-                    <i class="fa-solid fa-gears"></i>
-                    <h4>2. 系統實現</h4>
-                    <p>實戰教學帶您親手完成「流量引擎」與「導購中樞」。讓技術成為你的僕人，而非門檻。</p>
+                    <i class="fa-brands fa-meta"></i>
+                    <h4>2. 公域精準獲客</h4>
+                    <p>讓 AI 擔任您的社群小編，自動化在各大平台發佈內容。24 小時不間斷地捕捉潛在客戶的注意力。</p>
                 </div>
                 <div class="loop-arrow" style="left: 65%;"><i class="fa-solid fa-chevron-right"></i></div>
 
                 <div class="loop-item">
-                    <i class="fa-solid fa-infinity"></i>
-                    <h4>3. 達成閉環</h4>
-                    <p>生產線正式啟動。讓 AI 幫你在公域抓流量、在私域收現金。您只需專注於實現更大的夢想。</p>
+                    <i class="fa-brands fa-line"></i>
+                    <h4>3. 私域智能成交</h4>
+                    <p>將流量無縫導入 LINE OA。透過智能客服接手，完成意圖識別、自動問答與收款，達成完美的變現閉環。</p>
                 </div>
             </div>
         </div>
@@ -154,30 +156,48 @@
 
     <section class="section" style="background: #fff; border-top: 1px solid var(--border);">
         <div class="section-h">
-            <h2>三大核心引擎，<span>徹底解放您的時間</span></h2>
+            <h2>五大核心服務，<span>徹底解放您的時間</span></h2>
             <p>您買下的不只是工具，而是每天幫您節省 8 小時瑣碎工作的數位特種部隊。</p>
         </div>
 
         <div class="sys-grid">
             <div class="sys-card" style="border-top: 5px solid var(--accent-blue);">
-                <div class="video-box"><i class="bi bi-broadcast"></i><span>公域流量收割・實戰影片</span></div>
+                <div class="video-box"><i class="bi bi-person-video3"></i><span style="font-weight: bold;">零基礎開發力</span></div>
                 <div class="sys-body">
-                    <h3>Meta 爆款內容引擎</h3>
-                    <p>自動追蹤全網時事與熱門新聞。AI 會以您的人設精準發文，在 FB/IG/Threads 為您大規模捕捉潛在客戶的注意力。</p>
+                    <h3>1. AI 講師 / Vibe Coding 教學</h3>
+                    <p>打破程式語言的深奧門檻。我們教您如何用「對話」的方式與 AI 協作，以最自然的人類語言打造出專屬的自動化系統。</p>
                 </div>
             </div>
-            <div class="sys-card" style="border-top: 5px solid var(--line-green);">
-                <div class="video-box"><i class="bi bi-wallet2"></i><span>私域變現轉化・實戰影片</span></div>
-                <div class="sys-body">
-                    <h3>LINE OA 智能成交業務</h3>
-                    <p>承接所有湧入的流量。24 小時不休息地進行意圖識別、問題解答與主動逼單。讓您的 LINE 不只是聊天，更是提款機。</p>
-                </div>
-            </div>
+            
             <div class="sys-card" style="border-top: 5px solid var(--text-main);">
-                <div class="video-box"><i class="bi bi-cpu"></i><span>高階 AI Agent 客製</span></div>
+                <div class="video-box"><i class="bi bi-buildings"></i><span style="font-weight: bold;">企業專屬數位大腦</span></div>
                 <div class="sys-body">
-                    <h3>企業級大腦定製 (SaaS)</h3>
-                    <p>如需數據戰情室、Telegram 遠端審核或庫存通報，我們能為您的 Agent 掛載專屬 Tools，讓 AI 真正參與決策。</p>
+                    <h3>2. 企業 AI 自動化導入</h3>
+                    <p>為您的企業量身定做數位員工。將日常重複性的文書、客服與營運流程全自動化，大幅降低人力成本並提升精準度。</p>
+                </div>
+            </div>
+
+            <div class="sys-card" style="border-top: 5px solid #8B5CF6;">
+                <div class="video-box"><i class="bi bi-camera-reels"></i><span style="font-weight: bold;">無上限的產能釋放</span></div>
+                <div class="sys-body">
+                    <h3>3. 影音內容自動流生產工廠</h3>
+                    <p>揮別耗時的拍攝與剪輯。我們為您建置自動化的生成管線，從腳本到影片一氣呵成，幫您實現高頻率的精緻內容產出。</p>
+                </div>
+            </div>
+
+            <div class="sys-card" style="border-top: 5px solid var(--line-green);">
+                <div class="video-box"><i class="bi bi-funnel"></i><span style="font-weight: bold;">完整的商業漏斗</span></div>
+                <div class="sys-body">
+                    <h3>4. 公域獲客 ➔ 私域變現系統</h3>
+                    <p>利用影音頻道在公域大規模吸引目光，並串接 LINE OA 智能系統進行私域的一對一轉化。打造一個只進不出的獲利漏斗。</p>
+                </div>
+            </div>
+
+            <div class="sys-card" style="border-top: 5px solid #0EA5E9;">
+                <div class="video-box"><i class="bi bi-broadcast"></i><span style="font-weight: bold;">社群聲量引擎</span></div>
+                <div class="sys-body">
+                    <h3>5. Meta 自動化內容發佈</h3>
+                    <p>全自動營運您的社群矩陣。系統會根據您的品牌人設，定時產出並發佈高互動內容，讓您隨時保持在粉絲的視野中。</p>
                 </div>
             </div>
         </div>
