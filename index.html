@@ -137,12 +137,10 @@
         /* --- Hero Section --- */
         .hero {
             min-height: 100vh; 
-            padding: 160px 5% 100px;
+            padding: 150px 5% 100px;
             display: flex; 
-            flex-direction: column; 
             align-items: center; 
             justify-content: center;
-            text-align: center; 
             position: relative;
             overflow: hidden;
             background: radial-gradient(circle at top, rgba(17, 24, 39, 0.8) 0%, var(--bg-dark) 80%);
@@ -159,6 +157,23 @@
             background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
             filter: blur(80px); pointer-events: none; z-index: 0;
         }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1300px;
+            width: 100%;
+            z-index: 1;
+            text-align: left;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
         
         .hero-tag { 
             font-size: 0.8rem; 
@@ -173,17 +188,16 @@
             padding: 6px 16px;
             border-radius: 50px;
             box-shadow: 0 0 15px rgba(59, 130, 246, 0.05);
-            z-index: 1;
+            display: inline-block;
         }
         
         .hero h1 { 
-            font-size: 3.5rem; 
+            font-size: 3.2rem; 
             font-weight: 900; 
             line-height: 1.25; 
             margin-bottom: 25px; 
             letter-spacing: -1px; 
             color: var(--text-bright);
-            z-index: 1;
         }
         
         .hero h1 span { 
@@ -193,26 +207,26 @@
         }
         
         .hero p.lead { 
-            font-size: 1.25rem; 
+            font-size: 1.15rem; 
             color: var(--text-muted); 
-            max-width: 800px; 
-            margin-bottom: 45px; 
+            max-width: 100%; 
+            margin-bottom: 35px; 
             font-weight: 400; 
-            z-index: 1;
+            line-height: 1.8;
+            border-left: 3px solid var(--accent-purple);
+            padding-left: 20px;
         }
         
         .hero-manifesto {
             background: rgba(15, 23, 42, 0.55); 
             border: 1px solid rgba(255, 255, 255, 0.06); 
-            padding: 35px 40px; 
+            padding: 30px 35px; 
             border-radius: 20px;
             backdrop-filter: blur(12px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.4); 
-            max-width: 850px; 
-            margin-bottom: 50px; 
+            width: 100%; 
+            margin-bottom: 40px; 
             border-left: 5px solid var(--accent-blue);
-            text-align: left;
-            z-index: 1;
             transition: all 0.3s;
         }
 
@@ -222,14 +236,14 @@
         }
 
         .hero-manifesto h3 { 
-            font-size: 1.35rem; 
+            font-size: 1.25rem; 
             margin-bottom: 12px; 
             color: var(--text-bright); 
             font-weight: 900; 
         }
         
         .hero-manifesto p { 
-            font-size: 1.05rem; 
+            font-size: 1rem; 
             color: var(--text-muted); 
             margin-bottom: 0; 
         }
@@ -244,9 +258,187 @@
             -webkit-text-fill-color: transparent;
             font-weight: bold;
         }
+
+        /* Architect Profile Card Styling */
+        .hero-profile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .profile-card {
+            background: rgba(15, 23, 42, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 24px;
+            padding: 35px;
+            width: 100%;
+            max-width: 420px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(139, 92, 246, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.25);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5), 0 0 50px rgba(139, 92, 246, 0.12);
+        }
+
+        .profile-avatar {
+            width: 100%;
+            height: 200px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(3, 7, 18, 0.8) 100%);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--accent-blue);
+            font-size: 3.5rem;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .profile-avatar i {
+            filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4));
+            animation: pulseGlow 3s infinite ease-in-out;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4)); }
+            50% { transform: scale(1.05); filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.7)); color: var(--accent-purple); }
+        }
+
+        .avatar-tag {
+            position: absolute;
+            bottom: 15px;
+            background: rgba(3, 7, 18, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-bright);
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .profile-info h3 {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: var(--text-bright);
+            margin-bottom: 5px;
+        }
+
+        .profile-title {
+            font-size: 0.8rem;
+            font-family: 'Outfit', sans-serif;
+            color: var(--accent-purple);
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .profile-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .profile-skills span {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .profile-skills span i {
+            color: var(--accent-blue);
+        }
+
+        .profile-desc {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .photo-placeholder-note {
+            display: block;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--accent-purple);
+            background: rgba(139, 92, 246, 0.06);
+            border: 1px dotted rgba(139, 92, 246, 0.25);
+            padding: 8px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
         
-        .hero-cta {
+        /* 3D Glowing Button Styles */
+        .btn-primary-glow {
+            background: linear-gradient(135deg, var(--line-green), #05A546);
+            color: #fff;
+            padding: 18px 42px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.15rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 25px rgba(6, 199, 85, 0.4), 0 0 30px rgba(6, 199, 85, 0.15);
+            position: relative;
+            overflow: hidden;
             z-index: 1;
+            cursor: pointer;
+        }
+
+        .btn-primary-glow:hover {
+            transform: scale(1.04) translateY(-3px);
+            box-shadow: 0 15px 35px rgba(6, 199, 85, 0.6), 0 0 45px rgba(6, 199, 85, 0.4);
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        .btn-primary-glow::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.25),
+                transparent
+            );
+            transition: all 0.6s ease;
+        }
+
+        .btn-primary-glow:hover::before {
+            left: 100%;
         }
 
         /* --- Section Common Styles --- */
@@ -492,11 +684,140 @@
             flex-grow: 1;
         }
 
-        /* --- 3. SOP Loop Section --- */
-        .loop-section {
+        /* --- 3. Roadmap Section --- */
+        .roadmap-section {
             background: var(--bg-dark-soft);
             border-top: 1px solid rgba(255, 255, 255, 0.04);
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .roadmap-container {
+            position: relative;
+            margin-top: 60px;
+            padding: 0 10px;
+        }
+
+        .roadmap-line {
+            position: absolute;
+            top: 140px;
+            left: 8%;
+            width: 84%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-purple) 50%, var(--line-green) 100%);
+            opacity: 0.25;
+            z-index: 1;
+        }
+
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .roadmap-card {
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 35px 30px;
+            position: relative;
+            transition: all 0.3s;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .roadmap-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.2);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.4), 0 0 20px rgba(59, 130, 246, 0.05);
+        }
+
+        .roadmap-badge {
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            font-family: 'Outfit', sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, var(--accent-blue), #1D4ED8);
+            padding: 6px 16px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .roadmap-badge.purple {
+            background: linear-gradient(135deg, var(--accent-purple), #6D28D9);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .roadmap-badge.green {
+            background: linear-gradient(135deg, var(--line-green), #047857);
+            box-shadow: 0 5px 15px rgba(6, 199, 85, 0.3);
+        }
+
+        .roadmap-icon {
+            width: 54px;
+            height: 54px;
+            background: rgba(59, 130, 246, 0.08);
+            color: var(--accent-blue);
+            border-radius: 14px;
+            border: 1px solid rgba(59, 130, 246, 0.12);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            margin-top: 10px;
+        }
+
+        .roadmap-icon.purple {
+            background: rgba(139, 92, 246, 0.08);
+            color: var(--accent-purple);
+            border-color: rgba(139, 92, 246, 0.12);
+        }
+
+        .roadmap-icon.green {
+            background: rgba(6, 199, 85, 0.08);
+            color: var(--line-green);
+            border-color: rgba(6, 199, 85, 0.12);
+        }
+
+        .roadmap-card h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--text-bright);
+            margin-bottom: 6px;
+        }
+
+        .roadmap-subtitle {
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .roadmap-card:nth-child(2) .roadmap-subtitle {
+            color: var(--accent-purple);
+        }
+
+        .roadmap-card:nth-child(3) .roadmap-subtitle {
+            color: var(--line-green);
+        }
+
+        .roadmap-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            flex-grow: 1;
+        }
+
+        /* --- 4. SOP Loop Section --- */
+        .loop-section {
+            background: var(--bg-dark);
         }
 
         .loop-container { 
@@ -576,9 +897,11 @@
             100% { transform: translateX(-6px); opacity: 0.3; }
         }
 
-        /* --- 4. Consultation steps Section --- */
+        /* --- 5. Consultation steps Section --- */
         .steps-section {
-            background: var(--bg-dark);
+            background: var(--bg-dark-soft);
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         }
 
         .steps-grid {
@@ -631,11 +954,9 @@
             line-height: 1.6;
         }
 
-        /* --- 5. FAQ Accordion Section --- */
+        /* --- 6. FAQ Accordion Section --- */
         .faq-section {
-            background: var(--bg-dark-soft);
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            background: var(--bg-dark);
         }
 
         .faq-container {
@@ -700,12 +1021,13 @@
             color: var(--accent-purple);
         }
 
-        /* --- 6. CTA / Final Pitch --- */
+        /* --- 7. CTA / Final Pitch --- */
         .cta { 
             text-align: center; 
             padding: 120px 5%; 
             background: radial-gradient(circle at bottom, rgba(139, 92, 246, 0.06) 0%, var(--bg-dark) 80%);
             position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
         }
         
         .cta h2 {
@@ -729,27 +1051,6 @@
             line-height: 1.7;
         }
 
-        .btn-lg-line { 
-            background: linear-gradient(135deg, var(--line-green), #05A546); 
-            color: #fff; 
-            padding: 20px 50px; 
-            border-radius: 100px; 
-            font-size: 1.3rem; 
-            font-weight: 900; 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 12px; 
-            box-shadow: 0 10px 30px rgba(6, 199, 85, 0.35); 
-            text-decoration: none; 
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .btn-lg-line:hover { 
-            transform: scale(1.05); 
-            box-shadow: 0 15px 40px rgba(6, 199, 85, 0.55); 
-        }
-
         .cta-bullets {
             margin-top: 45px; 
             display: flex; 
@@ -770,7 +1071,7 @@
             color: var(--line-green);
         }
 
-        /* --- Footer Styles --- */
+        /* --- Footer --- */
         footer { 
             padding: 60px 5% 40px; 
             text-align: center; 
@@ -918,9 +1219,45 @@
         }
 
         /* --- Responsive Queries --- */
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1.1fr 0.9fr;
+                gap: 30px;
+            }
             .hero h1 { font-size: 2.8rem; }
-            .hero p.lead { font-size: 1.1rem; }
+        }
+
+        @media (max-width: 992px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+            .hero-content {
+                align-items: center;
+            }
+            .hero p.lead {
+                border-left: none;
+                padding-left: 0;
+            }
+            .hero-manifesto {
+                text-align: left;
+            }
+            .hero-profile {
+                margin-top: 20px;
+            }
+            .roadmap-line {
+                display: none;
+            }
+            .roadmap-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+            .roadmap-badge {
+                top: 20px;
+                right: 20px;
+                left: auto;
+            }
             .loop-grid { 
                 grid-template-columns: 1fr; 
                 gap: 25px;
@@ -953,8 +1290,7 @@
             .hero h1 { font-size: 2.2rem; }
             .hero-manifesto { padding: 25px 20px; }
             .section-h h2 { font-size: 1.8rem; }
-            .btn-primary { width: 100%; justify-content: center; }
-            .btn-lg-line { width: 100%; justify-content: center; padding: 18px 30px; font-size: 1.15rem; }
+            .btn-primary-glow { width: 100%; justify-content: center; padding: 18px 25px; font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -966,7 +1302,7 @@
             <div class="logo-box">BD</div>
             <div class="logo-title">品牌解碼室<span>讓夢想擁有一條自動化的生產線</span></div>
         </a>
-        <a href="https://lin.ee/wZAv8yY" target="_blank" class="nav-btn">預約大師諮詢</a>
+        <a href="https://lin.ee/wZAv8yY" target="_blank" class="nav-btn">預約 15 分鐘免費戰略評估</a>
     </header>
 
     <!-- Hero Section -->
@@ -974,22 +1310,48 @@
         <div class="hero-glow-1"></div>
         <div class="hero-glow-2"></div>
         
-        <div class="hero-tag fade-in-up">THE DIGITAL MONOPOLY BLUEPRINT</div>
-        <h1 class="fade-in-up">你的商業才華，不該被技術細節埋沒。<br>只要你有「想法」，剩下的交給 <span>AI 幫你實現。</span></h1>
-        <p class="lead fade-in-up">這不是一場理論課程，這是一次將靈感轉化為「全自動獲利生產線」的商業賦能實戰。</p>
-        
-        <div class="hero-manifesto fade-in-up">
-            <h3>這是一場關於「商業主權」的革命</h3>
-            <p>
-                <strong>不寫複雜程式、不碰生硬的資料庫。</strong><br>
-                在《品牌解碼室》，我們不談虛浮的科技名詞。我們結合 20 年的品牌實戰經驗，只做一件事：<strong>把您的商業才華，封裝進一套 <span class="glow">24 小時為您精準獲客、自動成交</span> 的 AI 閉環系統中。</strong>
-            </p>
-        </div>
+        <div class="hero-container">
+            <!-- Left Column: Content -->
+            <div class="hero-content">
+                <div class="hero-tag fade-in-up">THE DIGITAL MONOPOLY BLUEPRINT</div>
+                <h1 class="fade-in-up">你的商業才華，不該被技術細節埋沒。<br>只要你有「想法」，剩下的交給 <span>AI 幫你實現。</span></h1>
+                <p class="lead fade-in-up">別再浪費時間與外包公司來回溝通。AI 時代，老闆必須學會親自掌控數位產線。1對1 教你建構自動化客服與社群收單系統，打造你專屬的『一人兵工廠』。</p>
+                
+                <div class="hero-manifesto fade-in-up">
+                    <h3>這是一場關於「商業主權」的革命</h3>
+                    <p>
+                        <strong>不寫複雜程式、不碰生硬的資料庫。</strong><br>
+                        在《品牌解碼室》，我們不談虛浮的科技名詞。我們結合 20 年的品牌實戰經驗，只做一件事：<strong>把您的商業才華，封裝進一套 <span class="glow">24 小時為您精準獲客、自動成交</span> 的 AI 閉環系統中。</strong>
+                    </p>
+                </div>
 
-        <div class="hero-cta fade-in-up">
-            <a href="https://lin.ee/wZAv8yY" target="_blank" class="btn-primary" style="padding: 18px 45px; font-size: 1.15rem; border-radius: 50px;">
-                立即解碼您的商業閉環 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
-            </a>
+                <div class="hero-cta fade-in-up">
+                    <a href="https://lin.ee/wZAv8yY" target="_blank" class="btn-primary-glow">
+                        <i class="fab fa-line"></i> 預約 15 分鐘免費戰略評估 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right Column: Architect Profile Avatar -->
+            <div class="hero-profile fade-in-up">
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <i class="bi bi-person-workspace"></i>
+                        <span class="avatar-tag">AI & 品牌自動化</span>
+                    </div>
+                    <div class="profile-info">
+                        <h3>AI & 品牌自動化架構師</h3>
+                        <p class="profile-title">Brand & AI Solutions Architect</p>
+                        <div class="profile-skills">
+                            <span><i class="fa-solid fa-code-branch"></i> Vibe Coding</span>
+                            <span><i class="fa-solid fa-diagram-project"></i> 系統架構</span>
+                            <span><i class="fa-solid fa-funnel-dollar"></i> 變現閉環</span>
+                        </div>
+                        <p class="profile-desc">「不教你寫程式碼，只教你如何用架構師的思維指揮 AI，把想法光速落地，做你自家的數位兵工廠。」</p>
+                        <span class="photo-placeholder-note"><i class="fa-solid fa-camera"></i> 個人資料與形象照即將上線</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1074,7 +1436,7 @@
                 <div class="service-body">
                     <div class="service-badge">No-Code 無代碼實現</div>
                     <h3>3. 一句話，讓 AI 幫你寫出產品</h3>
-                    <p>沒有代碼基礎也能創業！運用最新的 AI 無代碼工具，你再也不用苦學艱澀的語法。只要輸入簡單的需求描述，AI 就能快速幫你建構出專屬的網頁或服務系統。將技術雜務交給 AI，你只需專注於洞察客戶與商業變現。</p>
+                    <p>沒有代碼基礎也能創業！運用最新的 AI 無代碼工具，你再也不用苦學艱澀的語法。物理限制交給 AI，你只需專注於洞察客戶與商業變現。</p>
                 </div>
             </div>
 
@@ -1116,10 +1478,51 @@
         </div>
     </section>
 
-    <!-- 3. SOP Loop Section -->
+    <!-- 3. Roadmap Section -->
+    <section class="section roadmap-section fade-in-up">
+        <div class="section-h">
+            <h2>1 對 1 課程 <span>交付藍圖 (Roadmap)</span></h2>
+            <p>破除黑箱與未知，手把手帶領你完成個人品牌系統的落地路徑</p>
+        </div>
+        
+        <div class="roadmap-container">
+            <div class="roadmap-line"></div>
+            
+            <div class="roadmap-grid">
+                <!-- Phase 1 -->
+                <div class="roadmap-card">
+                    <div class="roadmap-badge">Phase 01</div>
+                    <div class="roadmap-icon"><i class="bi bi-bullseye"></i></div>
+                    <h3>大腦對齊</h3>
+                    <p class="roadmap-subtitle">釐清商業閉環與核心痛點</p>
+                    <p class="roadmap-desc">拒絕盲目跟風。我們首先與你深入剖析現有的資源與商業想法，找出最適合你的賽道。釐清「流量從哪裡來、在哪裡轉化、如何安全收款」的閉環邏輯，鎖定自動化改造的黃金切入點。</p>
+                </div>
+                
+                <!-- Phase 2 -->
+                <div class="roadmap-card">
+                    <div class="roadmap-badge purple">Phase 02</div>
+                    <div class="roadmap-icon purple"><i class="bi bi-shield-shaded"></i></div>
+                    <h3>工具武裝</h3>
+                    <p class="roadmap-subtitle">導入 AI 實戰工具流</p>
+                    <p class="roadmap-desc">跨越技術鴻溝。我們為你導入實用的 AI 協作心法，手把手教學：核心提示詞工程（Prompt Engineering）、自動化腳本概念、影音生成管線及 AI 調用邏輯。教你像指揮官一樣命令 AI 工作。</p>
+                </div>
+                
+                <!-- Phase 3 -->
+                <div class="roadmap-card">
+                    <div class="roadmap-badge green">Phase 03</div>
+                    <div class="roadmap-icon green"><i class="bi bi-rocket-takeoff"></i></div>
+                    <h3>系統落地</h3>
+                    <p class="roadmap-subtitle">實作專屬自動化客服與收單</p>
+                    <p class="roadmap-desc">看見真實成果。不再停留於理論，我們陪你從零到一建構出專屬的自動化社群發文、LINE OA 智能意圖客服、甚至無代碼產品雛形，真正打通「自動獲客與收款」的閉環，打造專屬的一人兵工廠。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SOP Loop Section -->
     <section class="section loop-section fade-in-up">
         <div class="section-h">
-            <h2>這就是您即將擁有的 <span>夢夢想生產線</span></h2>
+            <h2>這就是您即將擁有的 <span>夢想生產線</span></h2>
             <p>我們將「公域獲客 ➔ 私域變現」SOP，轉化為您手中心隨意動的自動化武器</p>
         </div>
 
@@ -1148,7 +1551,7 @@
         </div>
     </section>
 
-    <!-- 4. Consultation Steps Section -->
+    <!-- 5. Consultation Steps Section -->
     <section class="section steps-section fade-in-up">
         <div class="section-h">
             <h2>如何開啟您的 <span>品牌解碼之路？</span></h2>
@@ -1173,7 +1576,7 @@
         </div>
     </section>
 
-    <!-- 5. FAQ Accordion Section -->
+    <!-- 6. FAQ Accordion Section -->
     <section class="section faq-section fade-in-up">
         <div class="section-h">
             <h2>常見問題 <span>解答 (FAQ)</span></h2>
@@ -1225,8 +1628,8 @@
             <h2>未來的商業競賽，拼的不是技術，<br>而是你的<span>「決策與點子」。</span></h2>
             <p>別讓繁雜的程式碼、繁瑣的發文與剪輯消磨了你的創業熱情。立刻與我們聊聊，開啟屬於你的自動化獲利生產線。</p>
             
-            <a href="https://lin.ee/wZAv8yY" target="_blank" class="btn-lg-line">
-                <i class="fab fa-line"></i> 立即解鎖您的 AI 自動化獲利閉環
+            <a href="https://lin.ee/wZAv8yY" target="_blank" class="btn-primary-glow">
+                <i class="fab fa-line"></i> 預約 15 分鐘免費戰略評估
             </a>
             
             <div class="cta-bullets">
@@ -1250,7 +1653,7 @@
     </footer>
 
     <!-- LINE Floating Action Button -->
-    <a href="https://lin.ee/wZAv8yY" target="_blank" class="line-float-btn" title="加 LINE 預約大師諮詢">
+    <a href="https://lin.ee/wZAv8yY" target="_blank" class="line-float-btn" title="預約 15 分鐘免費戰略評估">
         <i class="fab fa-line"></i>
     </a>
 
@@ -1413,14 +1816,13 @@
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.08
+                threshold: 0.06
             };
             
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        // Optional: stop observing once animate-in is done
                         observer.unobserve(entry.target);
                     }
                 });
