@@ -1697,14 +1697,14 @@
                 <div class="cost-card-header">
                     <span class="cost-badge-alert"><i class="fa-solid fa-triangle-exclamation"></i> 官方 API 呼叫代價</span>
                     <h3>雲端影片 API 計秒扣點黑洞</h3>
-                    <p>如果直接串接官方 API（如 Google Veo 3.1 或 OpenAI 等）生成影片，將按秒計費。隨著生成次數增加，費用將迅速失控：</p>
+                    <p>如果直接使用 Gemini API 付費方案調用最新的 <strong>Google Veo 3.1</strong> 影片模型（皆含音訊），計費方式為按生成秒數收費。費用明細如下：</p>
                 </div>
                 
                 <div class="table-responsive">
                     <table class="cost-table">
                         <thead>
                             <tr>
-                                <th>輸出規格</th>
+                                <th>模型規格 (含音訊)</th>
                                 <th>API 每秒單價</th>
                                 <th>10 秒總價</th>
                                 <th>台幣預估 (1:32)</th>
@@ -1712,28 +1712,34 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1080p (無音效)</td>
-                                <td>$0.20 USD</td>
-                                <td>$2.00 USD</td>
-                                <td class="highlight-red">約 64 元</td>
-                            </tr>
-                            <tr>
-                                <td>1080p (含原生音效)</td>
+                                <td>Veo 3.1 Standard (1080p)</td>
                                 <td>$0.40 USD</td>
                                 <td>$4.00 USD</td>
                                 <td class="highlight-red">約 128 元</td>
                             </tr>
                             <tr>
-                                <td>4K (無音效)</td>
-                                <td>$0.40 USD</td>
-                                <td>$4.00 USD</td>
-                                <td class="highlight-red">約 128 元</td>
-                            </tr>
-                            <tr>
-                                <td>4K (含原生音效)</td>
+                                <td>Veo 3.1 Standard (4K)</td>
                                 <td>$0.60 USD</td>
                                 <td>$6.00 USD</td>
                                 <td class="highlight-red">約 192 元</td>
+                            </tr>
+                            <tr>
+                                <td>Veo 3.1 Fast (1080p)</td>
+                                <td>$0.12 USD</td>
+                                <td>$1.20 USD</td>
+                                <td class="highlight-red">約 38.4 元</td>
+                            </tr>
+                            <tr>
+                                <td>Veo 3.1 Fast (4K)</td>
+                                <td>$0.30 USD</td>
+                                <td>$3.00 USD</td>
+                                <td class="highlight-red">約 96 元</td>
+                            </tr>
+                            <tr>
+                                <td>Veo 3.1 Lite (1080p)</td>
+                                <td>$0.08 USD</td>
+                                <td>$0.80 USD</td>
+                                <td class="highlight-red">約 25.6 元</td>
                             </tr>
                         </tbody>
                     </table>
@@ -1741,7 +1747,7 @@
                 
                 <div class="cost-warn-box">
                     <i class="fa-solid fa-circle-exclamation"></i>
-                    <span><strong>警訊：</strong> 一支 10 秒影片約需 NT$64~192 元。若經營個人品牌每日產出 10 支，<strong>每月雲端影片 API 帳單高達 NT$19,200 ~ NT$57,600！</strong></span>
+                    <span><strong>算力成本警訊：</strong> 即便使用最便宜的 Lite 1080p 規格，每日產出 10 支 10 秒影片，單月 API 費用也需約 <strong>NT$7,680</strong>；若追求高品質 Standard 1080p，每日 10 支的月開銷將高達 <strong>NT$38,400</strong>，Standard 4K 更高達 <strong>NT$57,600</strong>！</span>
                 </div>
             </div>
 
