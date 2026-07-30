@@ -317,10 +317,10 @@
             background: #000;
         }
 
-        .phone-video-container video {
+        .phone-video-container iframe {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            border: none;
             position: absolute;
             top: 0;
             left: 0;
@@ -336,6 +336,7 @@
             z-index: 5;
             color: #fff;
             text-align: left;
+            pointer-events: none; /* Allows clicking iframe underneath */
         }
 
         .video-overlay-info h4 {
@@ -352,32 +353,6 @@
             font-size: 0.78rem;
             color: #D1D5DB;
             line-height: 1.4;
-        }
-
-        .video-play-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            background: rgba(245, 158, 11, 0.9);
-            color: #020408;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 8;
-            transition: all 0.3s;
-            box-shadow: 0 0 25px rgba(245, 158, 11, 0.4);
-        }
-
-        .video-play-btn:hover {
-            transform: translate(-50%, -50%) scale(1.1);
-            background: #fff;
-            box-shadow: 0 0 35px rgba(255, 255, 255, 0.6);
         }
 
         /* 3D Glowing Button Styles */
@@ -583,18 +558,6 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .service-media video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.85;
-            transition: opacity 0.3s;
-        }
-
-        .service-card:hover .service-media video {
-            opacity: 1;
-        }
-
         .service-media-placeholder {
             display: flex;
             flex-direction: column;
@@ -619,6 +582,24 @@
 
         .service-media-placeholder.purple i {
             filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.25));
+        }
+
+        .service-media-placeholder.green {
+            color: var(--line-green);
+            background: radial-gradient(circle at center, rgba(6, 199, 85, 0.06) 0%, rgba(3, 7, 18, 0.6) 100%);
+        }
+
+        .service-media-placeholder.green i {
+            filter: drop-shadow(0 0 10px rgba(6, 199, 85, 0.25));
+        }
+
+        .service-media-placeholder.blue {
+            color: #3B82F6;
+            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.06) 0%, rgba(3, 7, 18, 0.6) 100%);
+        }
+
+        .service-media-placeholder.blue i {
+            filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.25));
         }
 
         .service-media-placeholder span {
@@ -727,7 +708,7 @@
 
         .portfolio-media {
             width: 100%;
-            height: 180px;
+            height: 380px; /* Tall grid cards to cleanly present 9:16 vertical video thumbnails */
             background: #000;
             position: relative;
             overflow: hidden;
@@ -750,7 +731,7 @@
         .portfolio-play-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(2, 4, 8, 0.4);
+            background: rgba(2, 4, 8, 0.45);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -763,15 +744,15 @@
         }
 
         .portfolio-play-overlay i {
-            width: 50px;
-            height: 50px;
+            width: 54px;
+            height: 54px;
             border-radius: 50%;
             background: var(--accent-gold);
             color: var(--bg-dark);
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
         }
 
@@ -780,10 +761,15 @@
         }
 
         .portfolio-info-box h4 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 800;
             color: var(--text-bright);
             margin-bottom: 8px;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .portfolio-info-box span {
@@ -1406,12 +1392,14 @@
 
         .lightbox-container {
             width: 90%;
-            max-width: 500px; /* Tailored for vertical 9:16 portrait video */
-            height: 80vh;
+            max-width: 400px; /* Tailored for vertical 9:16 portrait video */
+            aspect-ratio: 9 / 16;
+            height: auto;
+            max-height: 85vh;
             background: #000;
             border: 2px solid rgba(245, 158, 11, 0.25);
             box-shadow: 0 0 50px rgba(245, 158, 11, 0.3);
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
             position: relative;
             transform: scale(0.92);
@@ -1452,7 +1440,7 @@
             height: 100%;
         }
 
-        .lightbox-video-frame iframe, .lightbox-video-frame video {
+        .lightbox-video-frame iframe {
             width: 100%;
             height: 100%;
             border: none;
@@ -1615,6 +1603,12 @@
             }
         }
 
+        @keyframes flowPulseVertical {
+            0% { transform: translateY(-5px); opacity: 0.3; }
+            50% { transform: translateY(5px); opacity: 1; color: var(--accent-gold); }
+            100% { transform: translateY(-5px); opacity: 0.3; }
+        }
+
         @media (max-width: 576px) {
             header { padding: 15px 4%; }
             .logo-title span { display: none; }
@@ -1662,18 +1656,15 @@
                 </div>
             </div>
             
-            <!-- Right Column: Interactive Phone Mockup with the Lake Maracaibo Video -->
+            <!-- Right Column: Interactive Phone Mockup with YouTube Video Embed (d7roBn7UgRE) -->
             <div class="hero-screen-wrapper fade-in-up">
-                <div class="phone-mockup" onclick="playMockupVideo()">
+                <div class="phone-mockup">
                     <div class="phone-notch"></div>
                     <div class="phone-video-container">
-                        <video id="hero-mockup-vid" src="medias/(11)委內瑞拉馬拉開波湖_危險的地球_480P.mp4" loop muted playsinline></video>
-                        <div class="video-play-btn" id="hero-play-icon">
-                            <i class="fa-solid fa-play"></i>
-                        </div>
+                        <iframe id="hero-mockup-iframe" src="https://www.youtube.com/embed/d7roBn7UgRE?autoplay=1&mute=1&loop=1&playlist=d7roBn7UgRE&controls=0&showinfo=0&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         <div class="video-overlay-info">
-                            <h4><i class="fa-solid fa-clapperboard"></i> 點擊播放實拍 Demo</h4>
-                            <p>KCinemaAI 科普影片代工作品：AI 虛擬主持人 + 全動態 T2I->I2V 閃電場景</p>
+                            <h4><i class="fa-solid fa-clapperboard"></i> KCinemaAI 代工樣片</h4>
+                            <p>《危險的地球》系列：AI 虛擬主持人對嘴 + 全動態 T2I->I2V 閃電場景</p>
                         </div>
                     </div>
                 </div>
@@ -1757,7 +1748,10 @@
             <!-- Service 3 -->
             <div class="service-card">
                 <div class="service-media">
-                    <video src="medias/website_movie_001.mp4" autoplay loop muted playsinline></video>
+                    <div class="service-media-placeholder green">
+                        <i class="bi bi-person-bounding-box"></i>
+                        <span>AVATAR GENERATION</span>
+                    </div>
                 </div>
                 <div class="service-body">
                     <div class="service-badge">AI 虛擬代言人生成</div>
@@ -1769,7 +1763,10 @@
             <!-- Service 4 -->
             <div class="service-card">
                 <div class="service-media">
-                    <video src="medias/website_movie_003.mp4" autoplay loop muted playsinline></video>
+                    <div class="service-media-placeholder blue">
+                        <i class="bi bi-play-btn-fill"></i>
+                        <span>T2I ➔ I2V RENDER</span>
+                    </div>
                 </div>
                 <div class="service-body">
                     <div class="service-badge">科普影音自動生產線</div>
@@ -1781,7 +1778,10 @@
             <!-- Service 5 -->
             <div class="service-card">
                 <div class="service-media">
-                    <video src="medias/Yt_Start.mp4" autoplay loop muted playsinline></video>
+                    <div class="service-media-placeholder">
+                        <i class="bi bi-funnel-fill"></i>
+                        <span>TRAFFIC FUNNEL</span>
+                    </div>
                 </div>
                 <div class="service-body">
                     <div class="service-badge">獲客變現漏斗</div>
@@ -1793,7 +1793,10 @@
             <!-- Service 6 -->
             <div class="service-card">
                 <div class="service-media">
-                    <video src="medias/Yt_Ending.mp4" autoplay loop muted playsinline></video>
+                    <div class="service-media-placeholder purple">
+                        <i class="bi bi-diagram-3-fill"></i>
+                        <span>SYSTEM REBUILD</span>
+                    </div>
                 </div>
                 <div class="service-body">
                     <div class="service-badge">架構拆解與重組</div>
@@ -1808,14 +1811,12 @@
     <section class="section showcase-section fade-in-up" id="portfolio-section">
         <div class="section-h">
             <h2>KCinemaAI <span>影音作品放映室</span></h2>
-            <p>點擊下方卡片即可直接在網頁中播放，感受極致的 AI 畫面張力與真實主持人對嘴效果</p>
+            <p>聚焦 9:16 行動端規格。點擊下方卡片即可直接播放，感受極致的 AI 畫面張力與真實主持人對嘴效果</p>
         </div>
 
         <div class="portfolio-tabs">
             <div class="portfolio-tab active" onclick="filterPortfolio('all')">全部作品</div>
             <div class="portfolio-tab" onclick="filterPortfolio('explainer')">科普解說大片</div>
-            <div class="portfolio-tab" onclick="filterPortfolio('avatar')">虛擬主持人代言</div>
-            <div class="portfolio-tab" onclick="filterPortfolio('short')">爆款流量短影音</div>
         </div>
 
         <div class="portfolio-grid" id="portfolio-grid-container">
@@ -2116,7 +2117,7 @@
             <p>本服務為雲端 AI 導購與智能客服平台，提供但不限於：AI 對話與導購功能、商機蒐集與 CRM 管理、商品與知識庫管理、多語系回覆能力、數據分析與戰情儀表板。本公司保留隨時調整、修改或終止部分功能之權利。</p>
             
             <h4>2. 帳戶註冊與安全</h4>
-            <p>用戶同意提供真實且完整之註冊資料、妥善保管帳號密碼，並對帳號下所有行為負完全責任。如發現未經授權使用，應立即通知本公司。</p>
+            <p>用戶同意提供真實且完整之註冊資料、妥善保管帳號密碼，並對帳號下所有行為負完全責任。如發現未經授权使用，應立即通知本公司。</p>
             
             <h4>3. 合法使用義務（重要）</h4>
             <p>用戶不得利用本服務從事任何違法或不當行為，包括但不限於：詐騙、誤導或不實銷售；散布違法、色情、暴力內容；未經授權蒐集他人個資；醫療、法律等需專業執照之誤導性建議；干擾或破壞系統運作。本公司有權在不事先通知下暫停或終止違規帳戶。</p>
@@ -2242,47 +2243,31 @@
     <!-- Interactive Scripts -->
     <script>
         // --- 1. Expandable Video Showcase Portfolios Database ---
-        // Future updates: Simply add new items to this array to dynamically build the showcase.
+        // Dynamically configured to ONLY use the user's specific YouTube 9:16 videos.
         const portfolioData = [
             {
-                title: "危險的地球：委內瑞拉馬拉開波湖的無盡閃電",
+                title: "地表最致命禁區！巴西蛇島「融化血肉」的致命演化，與一條價值3萬美金的黑市陰謀｜危險的地球",
                 category: "explainer",
-                thumbnail: "images/Saas_war_view01.png",
-                videoType: "local",
-                url: "medias/(11)委內瑞拉馬拉開波湖_危險的地球_480P.mp4",
+                thumbnail: "https://img.youtube.com/vi/d7roBn7UgRE/hqdefault.jpg",
+                videoType: "youtube",
+                url: "https://www.youtube.com/embed/d7roBn7UgRE",
                 tagLabel: "T2I->I2V 科普大片"
             },
             {
-                title: "AI 數位虛擬主持人：完美嘴型口播實拍",
-                category: "avatar",
-                thumbnail: "images/Saas_war_view01.png",
-                videoType: "local",
-                url: "medias/website_movie_001.mp4",
-                tagLabel: "口播 Avatar"
-            },
-            {
-                title: "AI 影音工作站概念與無限渲染展示",
+                title: "比火星更像外星！直擊地獄之門「達納基勒窪地」：pH值小於0的強酸深淵，與騙過頂尖科學家的「無機幽靈」｜危險的地球",
                 category: "explainer",
-                thumbnail: "images/AIOptimization_AIO_01.jpg",
-                videoType: "local",
-                url: "medias/website_movie_003.mp4",
-                tagLabel: "本地工作站"
+                thumbnail: "https://img.youtube.com/vi/c-2IY-jJGqU/hqdefault.jpg",
+                videoType: "youtube",
+                url: "https://www.youtube.com/embed/c-2IY-jJGqU",
+                tagLabel: "T2I->I2V 科普大片"
             },
             {
-                title: "YouTube 頻道引流與全自動內容分發流程",
-                category: "short",
-                thumbnail: "images/AI_Computing_Point.jpg",
-                videoType: "local",
-                url: "medias/Yt_Start.mp4",
-                tagLabel: "頻道起步引流"
-            },
-            {
-                title: "不露臉頻道商業變現與成交收單說明",
-                category: "short",
-                thumbnail: "images/AILINEBanner_01.jpg",
-                videoType: "local",
-                url: "medias/Yt_Ending.mp4",
-                tagLabel: "自動化收單"
+                title: "沉睡400年的地獄突襲！直擊印尼錫納朋火山：時速700公里的致命碎屑流，與廢墟裡一塵不染的「最後晚餐」｜危險的地球",
+                category: "explainer",
+                thumbnail: "https://img.youtube.com/vi/aJhidLOYOpk/hqdefault.jpg",
+                videoType: "youtube",
+                url: "https://www.youtube.com/embed/aJhidLOYOpk",
+                tagLabel: "T2I->I2V 科普大片"
             }
         ];
 
@@ -2292,7 +2277,7 @@
             if (!container) return;
             container.innerHTML = '';
 
-            portfolioData.forEach((item, index) => {
+            portfolioData.forEach((item) => {
                 if (filterCategory !== 'all' && item.category !== filterCategory) {
                     return;
                 }
@@ -2304,7 +2289,7 @@
 
                 card.innerHTML = `
                     <div class="portfolio-media">
-                        <img src="${item.thumbnail}" alt="${item.title}" onerror="this.src='images/Saas_war_view01.png'">
+                        <img src="${item.thumbnail}" alt="${item.title}" onerror="this.src='https://img.youtube.com/vi/${item.url.split('/').pop()}/0.jpg'">
                         <div class="portfolio-play-overlay">
                             <i class="fa-solid fa-play"></i>
                         </div>
@@ -2337,16 +2322,12 @@
             const content = document.getElementById('lightbox-video-content');
             if (!lightbox || !content) return;
 
-            if (item.videoType === 'local') {
-                content.innerHTML = `
-                    <video src="${item.url}" controls autoplay class="lightbox-video-frame" style="width:100%; height:100%; border-radius:20px;"></video>
-                `;
-            } else {
-                // For YouTube Embeds
-                content.innerHTML = `
-                    <iframe class="lightbox-video-frame" src="${item.url}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                `;
-            }
+            // Since all videos are YouTube embeds now, load iframe directly
+            // Appending loop configurations for vertical 9:16 layout
+            const videoId = item.url.split('/').pop();
+            content.innerHTML = `
+                <iframe class="lightbox-video-frame" src="${item.url}?autoplay=1&mute=0&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            `;
 
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden'; // Lock main scroll
@@ -2361,25 +2342,6 @@
                     if (content) content.innerHTML = ''; // Stop video playback
                     document.body.style.overflow = ''; // Restore main scroll
                 }
-            }
-        }
-
-        // Mockup Video Player trigger
-        let isMockupPlaying = false;
-        function playMockupVideo() {
-            const video = document.getElementById('hero-mockup-vid');
-            const playIcon = document.getElementById('hero-play-icon');
-            if (!video) return;
-
-            if (!isMockupPlaying) {
-                video.play();
-                video.muted = false; // Unmute on click to play sound
-                if (playIcon) playIcon.style.opacity = '0';
-                isMockupPlaying = true;
-            } else {
-                video.pause();
-                if (playIcon) playIcon.style.opacity = '1';
-                isMockupPlaying = false;
             }
         }
 
