@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KCinemaAI | 頂級 AI 影音自媒體客製化與代工</title>
+    <title>KCinemaAI | 頂級 AI 影音自媒體客製化與代工廠</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,21 +16,20 @@
 
     <style>
         :root {
-            --bg-dark: #020408;
-            --bg-dark-soft: #090D16;
-            --bg-card: rgba(15, 23, 42, 0.6);
+            --bg-dark: #000000;
+            --bg-dark-soft: #05070c;
+            --bg-card: rgba(10, 15, 30, 0.7);
             --text-bright: #F9FAFB;
             --text-muted: #9CA3AF;
             
             /* Cinematic Amber / Gold Color Scheme */
             --accent-gold: #F59E0B;
             --accent-gold-dark: #D97706;
-            --accent-glow: rgba(245, 158, 11, 0.25);
+            --accent-glow: rgba(245, 158, 11, 0.3);
             --accent-purple: #8B5CF6;
+            --accent-purple-glow: rgba(139, 92, 246, 0.2);
             
-            --border-glow: rgba(245, 158, 11, 0.08);
-            --line-green: #06C755;
-            --line-hover: #05A546;
+            --border-glow: rgba(245, 158, 11, 0.1);
         }
 
         * { 
@@ -47,7 +46,7 @@
         body { 
             background-color: var(--bg-dark); 
             color: var(--text-muted); 
-            line-height: 1.8; 
+            line-height: 1.7; 
             overflow-x: hidden; 
         }
 
@@ -66,9 +65,9 @@
             background: var(--accent-gold-dark);
         }
 
-        /* --- Header Styles --- */
+        /* --- Header --- */
         header {
-            padding: 15px 5%; 
+            padding: 20px 5%; 
             display: flex; 
             justify-content: space-between; 
             align-items: center;
@@ -76,10 +75,9 @@
             width: 100%; 
             top: 0; 
             z-index: 1000;
-            background: rgba(2, 4, 8, 0.85); 
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(245, 158, 11, 0.08);
-            transition: all 0.3s;
+            background: rgba(0, 0, 0, 0.85); 
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(245, 158, 11, 0.1);
         }
         
         .logo-area { 
@@ -90,16 +88,16 @@
         }
         
         .logo-box { 
-            width: 44px; 
-            height: 44px; 
+            width: 42px; 
+            height: 42px; 
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark)); 
-            color: #020408; 
-            border-radius: 12px; 
+            color: #000; 
+            border-radius: 10px; 
             display: flex; 
             justify-content: center; 
             align-items: center; 
             font-weight: 900; 
-            font-size: 1.35rem; 
+            font-size: 1.3rem; 
             font-family: 'Outfit', sans-serif;
             box-shadow: 0 0 20px var(--accent-glow);
         }
@@ -114,7 +112,7 @@
         
         .logo-title span { 
             display: block; 
-            font-size: 0.72rem; 
+            font-size: 0.7rem; 
             color: var(--text-muted); 
             font-weight: 400; 
             letter-spacing: 1.5px; 
@@ -124,7 +122,7 @@
         
         .nav-btn { 
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark)); 
-            color: #020408 !important; 
+            color: #000 !important; 
             padding: 10px 24px; 
             border-radius: 50px; 
             font-weight: 800; 
@@ -132,7 +130,7 @@
             transition: 0.3s; 
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
         
         .nav-btn:hover { 
@@ -140,45 +138,36 @@
             box-shadow: 0 6px 22px rgba(245, 158, 11, 0.45); 
         }
 
-        /* --- Hero Section (IMAX Screen layout) --- */
+        /* --- Hero Section (Centred text with 3 horizontal phone mockups under) --- */
         .hero {
             min-height: 100vh; 
-            padding: 150px 5% 100px;
+            padding: 160px 5% 80px;
             display: flex; 
+            flex-direction: column;
             align-items: center; 
             justify-content: center;
             position: relative;
             overflow: hidden;
-            background: radial-gradient(circle at center, rgba(15, 23, 42, 0.6) 0%, var(--bg-dark) 85%);
+            background: radial-gradient(circle at center, rgba(15, 23, 42, 0.7) 0%, var(--bg-dark) 85%);
+            text-align: center;
         }
 
         /* Glowing background blobs */
         .hero-glow-1 {
-            position: absolute; top: -10%; left: 15%; width: 45vw; height: 45vw;
+            position: absolute; top: -10%; left: 25%; width: 50vw; height: 50vw;
             background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
-            filter: blur(100px); pointer-events: none; z-index: 0;
+            filter: blur(120px); pointer-events: none; z-index: 0;
         }
         .hero-glow-2 {
-            position: absolute; bottom: -10%; right: 10%; width: 45vw; height: 45vw;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
-            filter: blur(100px); pointer-events: none; z-index: 0;
+            position: absolute; bottom: 0%; right: 15%; width: 45vw; height: 45vw;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
+            filter: blur(120px); pointer-events: none; z-index: 0;
         }
 
-        .hero-container {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 60px;
-            align-items: center;
-            max-width: 1300px;
-            width: 100%;
+        .hero-content-center {
+            max-width: 1000px;
             z-index: 1;
-            text-align: left;
-        }
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            margin-bottom: 50px;
         }
         
         .hero-tag { 
@@ -193,14 +182,13 @@
             border: 1px solid rgba(245, 158, 11, 0.25);
             padding: 6px 16px;
             border-radius: 50px;
-            box-shadow: 0 0 15px rgba(245, 158, 11, 0.05);
             display: inline-block;
         }
         
         .hero h1 { 
-            font-size: 3.4rem; 
+            font-size: 3.8rem; 
             font-weight: 900; 
-            line-height: 1.25; 
+            line-height: 1.2; 
             margin-bottom: 25px; 
             letter-spacing: -1.5px; 
             color: var(--text-bright);
@@ -214,152 +202,107 @@
         }
         
         .hero p.lead { 
-            font-size: 1.2rem; 
+            font-size: 1.25rem; 
             color: var(--text-muted); 
-            max-width: 100%; 
-            margin-bottom: 35px; 
+            max-width: 800px; 
+            margin: 0 auto 35px;
             font-weight: 400; 
             line-height: 1.8;
-            border-left: 3px solid var(--accent-gold);
-            padding-left: 20px;
-        }
-        
-        .hero-manifesto {
-            background: rgba(15, 23, 42, 0.45); 
-            border: 1px solid rgba(255, 255, 255, 0.05); 
-            padding: 30px 35px; 
-            border-radius: 20px;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5); 
-            width: 100%; 
-            margin-bottom: 40px; 
-            border-left: 5px solid var(--accent-gold-dark);
-            transition: all 0.3s;
         }
 
-        .hero-manifesto:hover {
-            border-left-color: var(--accent-gold);
-            box-shadow: 0 20px 45px rgba(245, 158, 11, 0.1);
-        }
-
-        .hero-manifesto h3 { 
-            font-size: 1.25rem; 
-            margin-bottom: 12px; 
-            color: var(--text-bright); 
-            font-weight: 900; 
-        }
-        
-        .hero-manifesto p { 
-            font-size: 1rem; 
-            color: var(--text-muted); 
-            margin-bottom: 0; 
-        }
-        
-        .hero-manifesto strong { 
-            color: var(--text-bright); 
-        }
-
-        .hero-manifesto span.glow {
-            background: linear-gradient(135deg, var(--accent-gold), #FFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: bold;
-        }
-
-        /* Hero Right Column: Mockup Screen Frame */
-        .hero-screen-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* Phone showcase slider grid */
+        .showcase-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
             width: 100%;
+            z-index: 2;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+
+        .phone-mockup-frame {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 28px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .phone-mockup-frame:hover {
+            transform: translateY(-8px);
+            border-color: rgba(245, 158, 11, 0.3);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 35px rgba(245, 158, 11, 0.1);
         }
 
         .phone-mockup {
             width: 100%;
-            max-width: 320px;
-            height: 580px;
-            background: #020408;
-            border: 12px solid #1F2937;
-            border-radius: 40px;
-            box-shadow: 0 35px 70px rgba(0,0,0,0.7), 0 0 50px rgba(245,158,11,0.1);
+            aspect-ratio: 9 / 16;
+            background: #000;
+            border: 8px solid #1F2937;
+            border-radius: 20px;
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .phone-mockup:hover {
-            border-color: #374151;
-            box-shadow: 0 35px 80px rgba(0,0,0,0.8), 0 0 60px rgba(245,158,11,0.2);
-            transform: translateY(-5px);
+        .phone-mockup iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
-        /* Phone Camera notch */
         .phone-notch {
             position: absolute;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 110px;
-            height: 20px;
+            width: 90px;
+            height: 14px;
             background: #1F2937;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
             z-index: 10;
         }
 
-        .phone-video-container {
+        .phone-info {
+            margin-top: 20px;
+            text-align: center;
             width: 100%;
-            height: 100%;
-            position: relative;
-            background: #000;
         }
 
-        .phone-video-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .video-overlay-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px;
-            background: linear-gradient(to top, rgba(2,4,8,0.95) 0%, rgba(2,4,8,0.4) 60%, transparent 100%);
-            z-index: 5;
-            color: #fff;
-            text-align: left;
-            pointer-events: none; /* Allows clicking iframe underneath */
-        }
-
-        .video-overlay-info h4 {
-            font-size: 0.95rem;
+        .phone-info h3 {
+            font-size: 1rem;
             font-weight: 800;
-            margin-bottom: 5px;
-            color: var(--accent-gold);
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            color: var(--text-bright);
+            margin-bottom: 8px;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
-        .video-overlay-info p {
-            font-size: 0.78rem;
-            color: #D1D5DB;
-            line-height: 1.4;
+        .phone-info span {
+            font-size: 0.72rem;
+            color: var(--accent-gold);
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.15);
+            padding: 3px 12px;
+            border-radius: 50px;
+            font-weight: 700;
         }
 
         /* 3D Glowing Button Styles */
         .btn-primary-glow {
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
-            color: #020408;
-            padding: 18px 42px;
+            color: #000;
+            padding: 18px 45px;
             border-radius: 50px;
             font-weight: 900;
             font-size: 1.15rem;
@@ -370,33 +313,13 @@
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0 10px 25px rgba(245, 158, 11, 0.35), 0 0 30px rgba(245, 158, 11, 0.15);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
             cursor: pointer;
+            z-index: 5;
         }
 
         .btn-primary-glow:hover {
             transform: scale(1.04) translateY(-3px);
             box-shadow: 0 15px 35px rgba(245, 158, 11, 0.55), 0 0 45px rgba(245, 158, 11, 0.3);
-            border-color: rgba(255, 255, 255, 0.35);
-        }
-
-        .btn-primary-glow::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255, 255, 255, 0.3),
-                transparent
-            );
-            transition: all 0.6s ease;
-        }
-
-        .btn-primary-glow:hover::before {
-            left: 100%;
         }
 
         /* --- Section Common Styles --- */
@@ -433,83 +356,11 @@
             margin: 0 auto;
         }
 
-        /* --- 1. Pain Points Section --- */
-        .pain-section {
+        /* --- 1. Custom Agency Core Services (第一階段主推) --- */
+        .services-section {
             background: var(--bg-dark-soft);
             border-top: 1px solid rgba(255, 255, 255, 0.04);
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-        }
-
-        .pain-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
-
-        .pain-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: 18px;
-            padding: 35px 25px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .pain-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: rgba(245, 158, 11, 0.25);
-            transition: all 0.3s;
-        }
-
-        .pain-card:hover {
-            transform: translateY(-5px);
-            background: rgba(15, 23, 42, 0.75);
-            border-color: rgba(245, 158, 11, 0.2);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(245, 158, 11, 0.05);
-        }
-
-        .pain-card:hover::before {
-            background: var(--accent-gold);
-            width: 5px;
-        }
-
-        .pain-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: rgba(245, 158, 11, 0.08);
-            color: var(--accent-gold);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            border: 1px solid rgba(245, 158, 11, 0.15);
-        }
-
-        .pain-card h4 {
-            font-size: 1.15rem;
-            font-weight: 800;
-            color: var(--text-bright);
-            margin-bottom: 12px;
-        }
-
-        .pain-card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* --- 2. 6 Core Services Section --- */
-        .services-section {
-            background: var(--bg-dark);
         }
 
         .services-grid {
@@ -521,99 +372,41 @@
 
         .service-card {
             background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.04);
             border-radius: 20px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
-        }
-
-        .service-card::after {
-            content: ''; position: absolute; inset: 0; border-radius: 20px;
-            padding: 1px; background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
+            padding: 40px;
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            background: rgba(17, 24, 39, 0.7);
+            transform: translateY(-5px);
             border-color: rgba(245, 158, 11, 0.25);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 25px rgba(245, 158, 11, 0.08);
+            background: rgba(15, 23, 42, 0.7);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(245, 158, 11, 0.05);
         }
 
-        .service-media {
-            width: 100%;
-            height: 200px;
-            background: #0f172a;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .service-media-placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            background: rgba(245, 158, 11, 0.08);
             color: var(--accent-gold);
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(245, 158, 11, 0.06) 0%, rgba(3, 7, 18, 0.6) 100%);
-            font-size: 2.8rem;
-        }
-
-        .service-media-placeholder i {
-            filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.25));
-            margin-bottom: 8px;
-        }
-
-        .service-media-placeholder.purple {
-            color: var(--accent-purple);
-            background: radial-gradient(circle at center, rgba(139, 92, 246, 0.06) 0%, rgba(3, 7, 18, 0.6) 100%);
-        }
-
-        .service-media-placeholder.purple i {
-            filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.25));
-        }
-
-        .service-media-placeholder.green {
-            color: var(--line-green);
-            background: radial-gradient(circle at center, rgba(6, 199, 85, 0.06) 0%, rgba(3, 7, 18, 0.6) 100%);
-        }
-
-        .service-media-placeholder.green i {
-            filter: drop-shadow(0 0 10px rgba(6, 199, 85, 0.25));
-        }
-
-        .service-media-placeholder.blue {
-            color: #3B82F6;
-            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.06) 0%, rgba(3, 7, 18, 0.6) 100%);
-        }
-
-        .service-media-placeholder.blue i {
-            filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.25));
-        }
-
-        .service-media-placeholder span {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        .service-body {
-            padding: 30px;
-            flex-grow: 1;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            border: 1px solid rgba(245, 158, 11, 0.15);
+        }
+
+        .service-card.purple .service-icon {
+            background: rgba(139, 92, 246, 0.08);
+            color: var(--accent-purple);
+            border-color: rgba(139, 92, 246, 0.15);
         }
 
         .service-badge {
@@ -628,160 +421,26 @@
             border: 1px solid rgba(245, 158, 11, 0.15);
         }
 
-        .service-card:nth-child(even) .service-badge {
+        .service-card.purple .service-badge {
             color: var(--accent-purple);
             background: rgba(139, 92, 246, 0.1);
             border-color: rgba(139, 92, 246, 0.15);
         }
 
-        .service-body h3 {
-            font-size: 1.25rem;
+        .service-card h3 {
+            font-size: 1.3rem;
             font-weight: 800;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             color: var(--text-bright);
         }
 
-        .service-body p {
+        .service-card p {
             font-size: 0.95rem;
             color: var(--text-muted);
-            line-height: 1.65;
-            margin-bottom: 0;
-            flex-grow: 1;
+            line-height: 1.7;
         }
 
-        /* --- 3. Dynamic Video Showcase Section (放映廳) --- */
-        .showcase-section {
-            background: var(--bg-dark-soft);
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-        }
-
-        .portfolio-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .portfolio-tab {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            color: var(--text-muted);
-            padding: 10px 24px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-
-        .portfolio-tab:hover, .portfolio-tab.active {
-            background: var(--accent-gold);
-            color: var(--bg-dark);
-            border-color: var(--accent-gold);
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.25);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .portfolio-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-gold);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-        }
-
-        .portfolio-media {
-            width: 100%;
-            height: 380px; /* Tall grid cards to cleanly present 9:16 vertical video thumbnails */
-            background: #000;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .portfolio-media img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .portfolio-card:hover .portfolio-media img {
-            transform: scale(1.06);
-        }
-
-        .portfolio-play-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(2, 4, 8, 0.45);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .portfolio-card:hover .portfolio-play-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-play-overlay i {
-            width: 54px;
-            height: 54px;
-            border-radius: 50%;
-            background: var(--accent-gold);
-            color: var(--bg-dark);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.35rem;
-            box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
-        }
-
-        .portfolio-info-box {
-            padding: 20px 25px;
-        }
-
-        .portfolio-info-box h4 {
-            font-size: 1rem;
-            font-weight: 800;
-            color: var(--text-bright);
-            margin-bottom: 8px;
-            line-height: 1.5;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .portfolio-info-box span {
-            font-size: 0.75rem;
-            color: var(--accent-gold);
-            background: rgba(245, 158, 11, 0.08);
-            border: 1px solid rgba(245, 158, 11, 0.15);
-            padding: 2px 10px;
-            border-radius: 50px;
-        }
-
-        /* --- 4. Cost Comparison Section --- */
+        /* --- 2. Cost Analysis Section --- */
         .cost-section {
             background: var(--bg-dark);
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
@@ -789,10 +448,9 @@
 
         .cost-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.1fr;
             gap: 40px;
             margin-top: 50px;
-            margin-bottom: 50px;
             align-items: stretch;
         }
 
@@ -803,31 +461,15 @@
             padding: 40px;
             display: flex;
             flex-direction: column;
-            position: relative;
-            backdrop-filter: blur(16px);
         }
 
         .cost-card.api-cost {
             border-color: rgba(239, 68, 68, 0.15);
-            box-shadow: inset 0 0 30px rgba(239, 68, 68, 0.02);
         }
 
         .cost-card.workstation-solution {
-            border-color: rgba(245, 158, 11, 0.15);
-            box-shadow: inset 0 0 30px rgba(245, 158, 11, 0.02), 0 0 35px rgba(245, 158, 11, 0.05);
-        }
-
-        .cost-card::after {
-            content: ''; position: absolute; inset: 0; border-radius: 24px;
-            padding: 1px; background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-        }
-
-        .cost-card.workstation-solution::after {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(59, 130, 246, 0.05));
+            border-color: rgba(245, 158, 11, 0.25);
+            box-shadow: 0 0 35px rgba(245, 158, 11, 0.05);
         }
 
         .cost-card-header {
@@ -869,13 +511,6 @@
             margin-bottom: 12px;
         }
 
-        .cost-card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* Cost Table */
         .table-responsive {
             width: 100%;
             overflow-x: auto;
@@ -903,10 +538,6 @@
             font-weight: 800;
         }
 
-        .cost-table tr:last-child td {
-            border-bottom: none;
-        }
-
         .highlight-red {
             color: #F87171;
             font-weight: 800;
@@ -931,11 +562,6 @@
             margin-top: 2px;
         }
 
-        .cost-warn-box strong {
-            color: var(--text-bright);
-        }
-
-        /* Workstation Solution list */
         .solution-list {
             list-style: none;
             display: flex;
@@ -976,42 +602,18 @@
             line-height: 1.65;
         }
 
-        .cost-cta {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* --- 5. Roadmap Section --- */
+        /* --- 3. Roadmap Section --- */
         .roadmap-section {
             background: var(--bg-dark-soft);
             border-top: 1px solid rgba(255, 255, 255, 0.04);
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         }
 
-        .roadmap-container {
-            position: relative;
-            margin-top: 60px;
-            padding: 0 10px;
-        }
-
-        .roadmap-line {
-            position: absolute;
-            top: 140px;
-            left: 8%;
-            width: 84%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-gold) 0%, var(--accent-purple) 50%, var(--line-green) 100%);
-            opacity: 0.25;
-            z-index: 1;
-        }
-
         .roadmap-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
-            position: relative;
-            z-index: 2;
+            margin-top: 50px;
         }
 
         .roadmap-card {
@@ -1020,16 +622,7 @@
             border-radius: 24px;
             padding: 35px 30px;
             position: relative;
-            transition: all 0.3s;
             box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .roadmap-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-gold);
-            box-shadow: 0 20px 45px rgba(0,0,0,0.4), 0 0 20px rgba(245, 158, 11, 0.05);
         }
 
         .roadmap-badge {
@@ -1039,11 +632,10 @@
             font-size: 0.75rem;
             font-weight: 800;
             font-family: 'Outfit', sans-serif;
-            color: #020408;
+            color: #000;
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
             padding: 6px 16px;
             border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
         }
 
@@ -1112,10 +704,9 @@
             font-size: 0.95rem;
             color: var(--text-muted);
             line-height: 1.65;
-            flex-grow: 1;
         }
 
-        /* --- 6. SOP Loop Section --- */
+        /* --- 4. SOP Loop --- */
         .loop-section {
             background: var(--bg-dark);
             border-bottom: 1px solid rgba(255,255,255,0.04);
@@ -1127,14 +718,12 @@
             border-radius: 30px; 
             margin-top: 50px; 
             border: 1px solid rgba(255, 255, 255, 0.04);
-            box-shadow: inset 0 0 25px rgba(0,0,0,0.2);
         }
         
         .loop-grid { 
             display: grid; 
             grid-template-columns: 1fr 60px 1fr 60px 1fr; 
             align-items: center; 
-            position: relative; 
         }
         
         .loop-item { 
@@ -1143,15 +732,8 @@
             padding: 35px 30px; 
             border-radius: 20px; 
             text-align: center;
-            transition: all 0.3s;
         }
         
-        .loop-item:hover {
-            transform: translateY(-3px);
-            border-color: var(--accent-gold);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
         .loop-item i { 
             font-size: 2.2rem; 
             color: var(--accent-gold); 
@@ -1185,7 +767,6 @@
             align-items: center;
             color: rgba(255, 255, 255, 0.15); 
             font-size: 1.5rem; 
-            height: 100%;
         }
 
         .loop-arrow i {
@@ -1198,7 +779,7 @@
             100% { transform: translateX(-6px); opacity: 0.3; }
         }
 
-        /* --- 7. FAQ Accordion Section --- */
+        /* --- 5. FAQ Accordion --- */
         .faq-section {
             background: var(--bg-dark-soft);
         }
@@ -1252,7 +833,6 @@
 
         .faq-item.active {
             border-color: var(--accent-gold);
-            background: rgba(17, 24, 39, 0.6);
         }
 
         .faq-item.active .faq-body {
@@ -1265,12 +845,11 @@
             color: var(--accent-gold-dark);
         }
 
-        /* --- 8. CTA / Final Pitch --- */
+        /* --- 6. CTA Section --- */
         .cta { 
             text-align: center; 
             padding: 120px 5%; 
             background: radial-gradient(circle at bottom, var(--accent-glow) 0%, var(--bg-dark) 85%);
-            position: relative;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
         }
         
@@ -1353,7 +932,7 @@
             height: 60px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
-            color: #020408; 
+            color: #000; 
             display: flex; 
             justify-content: center; 
             align-items: center;
@@ -1368,94 +947,6 @@
         .calendar-float-btn:hover {
             transform: scale(1.1) translateY(-5px);
             box-shadow: 0 12px 30px rgba(245, 158, 11, 0.6), 0 0 30px rgba(245, 158, 11, 0.35);
-        }
-
-        /* --- Custom Lightbox Overlay for Video Playback --- */
-        .lightbox-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(2, 4, 8, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 3000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s ease;
-        }
-
-        .lightbox-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .lightbox-container {
-            width: 90%;
-            max-width: 400px; /* Tailored for vertical 9:16 portrait video */
-            aspect-ratio: 9 / 16;
-            height: auto;
-            max-height: 85vh;
-            background: #000;
-            border: 2px solid rgba(245, 158, 11, 0.25);
-            box-shadow: 0 0 50px rgba(245, 158, 11, 0.3);
-            border-radius: 24px;
-            overflow: hidden;
-            position: relative;
-            transform: scale(0.92);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .lightbox-overlay.active .lightbox-container {
-            transform: scale(1);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(2, 4, 8, 0.8);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: #fff;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.35rem;
-            cursor: pointer;
-            z-index: 10;
-            transition: all 0.3s;
-        }
-
-        .lightbox-close:hover {
-            background: #EF4444;
-            border-color: #EF4444;
-            transform: rotate(90deg);
-        }
-
-        .lightbox-video-frame {
-            width: 100%;
-            height: 100%;
-        }
-
-        .lightbox-video-frame iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* --- Scroll Animation Classes --- */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(35px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         /* --- Modals (Legal Popups) --- */
@@ -1499,98 +990,50 @@
             background: none; border: none;
             color: var(--text-muted);
             font-size: 1.4rem; cursor: pointer;
-            transition: color 0.2s;
         }
         
         .modal-close:hover {
             color: #ef4444;
         }
 
-        .modal-content h2 {
-            font-size: 1.6rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        /* --- Scroll Animation Classes --- */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
-        .modal-content h4 {
-            font-size: 1.1rem;
-            font-weight: 800;
-            margin: 25px 0 10px;
-            color: var(--accent-gold);
-        }
-
-        .modal-content p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 15px;
-        }
-
-        .modal-content ul {
-            padding-left: 20px;
-            margin-bottom: 15px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .modal-content li {
-            margin-bottom: 8px;
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* --- Responsive Queries --- */
         @media (max-width: 1024px) {
-            .hero-container {
-                grid-template-columns: 1.1fr 0.9fr;
-                gap: 40px;
-            }
-            .hero h1 { font-size: 2.8rem; }
+            .hero h1 { font-size: 3rem; }
+            .showcase-container { gap: 20px; }
         }
 
         @media (max-width: 992px) {
-            .hero-container {
+            .hero h1 { font-size: 2.6rem; }
+            .showcase-container {
                 grid-template-columns: 1fr;
-                gap: 50px;
-                text-align: center;
-            }
-            .hero-content {
-                align-items: center;
-            }
-            .hero p.lead {
-                border-left: none;
-                padding-left: 0;
-            }
-            .hero-manifesto {
-                text-align: left;
-            }
-            .hero-screen-wrapper {
-                margin-top: 20px;
+                max-width: 380px;
+                gap: 40px;
             }
             .cost-container {
                 grid-template-columns: 1fr;
-                gap: 35px;
-            }
-            .roadmap-line {
-                display: none;
             }
             .roadmap-grid {
                 grid-template-columns: 1fr;
-                gap: 35px;
             }
-            .roadmap-badge {
-                top: 20px;
-                right: 20px;
-                left: auto;
-            }
-            .loop-grid { 
-                grid-template-columns: 1fr; 
+            .loop-grid {
+                grid-template-columns: 1fr;
                 gap: 25px;
             }
-            .loop-arrow { 
-                transform: rotate(90deg); 
+            .loop-arrow {
+                transform: rotate(90deg);
                 margin: 10px 0;
-                height: auto;
             }
             .loop-arrow i {
                 animation: flowPulseVertical 2s infinite linear;
@@ -1610,12 +1053,8 @@
         }
 
         @media (max-width: 576px) {
-            header { padding: 15px 4%; }
-            .logo-title span { display: none; }
             .hero h1 { font-size: 2.2rem; }
-            .hero-manifesto { padding: 25px 20px; }
-            .section-h h2 { font-size: 1.8rem; }
-            .btn-primary-glow { width: 100%; justify-content: center; padding: 18px 25px; font-size: 1.1rem; }
+            .btn-primary-glow { width: 100%; justify-content: center; padding: 18px 25px; }
         }
     </style>
 </head>
@@ -1635,200 +1074,123 @@
         <div class="hero-glow-1"></div>
         <div class="hero-glow-2"></div>
         
-        <div class="hero-container">
-            <!-- Left Column: Content -->
-            <div class="hero-content">
-                <div class="hero-tag fade-in-up">AI CINEMATIC WORKFLOW</div>
-                <h1 class="fade-in-up">用 AI 導演你的品牌劇本，<br>量產 <span>電影級自媒體影音。</span></h1>
-                <p class="lead fade-in-up">別再浪費時間與外包公司來回溝通。KCinemaAI 獨家技術 —— 結合「AI 虛擬主持人」與「全動態科普影片工作流」，帶你用極低成本，快速定制出好萊塢紀錄片質感的個人自媒體影音，打造你的不露臉爆款頻道。</p>
-                
-                <div class="hero-manifesto fade-in-up">
-                    <h3>🎬 解決「不想露臉、沒空拍攝、不會剪輯」的痛點</h3>
-                    <p>
-                        在第一階段，我們為您提供<strong>全方位的 AI 影音代工與客製化生成服務</strong>。您只需提供想法或主題，我們為您搞定高擬真虛擬代言人、極致電影級 B-roll 渲染、克隆專屬聲音，直接產出高點閱科普或宣傳大片。
-                    </p>
-                </div>
-
-                <div class="hero-cta fade-in-up">
-                    <a href="https://calendly.com/brand-decoderai/15min" target="_blank" class="btn-primary-glow">
-                        <i class="fa-regular fa-calendar-check"></i> 預約 15 分鐘免費戰略評估 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
-                    </a>
-                </div>
+        <!-- Headline Copywriting -->
+        <div class="hero-content-center">
+            <div class="hero-tag fade-in-up">AI CINEMATIC FEEDS</div>
+            <h1 class="fade-in-up">你的「一人自媒體兵工廠」——<br>KCinemaAI <span>客製化影音代工。</span></h1>
+            <p class="lead fade-in-up">
+                不需露臉、不需拍攝、更不需為昂貴的剪輯團隊買單。只需提供大綱或想法，KCinemaAI 以頂尖本地算力與 ComfyUI 流程，為您定制好萊塢紀錄片級別的 9:16 自媒體影音，助您快速起盤高點閱流量。
+            </p>
+            <div class="fade-in-up">
+                <a href="https://calendly.com/brand-decoderai/15min" target="_blank" class="btn-primary-glow">
+                    <i class="fa-regular fa-calendar-check"></i> 預約 15 分鐘免費戰略評估 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                </a>
             </div>
-            
-            <!-- Right Column: Interactive Phone Mockup with YouTube Video Embed (d7roBn7UgRE) -->
-            <div class="hero-screen-wrapper fade-in-up">
+        </div>
+
+        <!-- 3 Side-by-Side Phone Mockups holding the 3 YouTube videos (9:16 format) -->
+        <div class="showcase-container fade-in-up">
+            <!-- Phone 1: 巴西蛇島 -->
+            <div class="phone-mockup-frame">
                 <div class="phone-mockup">
                     <div class="phone-notch"></div>
-                    <div class="phone-video-container">
-                        <iframe id="hero-mockup-iframe" src="https://www.youtube.com/embed/d7roBn7UgRE?autoplay=1&mute=1&loop=1&playlist=d7roBn7UgRE&controls=0&showinfo=0&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        <div class="video-overlay-info">
-                            <h4><i class="fa-solid fa-clapperboard"></i> KCinemaAI 代工樣片</h4>
-                            <p>《危險的地球》系列：AI 虛擬主持人對嘴 + 全動態 T2I->I2V 閃電場景</p>
-                        </div>
-                    </div>
+                    <iframe src="https://www.youtube.com/embed/d7roBn7UgRE?autoplay=0&mute=0&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="phone-info">
+                    <h3>地表最致命禁區！巴西蛇島「融化血肉」的致命演化</h3>
+                    <span>T2I->I2V 科普大片</span>
+                </div>
+            </div>
+
+            <!-- Phone 2: 達納基勒窪地 -->
+            <div class="phone-mockup-frame">
+                <div class="phone-mockup">
+                    <div class="phone-notch"></div>
+                    <iframe src="https://www.youtube.com/embed/c-2IY-jJGqU?autoplay=0&mute=0&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="phone-info">
+                    <h3>比火星更像外星！直擊地獄之門「達納基勒窪地」強酸深淵</h3>
+                    <span>T2I->I2V 科普大片</span>
+                </div>
+            </div>
+
+            <!-- Phone 3: 錫納朋火山 -->
+            <div class="phone-mockup-frame">
+                <div class="phone-mockup">
+                    <div class="phone-notch"></div>
+                    <iframe src="https://www.youtube.com/embed/aJhidLOYOpk?autoplay=0&mute=0&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="phone-info">
+                    <h3>沉睡400年的地獄突襲！直擊印尼錫納朋火山碎屑流</h3>
+                    <span>T2I->I2V 科普大片</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 1. Pain Points Section -->
-    <section class="section pain-section fade-in-up">
-        <div class="section-h">
-            <h2>你是否也面臨這些 <span>創作瓶頸？</span></h2>
-            <p>做自媒體並非一定要買昂貴的攝影機或站在鏡頭前妥協，讓 KCinemaAI 為你接手繁重工序</p>
-        </div>
-        <div class="pain-grid">
-            <div class="pain-card">
-                <div class="pain-icon"><i class="bi bi-person-x"></i></div>
-                <h4>不想在鏡頭前露臉？</h4>
-                <p>渴望建立自媒體影響力，卻因隱私、性格或不習慣面對鏡頭而裹足不前。我們用客製化的 AI 虛擬主持人為你代勞。</p>
-            </div>
-            <div class="pain-card">
-                <div class="pain-icon"><i class="bi bi-clock-history"></i></div>
-                <h4>缺乏時間拍攝與剪輯？</h4>
-                <p>日常工作繁忙，寫劇本、打燈、拍攝、剪字幕與特效耗時費力，產能嚴重跟不上各大影音平台日更速度。</p>
-            </div>
-            <div class="pain-card">
-                <div class="pain-icon"><i class="bi bi-film"></i></div>
-                <h4>傳統影片外包成本高昂？</h4>
-                <p>找專業導演、攝影師與演員外包製作，單支影片動輒報價數萬台幣，且修改次數受限，難以支撐長期高頻運營。</p>
-            </div>
-            <div class="pain-card">
-                <div class="pain-icon"><i class="bi bi-image-alt"></i></div>
-                <h4>影片畫面單調、沒張力？</h4>
-                <p>只會做靜態字卡或使用網路無版權素材，缺乏震撼感。KCinemaAI 通過 T2I -> I2V 技術生成與劇本 100% 貼合的電影級鏡頭。</p>
-            </div>
-            <div class="pain-card">
-                <div class="pain-icon"><i class="bi bi-translate"></i></div>
-                <h4>配音生硬、缺乏感情？</h4>
-                <p>傳統機器合成音（TTS）毫無溫度，讓人一聽就想滑掉。我們克隆高保真音色，結合情感起伏，打造宛如真人解說。</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 2. 6 Core Services Section -->
+    <!-- 1. Custom Core Services (第一階段主推) -->
     <section class="section services-section fade-in-up">
         <div class="section-h">
-            <h2>KCinemaAI <span>6 大核心代工與客製服務</span></h2>
-            <p>我們結合頂尖 AI 影像演算法，為您打通從想法到爆款影音產出的高速流水線</p>
+            <h2>KCinemaAI <span>影音內容客製生成服務</span></h2>
+            <p>我們將原本高昂、繁瑣的影音工業流程，化為您的一鍵客製化代工廠</p>
         </div>
 
         <div class="services-grid">
             <!-- Service 1 -->
             <div class="service-card">
-                <div class="service-media">
-                    <div class="service-media-placeholder">
-                        <i class="bi bi-compass"></i>
-                        <span>CONCEPT EXPLORATION</span>
-                    </div>
-                </div>
-                <div class="service-body">
-                    <div class="service-badge">數據驅動痛點探索</div>
-                    <h3>1. 用數據取代直覺，幫你找方向</h3>
-                    <p>毫無想法、不知道從何開始？沒關係，讓數據告訴你答案！我們透過解析搜尋趨勢與爆款關鍵字，精準洞察消費者愛看的科普與熱點題材，將雜亂資訊轉化為具體的爆款影音開發大綱。</p>
-                </div>
+                <div class="service-icon"><i class="bi bi-person-bounding-box"></i></div>
+                <div class="service-badge">AI 虛擬代言人</div>
+                <h3>1. AI 虛擬主持人代口播</h3>
+                <p>根據您頻道的專業調性，我們為您客製高擬真 AI 虛擬主持人。只需輸入影片文字，即可秒級完成精準唇形同步（Lip-Sync）口播輸出，省去真人出鏡的化妝、打光與拍攝負擔。</p>
             </div>
 
             <!-- Service 2 -->
             <div class="service-card">
-                <div class="service-media">
-                    <div class="service-media-placeholder purple">
-                        <i class="bi bi-bezier2"></i>
-                        <span>CREATIVE FLUIDITY</span>
-                    </div>
-                </div>
-                <div class="service-body">
-                    <div class="service-badge">AI 創意飛輪</div>
-                    <h3>2. 告別靈感枯竭，讓創意自動生成</h3>
-                    <p>把 AI 當作你的超強編劇導演智囊團！透過特製的腳本提示詞架構，AI 能將冰冷的資料秒級重組為帶有強烈故事性、高留存率的影片腳本分鏡，你只需負責下決策，讓創意無限裂變。</p>
-                </div>
+                <div class="service-icon"><i class="bi bi-play-btn-fill"></i></div>
+                <div class="service-badge">史詩畫面生成</div>
+                <h3>2. 電影級 T2I ➔ I2V 畫面渲染</h3>
+                <p>拒絕單調的靜態卡片。KCinemaAI 使用本地頂規顯卡算力，將您的故事大綱渲染為史詩級 9:16 動態 B-roll。無論是雷電暴風、地獄窪地還是科幻未來，均能以極低成本穩定產出。</p>
             </div>
 
             <!-- Service 3 -->
             <div class="service-card">
-                <div class="service-media">
-                    <div class="service-media-placeholder green">
-                        <i class="bi bi-person-bounding-box"></i>
-                        <span>AVATAR GENERATION</span>
-                    </div>
-                </div>
-                <div class="service-body">
-                    <div class="service-badge">AI 虛擬代言人生成</div>
-                    <h3>3. 多風格 Avatar 主持人對嘴代口播</h3>
-                    <p>根據頻道調性，客製化專屬的 AI 虛擬主持人。只需輸入文字，即可驅動完美聲線與口形同步（Lip-Sync）的口播輸出。打破物理拍攝高牆，實現無需露臉的高頻率影音產出。</p>
-                </div>
+                <div class="service-icon"><i class="bi bi-translate"></i></div>
+                <div class="service-badge">高保真配音</div>
+                <h3>3. 專屬聲線克隆與配音</h3>
+                <p>配音是影音的靈魂。我們能為您克隆出帶有豐富情緒起伏、呼吸與抑揚頓挫的高保真人聲，不再是生硬死板的 TTS 語音，大幅拉長觀眾在短影音平台的停留時間。</p>
             </div>
 
             <!-- Service 4 -->
-            <div class="service-card">
-                <div class="service-media">
-                    <div class="service-media-placeholder blue">
-                        <i class="bi bi-play-btn-fill"></i>
-                        <span>T2I ➔ I2V RENDER</span>
-                    </div>
-                </div>
-                <div class="service-body">
-                    <div class="service-badge">科普影音自動生產線</div>
-                    <h3>4. 電影級 T2I ➔ I2V 動態影片渲染</h3>
-                    <p>拋棄無趣的靜態圖，我們提供學員與代工專屬的影音工作站：利用頂級模型算力，將您的腳本一行行渲染成與場景 100% 呼合的動態大片，無論是魔幻自然、未來科技還是歷史場景，都能以極低成本穩定產出。</p>
-                </div>
+            <div class="service-card purple">
+                <div class="service-icon"><i class="bi bi-magic"></i></div>
+                <div class="service-badge">數據痛點探索</div>
+                <h3>4. 自媒體爆款題材精準洞察</h3>
+                <p>如果您沒有主題靈感，我們透過數據庫解析當前各大短影音平台搜尋熱點、痛點話題與競品高流量題材，為您倒推最吸引點閱率的科普或行銷劇本大綱。</p>
             </div>
 
             <!-- Service 5 -->
-            <div class="service-card">
-                <div class="service-media">
-                    <div class="service-media-placeholder">
-                        <i class="bi bi-funnel-fill"></i>
-                        <span>TRAFFIC FUNNEL</span>
-                    </div>
-                </div>
-                <div class="service-body">
-                    <div class="service-badge">獲客變現漏斗</div>
-                    <h3>5. 自媒體引流到私域自動化閉環</h3>
-                    <p>產出內容的終極目的是變現。我們帶你搭建「公域流量 ➔ 私域變現」的完整流程：將 KCinemaAI 生產的短片分發至 YT、TikTok，吸引流量後無縫導入 LINE OA 智能系統，結合自動客服進行成交與諮詢引流。</p>
-                </div>
+            <div class="service-card purple">
+                <div class="service-icon"><i class="bi bi-clock-history"></i></div>
+                <div class="service-badge">自動化剪輯</div>
+                <h3>5. 全自動字幕與時間軸對齊</h3>
+                <p>傳統手動上字幕與核對音軌需要數小時。KCinemaAI 通過算法實現自動語音聽寫、精準雙語字幕渲染以及音效配樂自動融合，直接為您交付可發佈的成品影片。</p>
             </div>
 
             <!-- Service 6 -->
-            <div class="service-card">
-                <div class="service-media">
-                    <div class="service-media-placeholder purple">
-                        <i class="bi bi-diagram-3-fill"></i>
-                        <span>SYSTEM REBUILD</span>
-                    </div>
-                </div>
-                <div class="service-body">
-                    <div class="service-badge">架構拆解與重組</div>
-                    <h3>6. 從劇本大綱到成品落地的系統工程</h3>
-                    <p>最難的是將無形的「點子」落實為有條理的影片。我們帶你走過需求分析、架構拆解、分鏡任務重組與本地 ComfyUI 機械式渲染，讓抽象的影片想法，化為穩固、高產量的個人品牌事業。</p>
-                </div>
+            <div class="service-card purple">
+                <div class="service-icon"><i class="bi bi-funnel-fill"></i></div>
+                <div class="service-badge">流量變現閉環</div>
+                <h3>6. 自媒體引流與私域收單系統</h3>
+                <p>內容生成的目的在於引流變現。我們能協助規劃從 YT Shorts / Reels 公域引流，到私域 LINE OA 機器人自動化客服收單的獲客漏斗，完成商業變現閉環。</p>
             </div>
         </div>
     </section>
 
-    <!-- 3. Dynamic Video Showcase Section (放映廳) -->
-    <section class="section showcase-section fade-in-up" id="portfolio-section">
-        <div class="section-h">
-            <h2>KCinemaAI <span>影音作品放映室</span></h2>
-            <p>聚焦 9:16 行動端規格。點擊下方卡片即可直接播放，感受極致的 AI 畫面張力與真實主持人對嘴效果</p>
-        </div>
-
-        <div class="portfolio-tabs">
-            <div class="portfolio-tab active" onclick="filterPortfolio('all')">全部作品</div>
-            <div class="portfolio-tab" onclick="filterPortfolio('explainer')">科普解說大片</div>
-        </div>
-
-        <div class="portfolio-grid" id="portfolio-grid-container">
-            <!-- Dynamically populated by JS to allow easy updates in the future -->
-        </div>
-    </section>
-
-    <!-- 4. Cost Comparison Section -->
+    <!-- 2. Cost Analysis Section -->
     <section class="section cost-section fade-in-up">
         <div class="section-h">
             <h2>影片生成的 <span>真實算力成本</span> 對照</h2>
-            <p>看懂雲端付費 API 與 KCinemaAI 專屬工作站在「大流量生產」中的真實開銷差距</p>
+            <p>看懂雲端付費 API 與 KCinemaAI 本地工作站在「大流量生產」中的真實開銷差距</p>
         </div>
 
         <div class="cost-container">
@@ -1837,7 +1199,7 @@
                 <div class="cost-card-header">
                     <span class="cost-badge-alert"><i class="fa-solid fa-triangle-exclamation"></i> 官方 API 呼叫代價</span>
                     <h3>雲端影片 API 計秒扣點黑洞</h3>
-                    <p>如果直接使用 Gemini API 付費方案調用最新的 <strong>Google Veo 3.1</strong> 影片模型（皆含音訊），計費方式為按生成秒數收費。費用明細如下：</p>
+                    <p>若使用 Google 官方 Gemini API 的付費方案呼叫最新的 <strong>Google Veo 3.1</strong> 影片與音訊生成模型，每秒計費的累積開銷十分驚人：</p>
                 </div>
                 
                 <div class="table-responsive">
@@ -1881,7 +1243,7 @@
                 
                 <div class="cost-warn-box">
                     <i class="fa-solid fa-circle-exclamation"></i>
-                    <span><strong>算力成本警訊：</strong> 即便使用 Fast 1080p 進行快速生成，每日產出 10 支 10 秒影片，單月 API 費用也需約 <strong>NT$11,520</strong>；若追求高品質 Standard 1080p，每日 10 支的月開銷將高達 <strong>NT$38,400</strong>，Standard 4K 更高達 <strong>NT$57,600</strong>！</span>
+                    <span><strong>API 扣點黑洞：</strong> 若以 Fast 1080p 產出，每日僅生成 10 支 10 秒短片，單月帳單約 <strong>NT$11,520</strong>；若使用 Standard 1080p 高規格，每日 10 支的月開銷將飆升至 <strong>NT$38,400</strong>，長期運作極難承受。</span>
                 </div>
             </div>
 
@@ -1890,43 +1252,29 @@
                 <div class="cost-card-header">
                     <span class="cost-badge-success"><i class="fa-solid fa-circle-check"></i> KCinemaAI 本地解決方案</span>
                     <h3>KCinemaAI 專屬影音工作站</h3>
-                    <p>不需被雲端付費 API 綁架！我們提供學員與代工專屬的影音工作站，<strong>極大降低生成內容的成本，卻能達到同等甚至更強的頂級影音水準：</strong></p>
+                    <p>不需被雲端付費 API 綁架！我們為學員及代工部署專屬的本地算力工作站，極大降低生成內容的成本：</p>
                 </div>
                 
                 <ul class="solution-list">
                     <li>
                         <div class="sol-icon"><i class="bi bi-cpu-fill"></i></div>
                         <div class="sol-text">
-                            <h4>頂規硬體本地渲染</h4>
+                            <h4>頂級本地模型算力</h4>
                             <p>利用頂級模型算力，以極低成本，渲染出高品質真實動態影片。</p>
                         </div>
                     </li>
                     <li>
-                        <div class="sol-icon"><i class="bi bi-translate"></i></div>
+                        <div class="sol-icon"><i class="bi bi-person-video"></i></div>
                         <div class="sol-text">
-                            <h4>人聲克隆與嘴型同步 (Voice & Lip-Sync)</h4>
-                            <p>克隆專屬的高保真人聲，並自動完成 Text-To-Lip（對話嘴型對齊），使虛擬分身完美對嘴說話。</p>
+                            <h4>高流暢對嘴與語音克隆</h4>
+                            <p>完成 Text-To-Lip 口形對齊，使得 AI 主持人口播與複製人聲完美貼合，免去後期配音工作。</p>
                         </div>
                     </li>
                     <li>
                         <div class="sol-icon"><i class="bi bi-clock-history"></i></div>
                         <div class="sol-text">
-                            <h4>自動字幕與時間軸對齊</h4>
-                            <p>AI 自動語音識別，自動校對並精準對齊字幕時間軸，省下數小時手動打字與剪輯時間。</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="sol-icon"><i class="bi bi-file-earmark-text"></i></div>
-                        <div class="sol-text">
-                            <h4>AI 自動化腳本文案生成</h4>
-                            <p>從短影音腳本、分鏡大綱、社群貼文到產品推廣文案，AI 自動量產。</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="sol-icon"><i class="bi bi-cloud-arrow-up"></i></div>
-                        <div class="sol-text">
-                            <h4>多平台自動化發佈 (YT & 短影音自動上架)</h4>
-                            <p>打通內容產出到平台分發的最後一哩路，實現一鍵自動排程上架，打造全自動內容分發線。</p>
+                            <h4>自動化字幕與時間軸</h4>
+                            <p>一鍵生成對齊的時間軸與精細雙語字幕，節省手動剪輯耗費的時間與人工成本。</p>
                         </div>
                     </li>
                 </ul>
@@ -1940,48 +1288,44 @@
         </div>
     </section>
 
-    <!-- 5. Roadmap Section -->
+    <!-- 3. Roadmap Section -->
     <section class="section roadmap-section fade-in-up">
         <div class="section-h">
             <h2>KCinemaAI <span>交付與發展藍圖 (Roadmap)</span></h2>
             <p>從代工交付到未來的內容自主運營課程，兩階段帶領你走通 AI 自媒體變現閉環</p>
         </div>
         
-        <div class="roadmap-container">
-            <div class="roadmap-line"></div>
+        <div class="roadmap-grid">
+            <!-- Phase 1 -->
+            <div class="roadmap-card">
+                <div class="roadmap-badge">Phase 01</div>
+                <div class="roadmap-icon"><i class="bi bi-box-seam"></i></div>
+                <h3>代工與客製化交付</h3>
+                <p class="roadmap-subtitle">幫你做出好萊塢級內容</p>
+                <p class="roadmap-desc">此階段我們親自操刀，根據您的點子量身產出「虛擬代言人」與「全動態科普 T2I->I2V」影片成品。為您代工建立高水準的爆款短影音與頻道內容，以最快速度獲取公域流量。</p>
+            </div>
             
-            <div class="roadmap-grid">
-                <!-- Phase 1 -->
-                <div class="roadmap-card">
-                    <div class="roadmap-badge">Phase 01</div>
-                    <div class="roadmap-icon"><i class="bi bi-box-seam"></i></div>
-                    <h3>代工與客製化交付</h3>
-                    <p class="roadmap-subtitle">幫你做出好萊塢級內容</p>
-                    <p class="roadmap-desc">此階段我們親自操刀，根據您的點子量身產出「虛擬代言人」與「全動態科普 T2I->I2V」影片成品。為您代工建立高水準的爆款短影音與頻道內容，以最快速度獲取公域流量。</p>
-                </div>
-                
-                <!-- Phase 2 -->
-                <div class="roadmap-card">
-                    <div class="roadmap-badge purple">Phase 02</div>
-                    <div class="roadmap-icon purple"><i class="bi bi-shield-shaded"></i></div>
-                    <h3>本地工作站武裝</h3>
-                    <p class="roadmap-subtitle">導入私有化 AI 影音流水線</p>
-                    <p class="roadmap-desc">跨越技術鴻溝。我們為您配置專屬本地影音渲染環境，教導核心提示詞工程（Prompt Engineering）、克隆音色與時間軸對齊等全套 AI 協作，讓您以極低成本，在自己的電腦上實現無限產出。</p>
-                </div>
-                
-                <!-- Phase 3 -->
-                <div class="roadmap-card">
-                    <div class="roadmap-badge green">Phase 03</div>
-                    <div class="roadmap-icon green"><i class="bi bi-rocket-takeoff"></i></div>
-                    <h3>內容經營與自媒體孵化</h3>
-                    <p class="roadmap-subtitle">大導演與講師課程交付</p>
-                    <p class="roadmap-desc">隨著我們的官方自媒體頻道流量爆發，我們將進入第二階段。將成功起盤的實戰心法提煉為 1對1 深度課程，傳授完整的自媒體流量變現閉環，帶您真正以「AI 導演」之姿，建立自動化印鈔機。</p>
-                </div>
+            <!-- Phase 2 -->
+            <div class="roadmap-card">
+                <div class="roadmap-badge purple">Phase 02</div>
+                <div class="roadmap-icon purple"><i class="bi bi-shield-shaded"></i></div>
+                <h3>本地工作站武裝</h3>
+                <p class="roadmap-subtitle">導入私有化 AI 影音流水線</p>
+                <p class="roadmap-desc">跨越技術鴻溝。我們為您配置專屬本地影音渲染環境，教導核心提示詞工程（Prompt Engineering）、克隆音色與時間軸對齊等全套 AI 協作，讓您以極低成本，在自己的電腦上實現無限產出。</p>
+            </div>
+            
+            <!-- Phase 3 -->
+            <div class="roadmap-card">
+                <div class="roadmap-badge green">Phase 03</div>
+                <div class="roadmap-icon green"><i class="bi bi-rocket-takeoff"></i></div>
+                <h3>內容經營與自媒體孵化</h3>
+                <p class="roadmap-subtitle">大導演與講師課程交付</p>
+                <p class="roadmap-desc">隨著我們的官方自媒體頻道流量爆發，我們將進入第二階段。將成功起盤的實戰心法提煉為 1對1 深度課程，傳授完整的自媒體流量變現閉環，帶您真正以「AI 導演」之姿，建立自動化印鈔機。</p>
             </div>
         </div>
     </section>
 
-    <!-- 6. SOP Loop Section -->
+    <!-- 4. SOP Loop -->
     <section class="section loop-section fade-in-up">
         <div class="section-h">
             <h2>KCinemaAI <span>全自動影音生產線</span></h2>
@@ -2013,11 +1357,11 @@
         </div>
     </section>
 
-    <!-- 7. FAQ Accordion Section -->
+    <!-- 5. FAQ Accordion -->
     <section class="section faq-section fade-in-up">
         <div class="section-h">
             <h2>常見問題 <span>解答 (FAQ)</span></h2>
-            <p>為您解答關於 AI 電影級自媒體代工與客製化系統的疑问</p>
+            <p>為您解答關於 AI 電影級自媒體代工與客製化系統的疑問</p>
         </div>
         <div class="faq-container">
             <div class="faq-item">
@@ -2059,21 +1403,19 @@
         </div>
     </section>
 
-    <!-- CTA / Final Pitch -->
+    <!-- CTA Section -->
     <section class="cta fade-in-up">
-        <div class="cta-inner">
-            <h2>未來的商業競賽，拼的不是技術，<br>而是你的<span>「決策與點子」。</span></h2>
-            <p>別讓繁雜的發文、生硬的面對鏡頭與耗時的剪輯消磨了你的自媒體創業熱情。立刻與我們聊聊，開啟屬於你的 AI 影音自動化生產線。</p>
-            
-            <a href="https://calendly.com/brand-decoderai/15min" target="_blank" class="btn-primary-glow">
-                <i class="fa-regular fa-calendar-check"></i> 預約 15 分鐘免費戰略評估
-            </a>
-            
-            <div class="cta-bullets">
-                <span><i class="fa-solid fa-check"></i> 個人自媒體代工</span>
-                <span><i class="fa-solid fa-check"></i> 1對1專屬戰略規畫</span>
-                <span><i class="fa-solid fa-check"></i> 0 面對鏡頭壓力</span>
-            </div>
+        <h2>未來的商業競賽，拼的不是技術，<br>而是你的<span>「決策與點子」。</span></h2>
+        <p>別讓繁雜的發文、生硬的面對鏡頭與耗時的剪輯消磨了你的自媒體創業熱情。立刻與我們聊聊，開啟屬於你的 AI 影音自動化生產線。</p>
+        
+        <a href="https://calendly.com/brand-decoderai/15min" target="_blank" class="btn-primary-glow">
+            <i class="fa-regular fa-calendar-check"></i> 預約 15 分鐘免費戰略評估
+        </a>
+        
+        <div class="cta-bullets">
+            <span><i class="fa-solid fa-check"></i> 個人自媒體代工</span>
+            <span><i class="fa-solid fa-check"></i> 1對1專屬戰略規畫</span>
+            <span><i class="fa-solid fa-check"></i> 0 面對鏡頭壓力</span>
         </div>
     </section>
 
@@ -2094,16 +1436,6 @@
         <i class="fa-regular fa-calendar-check"></i>
     </a>
 
-    <!-- CUSTOM LIGHTBOX OVERLAY FOR VIDEO GALLERY -->
-    <div class="lightbox-overlay" id="video-lightbox" onclick="closeLightbox(event)">
-        <div class="lightbox-container">
-            <button class="lightbox-close" onclick="closeLightbox('force')"><i class="fa-solid fa-times"></i></button>
-            <div class="lightbox-video-frame" id="lightbox-video-content">
-                <!-- Video player injected dynamically -->
-            </div>
-        </div>
-    </div>
-
     <!-- LEGAL MODALS -->
     <!-- 1. TOS Modal -->
     <div id="modal-tos" class="modal-overlay" onclick="closeModal(event, 'modal-tos')">
@@ -2117,7 +1449,7 @@
             <p>本服務為雲端 AI 導購與智能客服平台，提供但不限於：AI 對話與導購功能、商機蒐集與 CRM 管理、商品與知識庫管理、多語系回覆能力、數據分析與戰情儀表板。本公司保留隨時調整、修改或終止部分功能之權利。</p>
             
             <h4>2. 帳戶註冊與安全</h4>
-            <p>用戶同意提供真實且完整之註冊資料、妥善保管帳號密碼，並對帳號下所有行為負完全責任。如發現未經授权使用，應立即通知本公司。</p>
+            <p>用戶同意提供真實且完整之註冊資料、妥善保管帳號密碼，並對帳號下所有行為負完全責任。如發現未經授權使用，應立即通知本公司。</p>
             
             <h4>3. 合法使用義務（重要）</h4>
             <p>用戶不得利用本服務從事任何違法或不當行為，包括但不限於：詐騙、誤導或不實銷售；散布違法、色情、暴力內容；未經授權蒐集他人個資；醫療、法律等需專業執照之誤導性建議；干擾或破壞系統運作。本公司有權在不事先通知下暫停或終止違規帳戶。</p>
@@ -2242,114 +1574,8 @@
 
     <!-- Interactive Scripts -->
     <script>
-        // --- 1. Expandable Video Showcase Portfolios Database ---
-        // Dynamically configured to ONLY use the user's specific YouTube 9:16 videos.
-        const portfolioData = [
-            {
-                title: "地表最致命禁區！巴西蛇島「融化血肉」的致命演化，與一條價值3萬美金的黑市陰謀｜危險的地球",
-                category: "explainer",
-                thumbnail: "https://img.youtube.com/vi/d7roBn7UgRE/hqdefault.jpg",
-                videoType: "youtube",
-                url: "https://www.youtube.com/embed/d7roBn7UgRE",
-                tagLabel: "T2I->I2V 科普大片"
-            },
-            {
-                title: "比火星更像外星！直擊地獄之門「達納基勒窪地」：pH值小於0的強酸深淵，與騙過頂尖科學家的「無機幽靈」｜危險的地球",
-                category: "explainer",
-                thumbnail: "https://img.youtube.com/vi/c-2IY-jJGqU/hqdefault.jpg",
-                videoType: "youtube",
-                url: "https://www.youtube.com/embed/c-2IY-jJGqU",
-                tagLabel: "T2I->I2V 科普大片"
-            },
-            {
-                title: "沉睡400年的地獄突襲！直擊印尼錫納朋火山：時速700公里的致命碎屑流，與廢墟裡一塵不染的「最後晚餐」｜危險的地球",
-                category: "explainer",
-                thumbnail: "https://img.youtube.com/vi/aJhidLOYOpk/hqdefault.jpg",
-                videoType: "youtube",
-                url: "https://www.youtube.com/embed/aJhidLOYOpk",
-                tagLabel: "T2I->I2V 科普大片"
-            }
-        ];
-
-        // Renders the portfolio grid
-        function renderPortfolio(filterCategory = 'all') {
-            const container = document.getElementById('portfolio-grid-container');
-            if (!container) return;
-            container.innerHTML = '';
-
-            portfolioData.forEach((item) => {
-                if (filterCategory !== 'all' && item.category !== filterCategory) {
-                    return;
-                }
-
-                // Create Card element
-                const card = document.createElement('div');
-                card.className = 'portfolio-card';
-                card.onclick = () => openLightbox(item);
-
-                card.innerHTML = `
-                    <div class="portfolio-media">
-                        <img src="${item.thumbnail}" alt="${item.title}" onerror="this.src='https://img.youtube.com/vi/${item.url.split('/').pop()}/0.jpg'">
-                        <div class="portfolio-play-overlay">
-                            <i class="fa-solid fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="portfolio-info-box">
-                        <h4>${item.title}</h4>
-                        <span>${item.tagLabel}</span>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        // Filters showcase gallery cards
-        function filterPortfolio(category) {
-            // Update active tab styling
-            const tabs = document.querySelectorAll('.portfolio-tab');
-            tabs.forEach(tab => {
-                tab.classList.remove('active');
-                if (tab.getAttribute('onclick').includes(category)) {
-                    tab.classList.add('active');
-                }
-            });
-            renderPortfolio(category);
-        }
-
-        // Lightbox controllers
-        function openLightbox(item) {
-            const lightbox = document.getElementById('video-lightbox');
-            const content = document.getElementById('lightbox-video-content');
-            if (!lightbox || !content) return;
-
-            // Since all videos are YouTube embeds now, load iframe directly
-            // Appending loop configurations for vertical 9:16 layout
-            const videoId = item.url.split('/').pop();
-            content.innerHTML = `
-                <iframe class="lightbox-video-frame" src="${item.url}?autoplay=1&mute=0&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            `;
-
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Lock main scroll
-        }
-
-        function closeLightbox(e) {
-            if (e === 'force' || e.target === e.currentTarget) {
-                const lightbox = document.getElementById('video-lightbox');
-                const content = document.getElementById('lightbox-video-content');
-                if (lightbox) {
-                    lightbox.classList.remove('active');
-                    if (content) content.innerHTML = ''; // Stop video playback
-                    document.body.style.overflow = ''; // Restore main scroll
-                }
-            }
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
-            // Render the initial showcase items
-            renderPortfolio('all');
-
-            // 2. FAQ Accordion Toggle
+            // FAQ Accordion Toggle
             const faqHeaders = document.querySelectorAll('.faq-header');
             faqHeaders.forEach(header => {
                 header.addEventListener('click', () => {
@@ -2364,7 +1590,7 @@
                 });
             });
 
-            // 3. Scroll Animation Observer
+            // Scroll Animation Observer
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
@@ -2385,7 +1611,7 @@
             });
         });
 
-        // 4. Modal Control Functions
+        // Modal Control Functions
         function openModal(id) {
             const modal = document.getElementById(id);
             if (modal) {
