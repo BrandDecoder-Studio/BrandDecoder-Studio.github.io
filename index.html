@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>品牌解碼室 | 打造您的 AI 商業獲利閉環</title>
+    <title>KCinemaAI | 頂級 AI 影音自媒體客製化與代工</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;700;900&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;700;900&family=Outfit:wght@400;700;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     
     <!-- FontAwesome & Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -16,15 +16,19 @@
 
     <style>
         :root {
-            --bg-dark: #030712;
-            --bg-dark-soft: #080B11;
-            --bg-card: rgba(17, 24, 39, 0.45);
-            --border-glow: rgba(59, 130, 246, 0.08);
+            --bg-dark: #020408;
+            --bg-dark-soft: #090D16;
+            --bg-card: rgba(15, 23, 42, 0.6);
             --text-bright: #F9FAFB;
             --text-muted: #9CA3AF;
-            --accent-blue: #3B82F6;
+            
+            /* Cinematic Amber / Gold Color Scheme */
+            --accent-gold: #F59E0B;
+            --accent-gold-dark: #D97706;
+            --accent-glow: rgba(245, 158, 11, 0.25);
             --accent-purple: #8B5CF6;
-            --accent-glow: rgba(59, 130, 246, 0.5);
+            
+            --border-glow: rgba(245, 158, 11, 0.08);
             --line-green: #06C755;
             --line-hover: #05A546;
         }
@@ -33,7 +37,7 @@
             margin: 0; 
             padding: 0; 
             box-sizing: border-box; 
-            font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', 'Noto Sans TC', -apple-system, sans-serif;
         }
         
         html { 
@@ -47,7 +51,7 @@
             overflow-x: hidden; 
         }
 
-        /* Scrollbar Styling */
+        /* Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -55,11 +59,11 @@
             background: var(--bg-dark);
         }
         ::-webkit-scrollbar-thumb {
-            background: #1F2937;
+            background: #111827;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #374151;
+            background: var(--accent-gold-dark);
         }
 
         /* --- Header Styles --- */
@@ -72,9 +76,9 @@
             width: 100%; 
             top: 0; 
             z-index: 1000;
-            background: rgba(3, 7, 18, 0.75); 
+            background: rgba(2, 4, 8, 0.85); 
             backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(245, 158, 11, 0.08);
             transition: all 0.3s;
         }
         
@@ -86,55 +90,57 @@
         }
         
         .logo-box { 
-            width: 40px; 
-            height: 40px; 
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); 
-            color: #fff; 
-            border-radius: 10px; 
+            width: 44px; 
+            height: 44px; 
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark)); 
+            color: #020408; 
+            border-radius: 12px; 
             display: flex; 
             justify-content: center; 
             align-items: center; 
             font-weight: 900; 
-            font-size: 1.25rem; 
+            font-size: 1.35rem; 
             font-family: 'Outfit', sans-serif;
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 0 20px var(--accent-glow);
         }
         
         .logo-title { 
-            font-size: 1.15rem; 
+            font-size: 1.3rem; 
             font-weight: 900; 
             letter-spacing: 0.5px;
             color: var(--text-bright);
+            font-family: 'Syne', sans-serif;
         }
         
         .logo-title span { 
             display: block; 
-            font-size: 0.7rem; 
+            font-size: 0.72rem; 
             color: var(--text-muted); 
             font-weight: 400; 
             letter-spacing: 1.5px; 
             margin-top: 2px;
+            font-family: 'Inter', sans-serif;
         }
         
         .nav-btn { 
-            background: linear-gradient(135deg, var(--accent-blue), #1D4ED8); 
-            color: #fff !important; 
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark)); 
+            color: #020408 !important; 
             padding: 10px 24px; 
             border-radius: 50px; 
-            font-weight: bold; 
+            font-weight: 800; 
             font-size: 0.85rem; 
             transition: 0.3s; 
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .nav-btn:hover { 
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); 
+            box-shadow: 0 6px 22px rgba(245, 158, 11, 0.45); 
         }
 
-        /* --- Hero Section --- */
+        /* --- Hero Section (IMAX Screen layout) --- */
         .hero {
             min-height: 100vh; 
             padding: 150px 5% 100px;
@@ -143,25 +149,25 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            background: radial-gradient(circle at top, rgba(17, 24, 39, 0.8) 0%, var(--bg-dark) 80%);
+            background: radial-gradient(circle at center, rgba(15, 23, 42, 0.6) 0%, var(--bg-dark) 85%);
         }
 
         /* Glowing background blobs */
         .hero-glow-1 {
-            position: absolute; top: -10%; left: 20%; width: 45vw; height: 45vw;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-            filter: blur(80px); pointer-events: none; z-index: 0;
+            position: absolute; top: -10%; left: 15%; width: 45vw; height: 45vw;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+            filter: blur(100px); pointer-events: none; z-index: 0;
         }
         .hero-glow-2 {
-            position: absolute; bottom: 10%; right: 15%; width: 40vw; height: 40vw;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
-            filter: blur(80px); pointer-events: none; z-index: 0;
+            position: absolute; bottom: -10%; right: 10%; width: 45vw; height: 45vw;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+            filter: blur(100px); pointer-events: none; z-index: 0;
         }
 
         .hero-container {
             display: grid;
-            grid-template-columns: 1.25fr 0.75fr;
-            gap: 50px;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
             align-items: center;
             max-width: 1300px;
             width: 100%;
@@ -178,61 +184,62 @@
         .hero-tag { 
             font-size: 0.8rem; 
             font-weight: 800; 
-            color: var(--accent-blue); 
+            color: var(--accent-gold); 
             letter-spacing: 4px; 
             text-transform: uppercase; 
             margin-bottom: 24px; 
             font-family: 'Outfit', sans-serif;
-            background: rgba(59, 130, 246, 0.08);
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.25);
             padding: 6px 16px;
             border-radius: 50px;
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.05);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.05);
             display: inline-block;
         }
         
         .hero h1 { 
-            font-size: 3.2rem; 
+            font-size: 3.4rem; 
             font-weight: 900; 
             line-height: 1.25; 
             margin-bottom: 25px; 
-            letter-spacing: -1px; 
+            letter-spacing: -1.5px; 
             color: var(--text-bright);
+            font-family: 'Syne', sans-serif;
         }
         
         .hero h1 span { 
-            background: linear-gradient(135deg, #60A5FA, #C084FC);
+            background: linear-gradient(135deg, var(--accent-gold), #FFF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         
         .hero p.lead { 
-            font-size: 1.15rem; 
+            font-size: 1.2rem; 
             color: var(--text-muted); 
             max-width: 100%; 
             margin-bottom: 35px; 
             font-weight: 400; 
             line-height: 1.8;
-            border-left: 3px solid var(--accent-purple);
+            border-left: 3px solid var(--accent-gold);
             padding-left: 20px;
         }
         
         .hero-manifesto {
-            background: rgba(15, 23, 42, 0.55); 
-            border: 1px solid rgba(255, 255, 255, 0.06); 
+            background: rgba(15, 23, 42, 0.45); 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
             padding: 30px 35px; 
             border-radius: 20px;
             backdrop-filter: blur(12px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5); 
             width: 100%; 
             margin-bottom: 40px; 
-            border-left: 5px solid var(--accent-blue);
+            border-left: 5px solid var(--accent-gold-dark);
             transition: all 0.3s;
         }
 
         .hero-manifesto:hover {
-            border-left-color: var(--accent-purple);
-            box-shadow: 0 20px 45px rgba(139, 92, 246, 0.1);
+            border-left-color: var(--accent-gold);
+            box-shadow: 0 20px 45px rgba(245, 158, 11, 0.1);
         }
 
         .hero-manifesto h3 { 
@@ -253,157 +260,133 @@
         }
 
         .hero-manifesto span.glow {
-            background: linear-gradient(135deg, var(--accent-blue), #38BDF8);
+            background: linear-gradient(135deg, var(--accent-gold), #FFF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: bold;
         }
 
-        /* Architect Profile Card Styling */
-        .hero-profile {
+        /* Hero Right Column: Mockup Screen Frame */
+        .hero-screen-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
         }
 
-        .profile-card {
-            background: rgba(15, 23, 42, 0.45);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 24px;
-            padding: 35px;
+        .phone-mockup {
             width: 100%;
-            max-width: 420px;
-            backdrop-filter: blur(16px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(139, 92, 246, 0.05);
+            max-width: 320px;
+            height: 580px;
+            background: #020408;
+            border: 12px solid #1F2937;
+            border-radius: 40px;
+            box-shadow: 0 35px 70px rgba(0,0,0,0.7), 0 0 50px rgba(245,158,11,0.1);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             transition: all 0.4s ease;
         }
 
-        .profile-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .profile-card:hover {
+        .phone-mockup:hover {
+            border-color: #374151;
+            box-shadow: 0 35px 80px rgba(0,0,0,0.8), 0 0 60px rgba(245,158,11,0.2);
             transform: translateY(-5px);
-            border-color: rgba(139, 92, 246, 0.25);
-            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5), 0 0 50px rgba(139, 92, 246, 0.12);
         }
 
-        .profile-avatar {
+        /* Phone Camera notch */
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110px;
+            height: 20px;
+            background: #1F2937;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            z-index: 10;
+        }
+
+        .phone-video-container {
             width: 100%;
-            height: 200px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(3, 7, 18, 0.8) 100%);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            height: 100%;
+            position: relative;
+            background: #000;
+        }
+
+        .phone-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .video-overlay-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(2,4,8,0.95) 0%, rgba(2,4,8,0.4) 60%, transparent 100%);
+            z-index: 5;
+            color: #fff;
+            text-align: left;
+        }
+
+        .video-overlay-info h4 {
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            color: var(--accent-gold);
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .video-overlay-info p {
+            font-size: 0.78rem;
+            color: #D1D5DB;
+            line-height: 1.4;
+        }
+
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(245, 158, 11, 0.9);
+            color: #020408;
+            display: flex;
             justify-content: center;
             align-items: center;
-            color: var(--accent-blue);
-            font-size: 3.5rem;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 25px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 8;
+            transition: all 0.3s;
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.4);
         }
 
-        .profile-avatar i {
-            filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4));
-            animation: pulseGlow 3s infinite ease-in-out;
+        .video-play-btn:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: #fff;
+            box-shadow: 0 0 35px rgba(255, 255, 255, 0.6);
         }
 
-        @keyframes pulseGlow {
-            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4)); }
-            50% { transform: scale(1.05); filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.7)); color: var(--accent-purple); }
-        }
-
-        .avatar-tag {
-            position: absolute;
-            bottom: 15px;
-            background: rgba(3, 7, 18, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-bright);
-            padding: 4px 14px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
-
-        .profile-info h3 {
-            font-size: 1.35rem;
-            font-weight: 900;
-            color: var(--text-bright);
-            margin-bottom: 5px;
-        }
-
-        .profile-title {
-            font-size: 0.8rem;
-            font-family: 'Outfit', sans-serif;
-            color: var(--accent-purple);
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-
-        .profile-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-
-        .profile-skills span {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            color: var(--text-muted);
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .profile-skills span i {
-            color: var(--accent-blue);
-        }
-
-        .profile-desc {
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .photo-placeholder-note {
-            display: block;
-            text-align: center;
-            font-size: 0.75rem;
-            color: var(--accent-purple);
-            background: rgba(139, 92, 246, 0.06);
-            border: 1px dotted rgba(139, 92, 246, 0.25);
-            padding: 8px;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-        
         /* 3D Glowing Button Styles */
         .btn-primary-glow {
-            background: linear-gradient(135deg, var(--line-green), #05A546);
-            color: #fff;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: #020408;
             padding: 18px 42px;
             border-radius: 50px;
-            font-weight: 800;
+            font-weight: 900;
             font-size: 1.15rem;
             display: inline-flex;
             align-items: center;
@@ -411,7 +394,7 @@
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 10px 25px rgba(6, 199, 85, 0.4), 0 0 30px rgba(6, 199, 85, 0.15);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.35), 0 0 30px rgba(245, 158, 11, 0.15);
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -420,7 +403,7 @@
 
         .btn-primary-glow:hover {
             transform: scale(1.04) translateY(-3px);
-            box-shadow: 0 15px 35px rgba(6, 199, 85, 0.6), 0 0 45px rgba(6, 199, 85, 0.4);
+            box-shadow: 0 15px 35px rgba(245, 158, 11, 0.55), 0 0 45px rgba(245, 158, 11, 0.3);
             border-color: rgba(255, 255, 255, 0.35);
         }
 
@@ -431,7 +414,7 @@
             background: linear-gradient(
                 90deg,
                 transparent,
-                rgba(255, 255, 255, 0.25),
+                rgba(255, 255, 255, 0.3),
                 transparent
             );
             transition: all 0.6s ease;
@@ -455,14 +438,15 @@
         }
         
         .section-h h2 { 
-            font-size: 2.5rem; 
+            font-size: 2.6rem; 
             font-weight: 900; 
             margin-bottom: 15px; 
             color: var(--text-bright);
+            font-family: 'Syne', sans-serif;
         }
         
         .section-h h2 span {
-            background: linear-gradient(135deg, #60A5FA, #C084FC);
+            background: linear-gradient(135deg, var(--accent-gold), #FFF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -490,7 +474,7 @@
 
         .pain-card {
             background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.04);
             border-radius: 18px;
             padding: 35px 25px;
             position: relative;
@@ -505,19 +489,19 @@
             left: 0;
             width: 4px;
             height: 100%;
-            background: rgba(239, 68, 68, 0.3);
+            background: rgba(245, 158, 11, 0.25);
             transition: all 0.3s;
         }
 
         .pain-card:hover {
             transform: translateY(-5px);
-            background: rgba(17, 24, 39, 0.75);
-            border-color: rgba(239, 68, 68, 0.2);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(239, 68, 68, 0.05);
+            background: rgba(15, 23, 42, 0.75);
+            border-color: rgba(245, 158, 11, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(245, 158, 11, 0.05);
         }
 
         .pain-card:hover::before {
-            background: #EF4444;
+            background: var(--accent-gold);
             width: 5px;
         }
 
@@ -525,14 +509,14 @@
             width: 48px;
             height: 48px;
             border-radius: 12px;
-            background: rgba(239, 68, 68, 0.1);
-            color: #EF4444;
+            background: rgba(245, 158, 11, 0.08);
+            color: var(--accent-gold);
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 1.4rem;
             margin-bottom: 20px;
-            border: 1px solid rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.15);
         }
 
         .pain-card h4 {
@@ -583,8 +567,8 @@
         .service-card:hover {
             transform: translateY(-8px);
             background: rgba(17, 24, 39, 0.7);
-            border-color: rgba(59, 130, 246, 0.25);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.4), 0 0 25px rgba(59, 130, 246, 0.08);
+            border-color: rgba(245, 158, 11, 0.25);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 25px rgba(245, 158, 11, 0.08);
         }
 
         .service-media {
@@ -616,15 +600,15 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: var(--accent-blue);
+            color: var(--accent-gold);
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.06) 0%, rgba(3, 7, 18, 0.6) 100%);
+            background: radial-gradient(circle at center, rgba(245, 158, 11, 0.06) 0%, rgba(3, 7, 18, 0.6) 100%);
             font-size: 2.8rem;
         }
 
         .service-media-placeholder i {
-            filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.25));
+            filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.25));
             margin-bottom: 8px;
         }
 
@@ -655,12 +639,12 @@
             align-self: flex-start;
             font-size: 0.75rem;
             font-weight: 800;
-            color: var(--accent-blue);
-            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-gold);
+            background: rgba(245, 158, 11, 0.1);
             padding: 4px 12px;
             border-radius: 50px;
             margin-bottom: 15px;
-            border: 1px solid rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.15);
         }
 
         .service-card:nth-child(even) .service-badge {
@@ -684,10 +668,136 @@
             flex-grow: 1;
         }
 
-        /* --- 3. Cost Comparison Section --- */
-        .cost-section {
+        /* --- 3. Dynamic Video Showcase Section (放映廳) --- */
+        .showcase-section {
             background: var(--bg-dark-soft);
             border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .portfolio-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-tab {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--text-muted);
+            padding: 10px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .portfolio-tab:hover, .portfolio-tab.active {
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            border-color: var(--accent-gold);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.25);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .portfolio-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .portfolio-media {
+            width: 100%;
+            height: 180px;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .portfolio-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-card:hover .portfolio-media img {
+            transform: scale(1.06);
+        }
+
+        .portfolio-play-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(2, 4, 8, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .portfolio-card:hover .portfolio-play-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-play-overlay i {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.25rem;
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+        }
+
+        .portfolio-info-box {
+            padding: 20px 25px;
+        }
+
+        .portfolio-info-box h4 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-bright);
+            margin-bottom: 8px;
+        }
+
+        .portfolio-info-box span {
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.15);
+            padding: 2px 10px;
+            border-radius: 50px;
+        }
+
+        /* --- 4. Cost Comparison Section --- */
+        .cost-section {
+            background: var(--bg-dark);
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         }
 
@@ -717,8 +827,8 @@
         }
 
         .cost-card.workstation-solution {
-            border-color: rgba(6, 199, 85, 0.15);
-            box-shadow: inset 0 0 30px rgba(6, 199, 85, 0.02), 0 0 35px rgba(6, 199, 85, 0.05);
+            border-color: rgba(245, 158, 11, 0.15);
+            box-shadow: inset 0 0 30px rgba(245, 158, 11, 0.02), 0 0 35px rgba(245, 158, 11, 0.05);
         }
 
         .cost-card::after {
@@ -731,7 +841,7 @@
         }
 
         .cost-card.workstation-solution::after {
-            background: linear-gradient(135deg, rgba(6, 199, 85, 0.25), rgba(59, 130, 246, 0.05));
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(59, 130, 246, 0.05));
         }
 
         .cost-card-header {
@@ -758,11 +868,11 @@
             gap: 6px;
             font-size: 0.75rem;
             font-weight: 800;
-            color: var(--line-green);
-            background: rgba(6, 199, 85, 0.1);
+            color: var(--accent-gold);
+            background: rgba(245, 158, 11, 0.1);
             padding: 5px 14px;
             border-radius: 50px;
-            border: 1px solid rgba(6, 199, 85, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.15);
             margin-bottom: 15px;
         }
 
@@ -779,7 +889,7 @@
             line-height: 1.6;
         }
 
-        /* Cost Table Styling */
+        /* Cost Table */
         .table-responsive {
             width: 100%;
             overflow-x: auto;
@@ -856,13 +966,13 @@
             width: 44px;
             height: 44px;
             border-radius: 10px;
-            background: rgba(6, 199, 85, 0.08);
-            color: var(--line-green);
+            background: rgba(245, 158, 11, 0.08);
+            color: var(--accent-gold);
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 1.25rem;
-            border: 1px solid rgba(6, 199, 85, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.15);
             flex-shrink: 0;
             margin-top: 3px;
         }
@@ -875,7 +985,7 @@
         }
 
         .sol-text p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
             line-height: 1.65;
         }
@@ -886,10 +996,11 @@
             justify-content: center;
         }
 
-        /* --- 4. Roadmap Section --- */
+        /* --- 5. Roadmap Section --- */
         .roadmap-section {
-            background: var(--bg-dark);
-            position: relative;
+            background: var(--bg-dark-soft);
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         }
 
         .roadmap-container {
@@ -904,7 +1015,7 @@
             left: 8%;
             width: 84%;
             height: 2px;
-            background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-purple) 50%, var(--line-green) 100%);
+            background: linear-gradient(90deg, var(--accent-gold) 0%, var(--accent-purple) 50%, var(--line-green) 100%);
             opacity: 0.25;
             z-index: 1;
         }
@@ -931,8 +1042,8 @@
 
         .roadmap-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(59, 130, 246, 0.2);
-            box-shadow: 0 20px 45px rgba(0,0,0,0.4), 0 0 20px rgba(59, 130, 246, 0.05);
+            border-color: var(--accent-gold);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.4), 0 0 20px rgba(245, 158, 11, 0.05);
         }
 
         .roadmap-badge {
@@ -942,31 +1053,33 @@
             font-size: 0.75rem;
             font-weight: 800;
             font-family: 'Outfit', sans-serif;
-            color: #fff;
-            background: linear-gradient(135deg, var(--accent-blue), #1D4ED8);
+            color: #020408;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
             padding: 6px 16px;
             border-radius: 50px;
             border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
         }
 
         .roadmap-badge.purple {
             background: linear-gradient(135deg, var(--accent-purple), #6D28D9);
+            color: #fff;
             box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
         }
 
         .roadmap-badge.green {
             background: linear-gradient(135deg, var(--line-green), #047857);
+            color: #fff;
             box-shadow: 0 5px 15px rgba(6, 199, 85, 0.3);
         }
 
         .roadmap-icon {
             width: 54px;
             height: 54px;
-            background: rgba(59, 130, 246, 0.08);
-            color: var(--accent-blue);
+            background: rgba(245, 158, 11, 0.08);
+            color: var(--accent-gold);
             border-radius: 14px;
-            border: 1px solid rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(245, 158, 11, 0.12);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -996,7 +1109,7 @@
 
         .roadmap-subtitle {
             font-size: 0.9rem;
-            color: var(--accent-blue);
+            color: var(--accent-gold);
             font-weight: bold;
             margin-bottom: 15px;
         }
@@ -1016,11 +1129,10 @@
             flex-grow: 1;
         }
 
-        /* --- 5. SOP Loop Section --- */
+        /* --- 6. SOP Loop Section --- */
         .loop-section {
-            background: var(--bg-dark-soft);
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            background: var(--bg-dark);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
         }
 
         .loop-container { 
@@ -1050,13 +1162,13 @@
         
         .loop-item:hover {
             transform: translateY(-3px);
-            border-color: rgba(59, 130, 246, 0.2);
+            border-color: var(--accent-gold);
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
         .loop-item i { 
             font-size: 2.2rem; 
-            color: var(--accent-blue); 
+            color: var(--accent-gold); 
             margin-bottom: 20px; 
         }
         
@@ -1096,70 +1208,13 @@
 
         @keyframes flowPulse {
             0% { transform: translateX(-6px); opacity: 0.3; }
-            50% { transform: translateX(6px); opacity: 1; color: var(--accent-blue); }
+            50% { transform: translateX(6px); opacity: 1; color: var(--accent-gold); }
             100% { transform: translateX(-6px); opacity: 0.3; }
-        }
-
-        /* --- 6. Consultation steps Section --- */
-        .steps-section {
-            background: var(--bg-dark);
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .step-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 40px 30px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .step-card:hover {
-            border-color: rgba(59, 130, 246, 0.15);
-            background: rgba(17, 24, 39, 0.6);
-        }
-
-        .step-num {
-            font-size: 3.5rem;
-            font-weight: 900;
-            font-family: 'Outfit', sans-serif;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.18), rgba(139, 92, 246, 0.04));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            line-height: 1;
-            user-select: none;
-        }
-
-        .step-card h4 {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--text-bright);
-            margin-top: 20px;
-            margin-bottom: 12px;
-        }
-
-        .step-card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.6;
         }
 
         /* --- 7. FAQ Accordion Section --- */
         .faq-section {
             background: var(--bg-dark-soft);
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         }
 
         .faq-container {
@@ -1177,7 +1232,7 @@
         }
 
         .faq-item:hover {
-            border-color: rgba(59, 130, 246, 0.2);
+            border-color: var(--accent-gold);
             background: rgba(17, 24, 39, 0.65);
         }
 
@@ -1195,7 +1250,7 @@
 
         .faq-icon {
             font-size: 1.2rem;
-            color: var(--accent-blue);
+            color: var(--accent-gold);
             transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -1210,7 +1265,7 @@
         }
 
         .faq-item.active {
-            border-color: rgba(59, 130, 246, 0.25);
+            border-color: var(--accent-gold);
             background: rgba(17, 24, 39, 0.6);
         }
 
@@ -1221,15 +1276,16 @@
 
         .faq-item.active .faq-icon {
             transform: rotate(45deg);
-            color: var(--accent-purple);
+            color: var(--accent-gold-dark);
         }
 
         /* --- 8. CTA / Final Pitch --- */
         .cta { 
             text-align: center; 
             padding: 120px 5%; 
-            background: radial-gradient(circle at bottom, rgba(139, 92, 246, 0.06) 0%, var(--bg-dark) 80%);
+            background: radial-gradient(circle at bottom, var(--accent-glow) 0%, var(--bg-dark) 85%);
             position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
         }
         
         .cta h2 {
@@ -1238,10 +1294,11 @@
             margin-bottom: 20px;
             color: var(--text-bright);
             line-height: 1.3;
+            font-family: 'Syne', sans-serif;
         }
 
         .cta h2 span {
-            background: linear-gradient(135deg, #60A5FA, #C084FC);
+            background: linear-gradient(135deg, var(--accent-gold), #FFF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -1270,7 +1327,7 @@
         }
 
         .cta-bullets i {
-            color: var(--line-green);
+            color: var(--accent-gold);
         }
 
         /* --- Footer --- */
@@ -1280,7 +1337,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05); 
             color: var(--text-muted); 
             font-size: 0.85rem; 
-            background: var(--bg-dark-soft);
+            background: var(--bg-dark);
         }
 
         .footer-links {
@@ -1298,33 +1355,107 @@
         }
 
         .footer-links a:hover {
-            color: var(--accent-blue);
+            color: var(--accent-gold);
         }
 
-        /* --- LINE Float Button --- */
-        .line-float-btn {
+        /* --- Float Calendar Button --- */
+        .calendar-float-btn {
             position: fixed;
             bottom: 35px; 
             right: 35px;
             width: 60px; 
             height: 60px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--line-green), #05A546);
-            color: #fff; 
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: #020408; 
             display: flex; 
             justify-content: center; 
             align-items: center;
-            font-size: 2rem; 
+            font-size: 1.6rem; 
             text-decoration: none;
-            box-shadow: 0 8px 25px rgba(6, 199, 85, 0.4), 0 0 20px rgba(6, 199, 85, 0.15);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4), 0 0 20px rgba(245, 158, 11, 0.15);
             z-index: 999;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
         
-        .line-float-btn:hover {
+        .calendar-float-btn:hover {
             transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 12px 30px rgba(6, 199, 85, 0.6), 0 0 30px rgba(6, 199, 85, 0.35);
+            box-shadow: 0 12px 30px rgba(245, 158, 11, 0.6), 0 0 30px rgba(245, 158, 11, 0.35);
+        }
+
+        /* --- Custom Lightbox Overlay for Video Playback --- */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(2, 4, 8, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 3000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .lightbox-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox-container {
+            width: 90%;
+            max-width: 500px; /* Tailored for vertical 9:16 portrait video */
+            height: 80vh;
+            background: #000;
+            border: 2px solid rgba(245, 158, 11, 0.25);
+            box-shadow: 0 0 50px rgba(245, 158, 11, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            transform: scale(0.92);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .lightbox-overlay.active .lightbox-container {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(2, 4, 8, 0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.35rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+        }
+
+        .lightbox-close:hover {
+            background: #EF4444;
+            border-color: #EF4444;
+            transform: rotate(90deg);
+        }
+
+        .lightbox-video-frame {
+            width: 100%;
+            height: 100%;
+        }
+
+        .lightbox-video-frame iframe, .lightbox-video-frame video {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* --- Scroll Animation Classes --- */
@@ -1399,7 +1530,7 @@
             font-size: 1.1rem;
             font-weight: 800;
             margin: 25px 0 10px;
-            color: var(--accent-blue);
+            color: var(--accent-gold);
         }
 
         .modal-content p {
@@ -1424,7 +1555,7 @@
         @media (max-width: 1024px) {
             .hero-container {
                 grid-template-columns: 1.1fr 0.9fr;
-                gap: 30px;
+                gap: 40px;
             }
             .hero h1 { font-size: 2.8rem; }
         }
@@ -1445,7 +1576,7 @@
             .hero-manifesto {
                 text-align: left;
             }
-            .hero-profile {
+            .hero-screen-wrapper {
                 margin-top: 20px;
             }
             .cost-container {
@@ -1484,12 +1615,6 @@
             }
         }
 
-        @keyframes flowPulseVertical {
-            0% { transform: translateY(-5px); opacity: 0.3; }
-            50% { transform: translateY(5px); opacity: 1; color: var(--accent-blue); }
-            100% { transform: translateY(-5px); opacity: 0.3; }
-        }
-
         @media (max-width: 576px) {
             header { padding: 15px 4%; }
             .logo-title span { display: none; }
@@ -1505,10 +1630,10 @@
     <!-- Header -->
     <header>
         <a href="#" class="logo-area">
-            <div class="logo-box">BD</div>
-            <div class="logo-title">品牌解碼室<span>讓夢想擁有一條自動化的生產線</span></div>
+            <div class="logo-box">KC</div>
+            <div class="logo-title">KCinemaAI<span>電影級 AI 自媒體影片代工廠</span></div>
         </a>
-        <a href="https://lin.ee/wZAv8yY" target="_blank" class="nav-btn">預約 15 分鐘免費戰略評估</a>
+        <a href="https://calendly.com/brand-decoderai/15min" target="_blank" class="nav-btn">預約 15 分鐘免費戰略評估</a>
     </header>
 
     <!-- Hero Section -->
@@ -1519,42 +1644,37 @@
         <div class="hero-container">
             <!-- Left Column: Content -->
             <div class="hero-content">
-                <div class="hero-tag fade-in-up">THE DIGITAL MONOPOLY BLUEPRINT</div>
-                <h1 class="fade-in-up">你的商業才華，不該被技術細節埋沒。<br>只要你有「想法」，剩下的交給 <span>AI 幫你實現。</span></h1>
-                <p class="lead fade-in-up">別再浪費時間與外包公司來回溝通。AI 時代，老闆必須學會親自掌控數位產線。1對1 教你建構自動化客服與社群收單系統，打造你專屬的『一人兵工廠』。</p>
+                <div class="hero-tag fade-in-up">AI CINEMATIC WORKFLOW</div>
+                <h1 class="fade-in-up">用 AI 導演你的品牌劇本，<br>量產 <span>電影級自媒體影音。</span></h1>
+                <p class="lead fade-in-up">別再浪費時間與外包公司來回溝通。KCinemaAI 獨家技術 —— 結合「AI 虛擬主持人」與「全動態科普影片工作流」，帶你用極低成本，快速定制出好萊塢紀錄片質感的個人自媒體影音，打造你的不露臉爆款頻道。</p>
                 
                 <div class="hero-manifesto fade-in-up">
-                    <h3>這是一場關於「商業主權」的革命</h3>
+                    <h3>🎬 解決「不想露臉、沒空拍攝、不會剪輯」的痛點</h3>
                     <p>
-                        <strong>不寫複雜程式、不碰生硬的資料庫。</strong><br>
-                        在《品牌解碼室》，我們不談虛浮的科技名詞。我們結合 20 年的品牌實戰經驗，只做一件事：<strong>把您的商業才華，封裝進一套 <span class="glow">24 小時為您精準獲客、自動成交</span> 的 AI 閉環系統中。</strong>
+                        在第一階段，我們為您提供<strong>全方位的 AI 影音代工與客製化生成服務</strong>。您只需提供想法或主題，我們為您搞定高擬真虛擬代言人、極致電影級 B-roll 渲染、克隆專屬聲音，直接產出高點閱科普或宣傳大片。
                     </p>
                 </div>
 
                 <div class="hero-cta fade-in-up">
-                    <a href="https://lin.ee/wZAv8yY" target="_blank" class="btn-primary-glow">
-                        <i class="fab fa-line"></i> 預約 15 分鐘免費戰略評估 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                    <a href="https://calendly.com/brand-decoderai/15min" target="_blank" class="btn-primary-glow">
+                        <i class="fa-regular fa-calendar-check"></i> 預約 15 分鐘免費戰略評估 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
                     </a>
                 </div>
             </div>
             
-            <!-- Right Column: Architect Profile Avatar -->
-            <div class="hero-profile fade-in-up">
-                <div class="profile-card">
-                    <div class="profile-avatar">
-                        <i class="bi bi-person-workspace"></i>
-                        <span class="avatar-tag">AI & 品牌自動化</span>
-                    </div>
-                    <div class="profile-info">
-                        <h3>AI & 品牌自動化架構師</h3>
-                        <p class="profile-title">Brand & AI Solutions Architect</p>
-                        <div class="profile-skills">
-                            <span><i class="fa-solid fa-code-branch"></i> Vibe Coding</span>
-                            <span><i class="fa-solid fa-diagram-project"></i> 系統架構</span>
-                            <span><i class="fa-solid fa-funnel-dollar"></i> 變現閉環</span>
+            <!-- Right Column: Interactive Phone Mockup with the Lake Maracaibo Video -->
+            <div class="hero-screen-wrapper fade-in-up">
+                <div class="phone-mockup" onclick="playMockupVideo()">
+                    <div class="phone-notch"></div>
+                    <div class="phone-video-container">
+                        <video id="hero-mockup-vid" src="medias/(11)委內瑞拉馬拉開波湖_危險的地球_480P.mp4" loop muted playsinline></video>
+                        <div class="video-play-btn" id="hero-play-icon">
+                            <i class="fa-solid fa-play"></i>
                         </div>
-                        <p class="profile-desc">「不教你寫程式碼，只教你如何用架構師的思維指揮 AI，把想法光速落地，做你自家的數位兵工廠。」</p>
-                        <span class="photo-placeholder-note"><i class="fa-solid fa-camera"></i> 個人資料與形象照即將上線</span>
+                        <div class="video-overlay-info">
+                            <h4><i class="fa-solid fa-clapperboard"></i> 點擊播放實拍 Demo</h4>
+                            <p>KCinemaAI 科普影片代工作品：AI 虛擬主持人 + 全動態 T2I->I2V 閃電場景</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1564,34 +1684,34 @@
     <!-- 1. Pain Points Section -->
     <section class="section pain-section fade-in-up">
         <div class="section-h">
-            <h2>你是否也面臨這些 <span>創業瓶頸？</span></h2>
-            <p>別讓重複的技術雜務與未知的起步方向，消磨了你最珍貴的創業熱情</p>
+            <h2>你是否也面臨這些 <span>創作瓶頸？</span></h2>
+            <p>做自媒體並非一定要買昂貴的攝影機或站在鏡頭前妥協，讓 KCinemaAI 為你接手繁重工序</p>
         </div>
         <div class="pain-grid">
             <div class="pain-card">
-                <div class="pain-icon"><i class="bi bi-compass"></i></div>
-                <h4>想創業不知方向？</h4>
-                <p>滿腔熱血卻缺乏切入點，不知道做什麼產品最能切中市場痛點，深怕選錯方向白費力氣。</p>
+                <div class="pain-icon"><i class="bi bi-person-x"></i></div>
+                <h4>不想在鏡頭前露臉？</h4>
+                <p>渴望建立自媒體影響力，卻因隱私、性格或不習慣面對鏡頭而裹足不前。我們用客製化的 AI 虛擬主持人為你代勞。</p>
             </div>
             <div class="pain-card">
-                <div class="pain-icon"><i class="bi bi-lightbulb"></i></div>
-                <h4>有點子不知如何開始？</h4>
-                <p>腦袋裡有無限創意與靈感，卻被雜亂裝的起步步驟卡住，遲遲無法跨出具體的第一步。</p>
+                <div class="pain-icon"><i class="bi bi-clock-history"></i></div>
+                <h4>缺乏時間拍攝與剪輯？</h4>
+                <p>日常工作繁忙，寫劇本、打燈、拍攝、剪字幕與特效耗時費力，產能嚴重跟不上各大影音平台日更速度。</p>
             </div>
             <div class="pain-card">
-                <div class="pain-icon"><i class="bi bi-shop"></i></div>
-                <h4>有產品不知如何經營？</h4>
-                <p>研發出了好東西，卻面臨社群沒人看、粉專沒流量、不知道怎麼將流量變現的尷尬境地。</p>
+                <div class="pain-icon"><i class="bi bi-film"></i></div>
+                <h4>傳統影片外包成本高昂？</h4>
+                <p>找專業導演、攝影師與演員外包製作，單支影片動輒報價數萬台幣，且修改次數受限，難以支撐長期高頻運營。</p>
             </div>
             <div class="pain-card">
-                <div class="pain-icon"><i class="bi bi-code-slash"></i></div>
-                <h4>零代碼基礎想做產品？</h4>
-                <p>不會寫程式，找軟體外包開發動輒報價數十萬，難以承受高昂的早期測試與修改成本。</p>
+                <div class="pain-icon"><i class="bi bi-image-alt"></i></div>
+                <h4>影片畫面單調、沒張力？</h4>
+                <p>只會做靜態字卡或使用網路無版權素材，缺乏震撼感。KCinemaAI 通過 T2I -> I2V 技術生成與劇本 100% 貼合的電影級鏡頭。</p>
             </div>
             <div class="pain-card">
-                <div class="pain-icon"><i class="bi bi-cpu"></i></div>
-                <h4>想學 AI 不知從何開始？</h4>
-                <p>買了 ChatGPT 卻只會拿來聊天，不知道如何將 AI 真正融入工作流程，實現商業自動化省時賺錢。</p>
+                <div class="pain-icon"><i class="bi bi-translate"></i></div>
+                <h4>配音生硬、缺乏感情？</h4>
+                <p>傳統機器合成音（TTS）毫無溫度，讓人一聽就想滑掉。我們克隆高保真音色，結合情感起伏，打造宛如真人解說。</p>
             </div>
         </div>
     </section>
@@ -1599,8 +1719,8 @@
     <!-- 2. 6 Core Services Section -->
     <section class="section services-section fade-in-up">
         <div class="section-h">
-            <h2>專為「AI 小白 x 個人品牌創業者」設計的 <span>6 大核心賦能</span></h2>
-            <p>我們帶你從零起步，用 AI 幫你把點子迅速放大，建立最省力的個人品牌獲利閉環</p>
+            <h2>KCinemaAI <span>6 大核心代工與客製服務</span></h2>
+            <p>我們結合頂尖 AI 影像演算法，為您打通從想法到爆款影音產出的高速流水線</p>
         </div>
 
         <div class="services-grid">
@@ -1608,14 +1728,14 @@
             <div class="service-card">
                 <div class="service-media">
                     <div class="service-media-placeholder">
-                        <i class="bi bi-bar-chart-line"></i>
-                        <span>DATA ANALYTICS</span>
+                        <i class="bi bi-compass"></i>
+                        <span>CONCEPT EXPLORATION</span>
                     </div>
                 </div>
                 <div class="service-body">
                     <div class="service-badge">數據驅動痛點探索</div>
                     <h3>1. 用數據取代直覺，幫你找方向</h3>
-                    <p>毫無想法、不知道從何開始？沒關係，讓數據告訴你答案！我們教你透過解析市場真實回饋與搜尋趨勢，精準洞察消費者真正在找什麼。將雜亂的資訊轉化為具體的開發方向，讓你第一次做個人品牌就切中市場紅利。</p>
+                    <p>毫無想法、不知道從何開始？沒關係，讓數據告訴你答案！我們透過解析搜尋趨勢與爆款關鍵字，精準洞察消費者愛看的科普與熱點題材，將雜亂資訊轉化為具體的爆款影音開發大綱。</p>
                 </div>
             </div>
 
@@ -1623,14 +1743,14 @@
             <div class="service-card">
                 <div class="service-media">
                     <div class="service-media-placeholder purple">
-                        <i class="bi bi-activity"></i>
-                        <span>CREATIVE FLYWHEEL</span>
+                        <i class="bi bi-bezier2"></i>
+                        <span>CREATIVE FLUIDITY</span>
                     </div>
                 </div>
                 <div class="service-body">
                     <div class="service-badge">AI 創意飛輪</div>
                     <h3>2. 告別靈感枯竭，讓創意自動生成</h3>
-                    <p>想做內容卻總是卡關？把 AI 當作你的超強智囊團！透過建立提問框架與資料統整模型，AI 能從多角度刺激腦力激盪、快速收斂概念。你只需負責下決策，讓 AI 幫你把創意放大，打造源源不絕的內容產出引擎。</p>
+                    <p>把 AI 當作你的超強編劇導演智囊團！透過特製的腳本提示詞架構，AI 能將冰冷的資料秒級重組為帶有強烈故事性、高留存率的影片腳本分鏡，你只需負責下決策，讓創意無限裂變。</p>
                 </div>
             </div>
 
@@ -1640,9 +1760,9 @@
                     <video src="medias/website_movie_001.mp4" autoplay loop muted playsinline></video>
                 </div>
                 <div class="service-body">
-                    <div class="service-badge">No-Code 無代碼實現</div>
-                    <h3>3. 一句話，讓 AI 幫你寫出產品</h3>
-                    <p>沒有代碼基礎也能創業！運用最新的 AI 無代碼工具，你再也不用苦學艱澀的語法。只要輸入簡單的需求描述，AI 就能快速幫你建構出專屬的網頁或服務系統。將技術雜務交給 AI，你只需專注於洞察客戶與商業變現。</p>
+                    <div class="service-badge">AI 虛擬代言人生成</div>
+                    <h3>3. 多風格 Avatar 主持人對嘴代口播</h3>
+                    <p>根據頻道調性，客製化專屬的 AI 虛擬主持人。只需輸入文字，即可驅動完美聲線與口形同步（Lip-Sync）的口播輸出。打破物理拍攝高牆，實現無需露臉的高頻率影音產出。</p>
                 </div>
             </div>
 
@@ -1652,9 +1772,9 @@
                     <video src="medias/website_movie_003.mp4" autoplay loop muted playsinline></video>
                 </div>
                 <div class="service-body">
-                    <div class="service-badge">影音內容自動生產線</div>
-                    <h3>4. 低成本打造你的品牌護城河</h3>
-                    <p>有了好點子與好產品，接下來就是持續曝光。為了解決創作耗時的痛點，我們將為你導入專屬的「影音工作站」，揮別傳統繁瑣的拍攝與剪輯。無論是影音、圖片還是文字，都能讓你以極低的生產成本，穩定且高頻率地產出精緻內容。透過我的這套流程以及系統，你也能快速打造出屬於自己的個人品牌。</p>
+                    <div class="service-badge">科普影音自動生產線</div>
+                    <h3>4. 電影級 T2I ➔ I2V 動態影片渲染</h3>
+                    <p>拋棄無趣的靜態圖，我們提供學員與代工專屬的影音工作站：利用頂級模型算力，將您的腳本一行行渲染成與場景 100% 呼合的動態大片，無論是魔幻自然、未來科技還是歷史場景，都能以極低成本穩定產出。</p>
                 </div>
             </div>
 
@@ -1665,8 +1785,8 @@
                 </div>
                 <div class="service-body">
                     <div class="service-badge">獲客變現漏斗</div>
-                    <h3>5. 從公域引流到私域授課的自動化閉環</h3>
-                    <p>經營品牌最怕有流量卻無法變現。我們帶你建構一套「公域獲客 ➔ 私域變現」的完整系統：利用上述工作站產出的內容，在各大社群大規模吸引免費目光，接著將潛在客戶無縫引導至你的 LINE OA 或專屬社群。透過系統化的經營與授課提供深度價值，結合智能系統完成自動化成交，打造只進不出的獲利漏斗。</p>
+                    <h3>5. 自媒體引流到私域自動化閉環</h3>
+                    <p>產出內容的終極目的是變現。我們帶你搭建「公域流量 ➔ 私域變現」的完整流程：將 KCinemaAI 生產的短片分發至 YT、TikTok，吸引流量後無縫導入 LINE OA 智能系統，結合自動客服進行成交與諮詢引流。</p>
                 </div>
             </div>
 
@@ -1677,18 +1797,37 @@
                 </div>
                 <div class="service-body">
                     <div class="service-badge">架構拆解與重組</div>
-                    <h3>6. 從想法到實現的系統化工程</h3>
-                    <p>在設計產品與課程中，最困難的往往是如何將抽象概念具體落地。我們帶你走過一套系統化的流程：從需求分析找出痛點，接著進行架構拆解將複雜資訊模組化，再透過任務重組串聯可執行的步驟，最終進入實際操作。這背後的關鍵，就是幫你將無形的「想法」轉化為穩固的「架構」，最終「實現」出能精準滿足市場需求的個人品牌事業。</p>
+                    <h3>6. 從劇本大綱到成品落地的系統工程</h3>
+                    <p>最難的是將無形的「點子」落實為有條理的影片。我們帶你走過需求分析、架構拆解、分鏡任務重組與本地 ComfyUI 機械式渲染，讓抽象的影片想法，化為穩固、高產量的個人品牌事業。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. Cost Comparison Section -->
+    <!-- 3. Dynamic Video Showcase Section (放映廳) -->
+    <section class="section showcase-section fade-in-up" id="portfolio-section">
+        <div class="section-h">
+            <h2>KCinemaAI <span>影音作品放映室</span></h2>
+            <p>點擊下方卡片即可直接在網頁中播放，感受極致的 AI 畫面張力與真實主持人對嘴效果</p>
+        </div>
+
+        <div class="portfolio-tabs">
+            <div class="portfolio-tab active" onclick="filterPortfolio('all')">全部作品</div>
+            <div class="portfolio-tab" onclick="filterPortfolio('explainer')">科普解說大片</div>
+            <div class="portfolio-tab" onclick="filterPortfolio('avatar')">虛擬主持人代言</div>
+            <div class="portfolio-tab" onclick="filterPortfolio('short')">爆款流量短影音</div>
+        </div>
+
+        <div class="portfolio-grid" id="portfolio-grid-container">
+            <!-- Dynamically populated by JS to allow easy updates in the future -->
+        </div>
+    </section>
+
+    <!-- 4. Cost Comparison Section -->
     <section class="section cost-section fade-in-up">
         <div class="section-h">
-            <h2>內容生成的 <span>真實算力成本</span> 對照</h2>
-            <p>為什麼你需要專屬影音工作站？對比官方 API，看懂我們如何為你極大降低經營成本</p>
+            <h2>影片生成的 <span>真實算力成本</span> 對照</h2>
+            <p>看懂雲端付費 API 與 KCinemaAI 專屬工作站在「大流量生產」中的真實開銷差距</p>
         </div>
 
         <div class="cost-container">
@@ -1748,9 +1887,9 @@
             <!-- Right Side: Workstation Solution -->
             <div class="cost-card workstation-solution">
                 <div class="cost-card-header">
-                    <span class="cost-badge-success"><i class="fa-solid fa-circle-check"></i> 品牌解碼室解決方案</span>
-                    <h3>頂規私有化影音工作站</h3>
-                    <p>不需被雲端付費 API 綁架！我們提供學員專屬的影音工作站，<strong>極大降低生成內容的成本，卻能達到同等甚至更強的頂級影音水準：</strong></p>
+                    <span class="cost-badge-success"><i class="fa-solid fa-circle-check"></i> KCinemaAI 本地解決方案</span>
+                    <h3>KCinemaAI 專屬影音工作站</h3>
+                    <p>不需被雲端付費 API 綁架！我們提供學員與代工專屬的影音工作站，<strong>極大降低生成內容的成本，卻能達到同等甚至更強的頂級影音水準：</strong></p>
                 </div>
                 
                 <ul class="solution-list">
@@ -1794,17 +1933,17 @@
         </div>
 
         <div class="cost-cta text-center">
-            <a href="https://lin.ee/wZAv8yY" target="_blank" class="btn-primary-glow">
-                <i class="fab fa-line"></i> 預約 15 分鐘免費戰略評估
+            <a href="https://calendly.com/brand-decoderai/15min" target="_blank" class="btn-primary-glow">
+                <i class="fa-regular fa-calendar-check"></i> 預約 15 分鐘免費戰略評估
             </a>
         </div>
     </section>
 
-    <!-- 4. Roadmap Section -->
+    <!-- 5. Roadmap Section -->
     <section class="section roadmap-section fade-in-up">
         <div class="section-h">
-            <h2>1 對 1 課程 <span>交付藍圖 (Roadmap)</span></h2>
-            <p>破除黑箱與未知，手把手帶領你完成個人品牌系統的落地路徑</p>
+            <h2>KCinemaAI <span>交付與發展藍圖 (Roadmap)</span></h2>
+            <p>從代工交付到未來的內容自主運營課程，兩階段帶領你走通 AI 自媒體變現閉環</p>
         </div>
         
         <div class="roadmap-container">
@@ -1814,86 +1953,61 @@
                 <!-- Phase 1 -->
                 <div class="roadmap-card">
                     <div class="roadmap-badge">Phase 01</div>
-                    <div class="roadmap-icon"><i class="bi bi-bullseye"></i></div>
-                    <h3>大腦對齊</h3>
-                    <p class="roadmap-subtitle">釐清商業閉環與核心痛點</p>
-                    <p class="roadmap-desc">拒絕盲目跟風。我們首先與你深入剖析現有的資源與商業想法，找出最適合你的賽道。釐清「流量從哪裡來、在哪裡轉化、如何安全收款」的閉環邏輯，鎖定自動化改造的黃金切入點。</p>
+                    <div class="roadmap-icon"><i class="bi bi-box-seam"></i></div>
+                    <h3>代工與客製化交付</h3>
+                    <p class="roadmap-subtitle">幫你做出好萊塢級內容</p>
+                    <p class="roadmap-desc">此階段我們親自操刀，根據您的點子量身產出「虛擬代言人」與「全動態科普 T2I->I2V」影片成品。為您代工建立高水準的爆款短影音與頻道內容，以最快速度獲取公域流量。</p>
                 </div>
                 
                 <!-- Phase 2 -->
                 <div class="roadmap-card">
                     <div class="roadmap-badge purple">Phase 02</div>
                     <div class="roadmap-icon purple"><i class="bi bi-shield-shaded"></i></div>
-                    <h3>工具武裝</h3>
-                    <p class="roadmap-subtitle">導入 AI 實戰工具流</p>
-                    <p class="roadmap-desc">跨越技術鴻溝。我們為你導入實用的 AI 協作心法，手把手教學：核心提示詞工程（Prompt Engineering）、自動化腳本概念、影音生成管線及 AI 調用邏輯。教你像指揮官一樣命令 AI 工作。</p>
+                    <h3>本地工作站武裝</h3>
+                    <p class="roadmap-subtitle">導入私有化 AI 影音流水線</p>
+                    <p class="roadmap-desc">跨越技術鴻溝。我們為您配置專屬本地影音渲染環境，教導核心提示詞工程（Prompt Engineering）、克隆音色與時間軸對齊等全套 AI 協作，讓您以極低成本，在自己的電腦上實現無限產出。</p>
                 </div>
                 
                 <!-- Phase 3 -->
                 <div class="roadmap-card">
                     <div class="roadmap-badge green">Phase 03</div>
                     <div class="roadmap-icon green"><i class="bi bi-rocket-takeoff"></i></div>
-                    <h3>系統落地</h3>
-                    <p class="roadmap-subtitle">實作專屬自動化客服與收單</p>
-                    <p class="roadmap-desc">看見真實成果。不再停留於理論，我們陪你從零到一建構出專屬的自動化社群發文、LINE OA 智能意圖客服、甚至無代碼產品雛形，真正打通「自動獲客與收款」的閉環，打造專屬的一人兵工廠。</p>
+                    <h3>內容經營與自媒體孵化</h3>
+                    <p class="roadmap-subtitle">大導演與講師課程交付</p>
+                    <p class="roadmap-desc">隨著我們的官方自媒體頻道流量爆發，我們將進入第二階段。將成功起盤的實戰心法提煉為 1對1 深度課程，傳授完整的自媒體流量變現閉環，帶您真正以「AI 導演」之姿，建立自動化印鈔機。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. SOP Loop Section -->
+    <!-- 6. SOP Loop Section -->
     <section class="section loop-section fade-in-up">
         <div class="section-h">
-            <h2>這就是您即將擁有的 <span>夢想生產線</span></h2>
-            <p>我們將「公域獲客 ➔ 私域變現」SOP，轉化為您手中心隨意動的自動化武器</p>
+            <h2>KCinemaAI <span>全自動影音生產線</span></h2>
+            <p>我們將「文字大綱 ➔ 電影畫面 ➔ 自動分發」的 SOP，轉化為您在自媒體賽道的核心競爭武器</p>
         </div>
 
         <div class="loop-container">
             <div class="loop-grid">
                 <div class="loop-item">
-                    <i class="fa-solid fa-film"></i>
-                    <h4>1. 內容全自動量產</h4>
-                    <p>利用專屬的「影音工作站」，將大腦想法自動轉化為高品質影音素材，突破體力產能極限。</p>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <h4>1. 劇本大綱 & 影片生成</h4>
+                    <p>利用專屬的「影音工作站」，將大腦想法自動轉化為高品質真實動態影片，突破體力產能極限。</p>
                 </div>
                 <div class="loop-arrow"><i class="fa-solid fa-chevron-right"></i></div>
                 
                 <div class="loop-item">
-                    <i class="fa-brands fa-meta"></i>
-                    <h4>2. 公域精準獲客</h4>
-                    <p>讓 AI 擔任您的社群小編，24小時在多平台自動分發，捕捉潛在客戶的注意力。</p>
+                    <i class="fa-solid fa-microphone-lines"></i>
+                    <h4>2. 聲音克隆 & 嘴型對齊</h4>
+                    <p>克隆您的專屬高擬真聲線，自動與虛擬代言人進行嘴型時間軸完美對齊，省去傳統配音。</p>
                 </div>
                 <div class="loop-arrow"><i class="fa-solid fa-chevron-right"></i></div>
 
                 <div class="loop-item">
-                    <i class="fa-brands fa-line"></i>
-                    <h4>3. 私域智能成交</h4>
-                    <p>流量導入 LINE OA，由智能 AI 辨識意圖、一對一自動問答並收款，完美變現。</p>
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <h4>3. 自動字幕 & 一鍵分發</h4>
+                    <p>語音識別生成字幕，自動拼接音訊與特效，一鍵排程發佈至 YT、抖音，完成閉環流量收割。</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. Consultation Steps Section -->
-    <section class="section steps-section fade-in-up">
-        <div class="section-h">
-            <h2>如何開啟您的 <span>品牌解碼之路？</span></h2>
-            <p>簡單三步驟，為您量身定制自動化商業機器</p>
-        </div>
-        <div class="steps-grid">
-            <div class="step-card">
-                <div class="step-num">01</div>
-                <h4>一鍵加 LINE 預約</h4>
-                <p>點擊按鈕，免費加入《品牌解碼室》官方 LINE OA，留言發送預約諮詢意向。</p>
-            </div>
-            <div class="step-card">
-                <div class="step-num">02</div>
-                <h4>1對1 商業診斷</h4>
-                <p>由專業導師與您進行 30 分鐘線上診斷，精準梳理您的點子、產品及痛點。</p>
-            </div>
-            <div class="step-card">
-                <div class="step-num">03</div>
-                <h4>量身定制 AI 自動化方案</h4>
-                <p>為您定制專屬的影音生產線與私域賺錢漏斗規劃，讓夢想進入自動化生產。</p>
             </div>
         </div>
     </section>
@@ -1902,43 +2016,43 @@
     <section class="section faq-section fade-in-up">
         <div class="section-h">
             <h2>常見問題 <span>解答 (FAQ)</span></h2>
-            <p>為您解答關於 AI 創業與自動化系統的疑問</p>
+            <p>為您解答關於 AI 電影級自媒體代工與客製化系統的疑问</p>
         </div>
         <div class="faq-container">
             <div class="faq-item">
                 <div class="faq-header">
-                    <span>我完全是電腦白痴，沒有程式基礎也可以學會嗎？</span>
+                    <span>什麼是不露臉自媒體？KCinemaAI 是如何做到的？</span>
                     <i class="fa-solid fa-plus faq-icon"></i>
                 </div>
                 <div class="faq-body">
-                    完全可以！我們主打 Vibe Coding（用自然語言與 AI 協作）與 No-Code（無代碼開發工具）。我們將教您如何用平常說話的方式去命令 AI 寫出所需的工具與系統，您不需要寫任何一行代碼。
+                    許多創作者不願或不便在鏡頭前露臉。KCinemaAI 通過高仿真「AI 虛擬主持人 (Avatar)」作為您的代言人，並將腳本文字渲染為高質感的「T2I -> I2V (文字-圖片-動態影片)」電影級 B-roll 畫面。這意味著您只需要提供想法，就能做出媲美紀錄片的高級影片。
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-header">
-                    <span>導入「影音工作站」需要購買昂貴的剪輯設備或電腦嗎？</span>
+                    <span>代工服務需要我提供什麼？</span>
                     <i class="fa-solid fa-plus faq-icon"></i>
                 </div>
                 <div class="faq-body">
-                    不需要。我們設計的自動化流暢系統與工具管線，使用您一般日常使用的電腦，甚至是手機，即可輕鬆操作運作。我們倡導的是以極低的硬體起步成本，換取最大的產出效率。
+                    您只需要提供影片的主題、基本文案或大綱。KCinemaAI 將為您搞定劇本擴寫、語意分鏡、虛擬主持人對嘴口播、電影級動態場景渲染、克隆語音配音、以及字幕自動對齊，直接將完成的影片（短影音或中長片）交付給您。
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-header">
-                    <span>這套 AI 自動化閉環系統適用於哪些行業？</span>
+                    <span>聽說 AI 影片生成的 API 很貴，你們怎麼降低成本？</span>
                     <i class="fa-solid fa-plus faq-icon"></i>
                 </div>
                 <div class="faq-body">
-                    適用範圍非常廣泛！包括知識付費（講師、諮詢顧問、教練）、個人自媒體創作者、電商品牌、實體店面獲客，以及任何需要「開發新客戶、自動客服應答、線上自動成交」的商業模式。
+                    如果使用雲端影片 API（如 Veo 3.1 Standard），一秒影片生成成本高達 $0.40 美元，高頻更新會產生極大負擔。KCinemaAI 通過我們配置的「本地私有化影音工作站」，將模型算法運行在本地高性能算力環境上，**以極低成本，渲染出高品質真實動態影片**，讓您擺脫 API 帳單黑洞。
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-header">
-                    <span>跟一般市面上的 AI 課程有什麼不同？</span>
+                    <span>第二階段的課程什麼時候會開啟？</span>
                     <i class="fa-solid fa-plus faq-icon"></i>
                 </div>
                 <div class="faq-body">
-                    市面上多數課程只教單一工具的操作理論。而《品牌解碼室》強調的是「實戰賦能與閉環落地」——我們結合 20 年的品牌實戰經驗，教您直接把想法重組成系統、做成產品，並直接打通獲客到收款的自動化流水線。
+                    當 KC 首席製片人自己的自媒體頻道（使用 KCinemaAI 工作站運營）人數與流量爆發後，我們將全面開啟第二階段課程。屆時將以「AI 大導演 / 講師」身份，把這套經過市場檢驗的自媒體實戰起盤心法與 ComfyUI 系統建置，以 1 對 1 課程完整交給您。
                 </div>
             </div>
         </div>
@@ -1948,16 +2062,16 @@
     <section class="cta fade-in-up">
         <div class="cta-inner">
             <h2>未來的商業競賽，拼的不是技術，<br>而是你的<span>「決策與點子」。</span></h2>
-            <p>別讓繁雜的程式碼、繁瑣的發文與剪輯消磨了你的創業熱情。立刻與我們聊聊，開啟屬於你的自動化獲利生產線。</p>
+            <p>別讓繁雜的發文、生硬的面對鏡頭與耗時的剪輯消磨了你的自媒體創業熱情。立刻與我們聊聊，開啟屬於你的 AI 影音自動化生產線。</p>
             
-            <a href="https://lin.ee/wZAv8yY" target="_blank" class="btn-primary-glow">
-                <i class="fab fa-line"></i> 預約 15 分鐘免費戰略評估
+            <a href="https://calendly.com/brand-decoderai/15min" target="_blank" class="btn-primary-glow">
+                <i class="fa-regular fa-calendar-check"></i> 預約 15 分鐘免費戰略評估
             </a>
             
             <div class="cta-bullets">
-                <span><i class="fa-solid fa-check"></i> 不限產業</span>
-                <span><i class="fa-solid fa-check"></i> 0 技術背景需求</span>
-                <span><i class="fa-solid fa-check"></i> 1對1專屬診斷</span>
+                <span><i class="fa-solid fa-check"></i> 個人自媒體代工</span>
+                <span><i class="fa-solid fa-check"></i> 1對1專屬戰略規畫</span>
+                <span><i class="fa-solid fa-check"></i> 0 面對鏡頭壓力</span>
             </div>
         </div>
     </section>
@@ -1971,13 +2085,23 @@
             <a href="javascript:void(0)" onclick="openModal('modal-aup')">使用政策 (AUP)</a>
             <a href="javascript:void(0)" onclick="openModal('modal-security')">資安與資料保護聲明</a>
         </div>
-        <p>&copy; 2026 Brand Decoder Studio | 品牌解碼室 | 讓夢想在對話中落地</p>
+        <p>&copy; 2026 KCinemaAI Studio | 品牌解碼室 | 讓夢想在銀幕中落地</p>
     </footer>
 
-    <!-- LINE Floating Action Button -->
-    <a href="https://lin.ee/wZAv8yY" target="_blank" class="line-float-btn" title="預約 15 分鐘免費戰略評估">
-        <i class="fab fa-line"></i>
+    <!-- Calendly Floating Action Button -->
+    <a href="https://calendly.com/brand-decoderai/15min" target="_blank" class="calendar-float-btn" title="預約 15 分鐘免費戰略評估">
+        <i class="fa-regular fa-calendar-check"></i>
     </a>
+
+    <!-- CUSTOM LIGHTBOX OVERLAY FOR VIDEO GALLERY -->
+    <div class="lightbox-overlay" id="video-lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-container">
+            <button class="lightbox-close" onclick="closeLightbox('force')"><i class="fa-solid fa-times"></i></button>
+            <div class="lightbox-video-frame" id="lightbox-video-content">
+                <!-- Video player injected dynamically -->
+            </div>
+        </div>
+    </div>
 
     <!-- LEGAL MODALS -->
     <!-- 1. TOS Modal -->
@@ -2004,7 +2128,7 @@
             <p>本服務採點數或訂閱制收費：點數一經購買即記入帳戶，並依實際使用量自動扣除。收費規則以平台公告為準，詳細退款規則另依《退款與點數政策》。</p>
             
             <h4>6. 服務可用性</h4>
-            <p>本公司將以合理商業努力維持服務穩定，但不保證服務不間斷、無錯誤或即時可用。因雲端服務商異常、網路故障、不可抗力事件或第三方平台（如 LINE）異常導致之中斷，本公司不負責。</p>
+            <p>本公司將以合理商業努力維持服務穩定，但不保證服務不間斷、無錯誤 or 即時可用。因雲端服務商異常、網路故障、不可抗力事件或第三方平台（如 LINE）異常導致之中斷，本公司不負責。</p>
             
             <h4>7. 智慧財產權</h4>
             <p>本服務及其軟體、介面、演算法與相關技術之智慧財產權均屬本公司所有。用戶僅取得非專屬、不可轉讓、可撤銷之使用授權。</p>
@@ -2081,7 +2205,7 @@
                 <li><b>（1）詐騙與誤導：</b>金融詐騙、假投資/貸款/購物、冒充身分或散布不實商業資訊。</li>
                 <li><b>（2）違法或高風險內容：</b>色情、性交易、暴力、仇恨言論、非法賭博或毒品交易。</li>
                 <li><b>（3）專業誤導（嚴禁）：</b>未具合法資格者，不得利用 AI 提供醫療診斷或治療建議、法律意見、投資保證或報酬承諾等依法需執照之建議。</li>
-                <li><b>（4）濫用 AI 或系統：</b>大量發送垃圾訊息、惡意壓測、試圖反向工程或規避計費機制。</li>
+                <li><b>（4）濫用 AI 或系統：</b>大量發送垃圾訊息、惡意壓測、試圖反向工程 or 規避計費機制。</li>
                 <li><b>（5）侵害他人權利：</b>未經授權蒐集個資、侵犯智慧財產權或散布機密資料。</li>
             </ul>
             
@@ -2117,15 +2241,159 @@
 
     <!-- Interactive Scripts -->
     <script>
+        // --- 1. Expandable Video Showcase Portfolios Database ---
+        // Future updates: Simply add new items to this array to dynamically build the showcase.
+        const portfolioData = [
+            {
+                title: "危險的地球：委內瑞拉馬拉開波湖的無盡閃電",
+                category: "explainer",
+                thumbnail: "images/Saas_war_view01.png",
+                videoType: "local",
+                url: "medias/(11)委內瑞拉馬拉開波湖_危險的地球_480P.mp4",
+                tagLabel: "T2I->I2V 科普大片"
+            },
+            {
+                title: "AI 數位虛擬主持人：完美嘴型口播實拍",
+                category: "avatar",
+                thumbnail: "images/Saas_war_view01.png",
+                videoType: "local",
+                url: "medias/website_movie_001.mp4",
+                tagLabel: "口播 Avatar"
+            },
+            {
+                title: "AI 影音工作站概念與無限渲染展示",
+                category: "explainer",
+                thumbnail: "images/AIOptimization_AIO_01.jpg",
+                videoType: "local",
+                url: "medias/website_movie_003.mp4",
+                tagLabel: "本地工作站"
+            },
+            {
+                title: "YouTube 頻道引流與全自動內容分發流程",
+                category: "short",
+                thumbnail: "images/AI_Computing_Point.jpg",
+                videoType: "local",
+                url: "medias/Yt_Start.mp4",
+                tagLabel: "頻道起步引流"
+            },
+            {
+                title: "不露臉頻道商業變現與成交收單說明",
+                category: "short",
+                thumbnail: "images/AILINEBanner_01.jpg",
+                videoType: "local",
+                url: "medias/Yt_Ending.mp4",
+                tagLabel: "自動化收單"
+            }
+        ];
+
+        // Renders the portfolio grid
+        function renderPortfolio(filterCategory = 'all') {
+            const container = document.getElementById('portfolio-grid-container');
+            if (!container) return;
+            container.innerHTML = '';
+
+            portfolioData.forEach((item, index) => {
+                if (filterCategory !== 'all' && item.category !== filterCategory) {
+                    return;
+                }
+
+                // Create Card element
+                const card = document.createElement('div');
+                card.className = 'portfolio-card';
+                card.onclick = () => openLightbox(item);
+
+                card.innerHTML = `
+                    <div class="portfolio-media">
+                        <img src="${item.thumbnail}" alt="${item.title}" onerror="this.src='images/Saas_war_view01.png'">
+                        <div class="portfolio-play-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-info-box">
+                        <h4>${item.title}</h4>
+                        <span>${item.tagLabel}</span>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Filters showcase gallery cards
+        function filterPortfolio(category) {
+            // Update active tab styling
+            const tabs = document.querySelectorAll('.portfolio-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.getAttribute('onclick').includes(category)) {
+                    tab.classList.add('active');
+                }
+            });
+            renderPortfolio(category);
+        }
+
+        // Lightbox controllers
+        function openLightbox(item) {
+            const lightbox = document.getElementById('video-lightbox');
+            const content = document.getElementById('lightbox-video-content');
+            if (!lightbox || !content) return;
+
+            if (item.videoType === 'local') {
+                content.innerHTML = `
+                    <video src="${item.url}" controls autoplay class="lightbox-video-frame" style="width:100%; height:100%; border-radius:20px;"></video>
+                `;
+            } else {
+                // For YouTube Embeds
+                content.innerHTML = `
+                    <iframe class="lightbox-video-frame" src="${item.url}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                `;
+            }
+
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Lock main scroll
+        }
+
+        function closeLightbox(e) {
+            if (e === 'force' || e.target === e.currentTarget) {
+                const lightbox = document.getElementById('video-lightbox');
+                const content = document.getElementById('lightbox-video-content');
+                if (lightbox) {
+                    lightbox.classList.remove('active');
+                    if (content) content.innerHTML = ''; // Stop video playback
+                    document.body.style.overflow = ''; // Restore main scroll
+                }
+            }
+        }
+
+        // Mockup Video Player trigger
+        let isMockupPlaying = false;
+        function playMockupVideo() {
+            const video = document.getElementById('hero-mockup-vid');
+            const playIcon = document.getElementById('hero-play-icon');
+            if (!video) return;
+
+            if (!isMockupPlaying) {
+                video.play();
+                video.muted = false; // Unmute on click to play sound
+                if (playIcon) playIcon.style.opacity = '0';
+                isMockupPlaying = true;
+            } else {
+                video.pause();
+                if (playIcon) playIcon.style.opacity = '1';
+                isMockupPlaying = false;
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. FAQ Accordion Toggle
+            // Render the initial showcase items
+            renderPortfolio('all');
+
+            // 2. FAQ Accordion Toggle
             const faqHeaders = document.querySelectorAll('.faq-header');
             faqHeaders.forEach(header => {
                 header.addEventListener('click', () => {
                     const item = header.parentElement;
                     const isActive = item.classList.contains('active');
                     
-                    // Close all items first for clean accordion effect
                     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
                     
                     if (!isActive) {
@@ -2134,7 +2402,7 @@
                 });
             });
 
-            // 2. Scroll Animation Observer
+            // 3. Scroll Animation Observer
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
@@ -2155,7 +2423,7 @@
             });
         });
 
-        // 3. Modal Control Functions
+        // 4. Modal Control Functions
         function openModal(id) {
             const modal = document.getElementById(id);
             if (modal) {
@@ -2165,7 +2433,6 @@
         }
 
         function closeModal(e, id) {
-            // Close if forced or click is directly on the overlay background
             if (e === 'force' || e.target === e.currentTarget) {
                 const modal = document.getElementById(id);
                 if (modal) {
