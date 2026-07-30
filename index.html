@@ -1588,7 +1588,7 @@
     </section>
 
     <!-- 2. Pricing & Cost Section -->
-    <section class="section pricing-section fade-in-up">
+    <section id="pricing" class="section pricing-section fade-in-up">
         <div class="section-h">
             <h2>KCinemaAI <span>客製代工與系統效益</span></h2>
             <p>公開透明的客製化影音代工收費，以及與雲端 API 生成秒數扣點的真實開銷對比</p>
@@ -2011,6 +2011,28 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            // Auto open modal or scroll based on URL hash (For LINE OA Rich Menu 1-click links)
+            const handleHashNavigation = () => {
+                const hash = window.location.hash.toLowerCase();
+                if (hash === '#terms' || hash === '#tos' || hash === '#modal-tos') {
+                    openModal('modal-tos');
+                } else if (hash === '#privacy') {
+                    openModal('modal-privacy');
+                } else if (hash === '#security') {
+                    openModal('modal-security');
+                } else if (hash === '#pricing') {
+                    const pricingEl = document.getElementById('pricing');
+                    if (pricingEl) {
+                        setTimeout(() => {
+                            pricingEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 150);
+                    }
+                }
+            };
+
+            handleHashNavigation();
+            window.addEventListener('hashchange', handleHashNavigation);
+
             // FAQ Accordion Toggle
             const faqHeaders = document.querySelectorAll('.faq-header');
             faqHeaders.forEach(header => {
