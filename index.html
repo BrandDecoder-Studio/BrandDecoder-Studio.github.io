@@ -725,7 +725,7 @@
             line-height: 1.65;
         }
 
-        /* --- 3. Service Scope Section (Roadmap refactored) --- */
+        /* --- 3. Service Scope Section --- */
         .roadmap-section {
             background: var(--bg-dark-soft);
             border-top: 1px solid rgba(255, 255, 255, 0.04);
@@ -1506,7 +1506,7 @@
                 <div class="roadmap-icon purple"><i class="bi bi-shield-shaded"></i></div>
                 <h3>影片生產自動化</h3>
                 <p class="roadmap-subtitle">建置專屬 AI 影音生產系統</p>
-                <p class="roadmap-desc">為您打造客製化的 AI 影片自動生成管線。從提示詞設計、專屬音色克隆，到嘴型對齊與字幕自動化生成，手把手協助您武裝完整的自動化流程，在您自己的系統上實現無限量的影片生產。</p>
+                <p class="roadmap-desc">為您打造客製化的 AI 影片自動生成管線。從提示詞設計、專屬音色克隆，到嘴型對齊與字幕自動化生成，手把手協助您武裝完整的自動化流程，在您自己的系統上實現影片無限量的生產。</p>
             </div>
             
             <!-- Service Scope 3 -->
@@ -1552,7 +1552,7 @@
         </div>
     </section>
 
-    <!-- 5. FAQ Accordion (Updated with new auto-generation tech details & removed Phase 2 course Q) -->
+    <!-- 5. FAQ Accordion -->
     <section class="section faq-section fade-in-up">
         <div class="section-h">
             <h2>常見問題 <span>解答 (FAQ)</span></h2>
@@ -1619,10 +1619,8 @@
     <!-- Footer -->
     <footer>
         <div class="footer-links">
-            <a href="javascript:void(0)" onclick="openModal('modal-tos')">服務條款</a>
+            <a href="javascript:void(0)" onclick="openModal('modal-tos')">影音代工服務須知與合作條款</a>
             <a href="javascript:void(0)" onclick="openModal('modal-privacy')">隱私權政策</a>
-            <a href="javascript:void(0)" onclick="openModal('modal-refund')">退款政策</a>
-            <a href="javascript:void(0)" onclick="openModal('modal-aup')">使用政策 (AUP)</a>
             <a href="javascript:void(0)" onclick="openModal('modal-security')">資安與資料保護聲明</a>
         </div>
         <p>&copy; 2026 KCinemaAI Studio | 品牌解碼室 | 讓夢想在銀幕中落地</p>
@@ -1634,138 +1632,90 @@
     </a>
 
     <!-- LEGAL MODALS -->
-    <!-- 1. TOS Modal -->
+    <!-- 1. TOS Modal (Updated with the new Brand Decoder KCinemaAI Terms) -->
     <div id="modal-tos" class="modal-overlay" onclick="closeModal(event, 'modal-tos')">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('force', 'modal-tos')"><i class="fa-solid fa-times"></i></button>
-            <h2>服務條款 (Terms of Service)</h2>
-            <p style="text-align: right; color: #888; font-size: 0.85rem; margin-bottom: 20px;">最後更新日：2026年02月25日</p>
-            <p>歡迎使用「BrandDecoder／品智 AI SaaS 智能客服系統」（以下簡稱「本服務」）。當您註冊、存取或使用本服務時，即表示您已閱讀、理解並同意受本服務條款拘束。</p>
+            <h2 style="font-family: 'Syne', 'Noto Sans TC', sans-serif; font-size: 1.6rem; font-weight: 900; margin-bottom: 20px; border-bottom: 1px solid rgba(245, 158, 11, 0.2); padding-bottom: 10px;">Brand Decoder KCinemaAI 影音代工服務須知與合作條款</h2>
+            <p style="text-align: right; color: var(--accent-gold); font-size: 0.85rem; margin-bottom: 20px;">更新生效日：2026年07月30日</p>
             
-            <h4>1. 服務內容</h4>
-            <p>本服務為雲端 AI 導購與智能客服平台，提供但不限於：AI 對話與導購功能、商機蒐集與 CRM 管理、商品與知識庫管理、多語系回覆能力、數據分析與戰情儀表板。本公司保留隨時調整、修改或終止部分功能之權利。</p>
+            <p style="margin-bottom: 25px; line-height: 1.8; color: var(--text-bright); background: rgba(245, 158, 11, 0.05); padding: 15px; border-radius: 12px; border-left: 4px solid var(--accent-gold);">
+                為了確保您的 AI 專案能以最頂級的算力品質與最高效率（2天內）完成交付（以實際接單日算起，不包含修改時間），請在下單前詳細閱讀以下合作規範：
+            </p>
             
-            <h4>2. 帳戶註冊與安全</h4>
-            <p>用戶同意提供真實且完整之註冊資料、妥善保管帳號密碼，並對帳號下所有行為負完全責任。如發現未經授权使用，應立即通知本公司。</p>
-            
-            <h4>3. 合法使用義務（重要）</h4>
-            <p>用戶不得利用本服務從事任何違法或不當行為，包括但不限於：詐騙、誤導或不實銷售；散布違法、色情、暴力內容；未經授權蒐集他人個資；醫療、法律等需專業執照之誤導性建議；干擾或破壞系統運作。本公司有權在不事先通知下暫停或終止違規帳戶。</p>
-            
-            <h4>4. AI 回覆與免責聲明</h4>
-            <p>用戶理解並同意本服務之 AI 回覆為機器生成內容，本公司已採合理措施降低錯誤，但不保證回覆之完整性、即時性、絕對正確性與特定商業適用性。用戶應自行判斷並承擔使用風險。</p>
-            
-            <h4>5. 費用與點數機制</h4>
-            <p>本服務採點數或訂閱制收費：點數一經購買即記入帳戶，並依實際使用量自動扣除。收費規則以平台公告為準，詳細退款規則另依《退款與點數政策》。</p>
-            
-            <h4>6. 服務可用性</h4>
-            <p>本公司將以合理商業努力維持服務穩定，但不保證服務不間斷、無錯誤 or 即時可用。因雲端服務商異常、網路故障、不可抗力事件或第三方平台（如 LINE）異常導致之中斷，本公司不負責。</p>
-            
-            <h4>7. 智慧財產權</h4>
-            <p>本服務及其軟體、介面、演算法與相關技術之智慧財產權均屬本公司所有。用戶僅取得非專屬、不可轉讓、可撤銷之使用授權。</p>
-            
-            <h4>8. 責任限制</h4>
-            <p>在法律允許最大範圍內，本公司對任何間接損害、商業損失、利潤損失或客戶流失均不負賠償責任。本公司總責任上限以用戶最近三個月實際支付費用為限。</p>
-            
-            <h4>9. 條款修改與準據法</h4>
-            <p>本公司得隨時修改本條款，並於網站公告。用戶於修改後繼續使用，即視為同意。本條款以中華民國法律為準據法，並以台灣台北地方法院為第一審管轄法院。</p>
+            <div style="display: flex; flex-direction: column; gap: 24px; font-size: 0.95rem; line-height: 1.7;">
+                <div>
+                    <h4 style="color: var(--text-bright); font-size: 1.1rem; font-weight: 800; margin-bottom: 8px;">1. 腳本與人聲「雙重鎖定原則」（Script & Voice Lock）</h4>
+                    <p>• 專案啟動時，需先確認最終「文字腳本」與「AI 克隆語音風格」。</p>
+                    <p>• 一旦進入 AI 算力渲染階段，若需變更腳本文字、新增內容或更換語音風格，將視為新專案重跑，需酌收原單 50% 之算力重置費用。</p>
+                </div>
+
+                <div>
+                    <h4 style="color: var(--text-bright); font-size: 1.1rem; font-weight: 800; margin-bottom: 8px;">2. 修改次數與權限範圍（Revision Policy）</h4>
+                    <p>• 每支影片交付後，享有 1 次免費微調機會。</p>
+                    <p>• 免費微調範圍僅限：字幕錯字修正、音量平衡微調，或指定替換最多 2 個分鏡之 B-Roll 背景畫面。</p>
+                    <p>• 免費微調不包含：全片視覺風格更換、虛擬人身分重新生成或大規模腳本修改。</p>
+                </div>
+
+                <div>
+                    <h4 style="color: var(--text-bright); font-size: 1.1rem; font-weight: 800; margin-bottom: 8px;">3. AI 演算特性與品質聲明（AI Artifacts Disclaimer）</h4>
+                    <p>• 本服務採用頂規私有化 AI 影音算力（含 Voice & Lip-Sync 對嘴技術）。</p>
+                    <p>• AI 影像生成具備機率性與獨特藝術風格，畫面可能包含微幅之 AI 演算特徵（如自然的光影流動感或肢體微動）。此為全球 AI 算力技術之正常現象，非影片瑕疵，無法以此作為退費或全片重渲染之依據。</p>
+                </div>
+
+                <div>
+                    <h4 style="color: var(--text-bright); font-size: 1.1rem; font-weight: 800; margin-bottom: 8px;">4. 最低採購門檻與計費（Minimum Order）</h4>
+                    <p>• 本服務採「按分鐘計費」（720P NT$ 800/分；1080P NT$ 1,500/分）。</p>
+                    <p>• 單次採購最低起訂長度為 3 分鐘（未滿 3 分鐘以 3 分鐘計），最長為 12 分鐘以內，以確保專案溝通與渲染之最佳效益。</p>
+                </div>
+
+                <div>
+                    <h4 style="color: var(--text-bright); font-size: 1.1rem; font-weight: 800; margin-bottom: 8px;">5. 智慧財產權與授權（Intellectual Property）</h4>
+                    <p>• 專案結案並付清尾款後，交付之最終影片成品之商業使用權完全歸客戶所有，您可以自由用於 YT、TikTok、FB、廣告投放或商業宣傳。</p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- 2. Refund Modal -->
-    <div id="modal-refund" class="modal-overlay" onclick="closeModal(event, 'modal-refund')">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('force', 'modal-refund')"><i class="fa-solid fa-times"></i></button>
-            <h2>退款與點數政策 (Refund Policy)</h2>
-            <p style="text-align: right; color: #888; font-size: 0.85rem; margin-bottom: 20px;">最後更新日：2026年02月25日</p>
-            <p>本政策適用於 BrandDecoder／品智 AI SaaS 平台之所有點數與付費服務。</p>
-            
-            <h4>1. 點數性質</h4>
-            <p>點數為數位服務使用額度，非現金、不具利息，且不得轉讓或兌換現金。</p>
-            
-            <h4>2. 點數扣除</h4>
-            <p>點數依實際系統使用量自動扣除，包括但不限於：AI 對話運算、模型呼叫、圖片辨識及其他算力消耗。扣點紀錄以後台 Log 為準。</p>
-            
-            <h4>3. 退款原則（重要）</h4>
-            <p>除法律另有規定外，下列情形恕不退款：<b>已使用之點數</b>、已開通之訂閱期間、因用戶操作或設定不當、因第三方平台（LINE 等）因素所造成之未使用服務。</p>
-            
-            <h4>4. 可申請退款之情形</h4>
-            <p>用戶得於購買後 7 日內且<b>未使用點數</b> 申請退款，須符合：帳戶無 any 扣點紀錄、無違反服務條款、非企業大量採購專案。本公司保留審核權。</p>
-            
-            <h4>5. 系統異常補償</h4>
-            <p>如經本公司確認為系統錯誤導致異常扣點，本公司將補發等值點數，或視情況提供其他合理補償。</p>
-        </div>
-    </div>
-
-    <!-- 3. Privacy Modal -->
+    <!-- 2. Privacy Modal (Streamlined for KCinemaAI) -->
     <div id="modal-privacy" class="modal-overlay" onclick="closeModal(event, 'modal-privacy')">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('force', 'modal-privacy')"><i class="fa-solid fa-times"></i></button>
             <h2>隱私權政策 (Privacy Policy)</h2>
-            <p style="text-align: right; color: #888; font-size: 0.85rem; margin-bottom: 20px;">最後更新日：2026年02月25日</p>
-            <p>BrandDecoder／品智 AI SaaS（以下稱「本公司」）高度重視您的個人資料保護與商業機密。</p>
+            <p style="text-align: right; color: #888; font-size: 0.85rem; margin-bottom: 20px;">最後更新日：2026年07月30日</p>
+            <p>KCinemaAI Studio（以下稱「本工作室」）高度重視您的個人資料保護與影音專案之商業機密。</p>
             
             <h4>1. 蒐集之資料類型</h4>
             <ul>
-                <li><b>（1）帳戶資料：</b>姓名或暱稱、Email、電話、LINE 顯示名稱與頭像（若串接）。</li>
-                <li><b>（2）使用資料：</b>對話內容、操作紀錄、Log 資訊、裝置與瀏覽資訊。</li>
-                <li><b>（3）客戶自行輸入之資料：</b>用戶透過本服務蒐集之終端客戶資料，由用戶自行負責合法性。</li>
+                <li><b>（1）專案聯絡資料：</b>姓名、Email、LINE 聯絡帳號及電話。</li>
+                <li><b>（2）專案輸入素材：</b>您提供的文案、文字腳本、個人配音樣本及 B-roll 指示素材。</li>
+                <li><b>（3）使用日誌：</b>系統生成過程中的運行 log、渲染狀態與反饋資料。</li>
             </ul>
             
-            <h4>2. 蒐集目的</h4>
-            <p>用於提供與優化服務、AI 回覆與導購、客戶支援、系統安全與防濫用，以及法令遵循。</p>
+            <h4>2. 蒐集與使用目的</h4>
+            <p>僅用於影音代工生產、AI 對嘴與語音克隆演算、專案交付聯絡、技術售後優化及防範服務遭濫用之安全考量。</p>
             
-            <h4>3. 資料保存與分享</h4>
-            <p>資料主要儲存於雲端服務（如 Google Cloud），可能跨境處理。本公司不會販售個資，但可能於必要範圍內提供給雲端基礎設施供應商、金流或技術服務商，或依法律要求提供予執法機關。</p>
-            
-            <h4>4. 用戶權利與安全</h4>
-            <p>依個資法，用戶得請求查詢、更正或刪除資料，請透過客服信箱提出申請。本公司採取合理技術與管理措施，包含存取控制、加密傳輸與多租戶隔離，以確保資料安全。</p>
+            <h4>3. 商業機密與資料安全</h4>
+            <p>我們承诺對您所提供的「原創劇本」、「專屬配音樣本」進行嚴格保密。專案影片交付完畢且結案後，我們將依安全規範在合理限期內清理您的隱私素材，絕不將其挪作他用，亦不會向任何第三方披露。</p>
         </div>
     </div>
 
-    <!-- 4. AUP Modal -->
-    <div id="modal-aup" class="modal-overlay" onclick="closeModal(event, 'modal-aup')">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('force', 'modal-aup')"><i class="fa-solid fa-times"></i></button>
-            <h2>可接受使用政策 (AUP)</h2>
-            <p style="text-align: right; color: #888; font-size: 0.85rem; margin-bottom: 20px;">最後更新日：2026年02月25日</p>
-            <p>本可接受使用政策規範所有使用 BrandDecoder／品智 AI SaaS 智能客服系統之行為標準。使用本服務即表示您同意遵守本政策。</p>
-            
-            <h4>1. 明確禁止行為（重要）</h4>
-            <ul>
-                <li><b>（1）詐騙與誤導：</b>金融詐騙、假投資/貸款/購物、冒充身分或散布不實商業資訊。</li>
-                <li><b>（2）違法或高風險內容：</b>色情、性交易、暴力、仇恨言論、非法賭博或毒品交易。</li>
-                <li><b>（3）專業誤導（嚴禁）：</b>未具合法資格者，不得利用 AI 提供醫療診斷或治療建議、法律意見、投資保證或報酬承諾等依法需執照之建議。</li>
-                <li><b>（4）濫用 AI 或系統：</b>大量發送垃圾訊息、惡意壓測、試圖反向工程 or 規避計費機制。</li>
-                <li><b>（5）侵害他人權利：</b>未經授權蒐集個資、侵犯智慧財產權或散布機密資料。</li>
-            </ul>
-            
-            <h4>2. 客戶資料責任與執法</h4>
-            <p>若用戶透過本服務蒐集終端客戶資料，應自行確保合法性並取得同意。為維護安全，本公司得監控異常活動，並依情節輕重採取警告、功能限制、暫停服務或終止帳戶之措施。</p>
-        </div>
-    </div>
-
-    <!-- 5. Security Modal -->
+    <!-- 3. Security Modal (Streamlined for KCinemaAI) -->
     <div id="modal-security" class="modal-overlay" onclick="closeModal(event, 'modal-security')">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('force', 'modal-security')"><i class="fa-solid fa-times"></i></button>
-            <h2>資訊安全與資料保護聲明</h2>
-            <p style="text-align: right; color: #888; font-size: 0.85rem; margin-bottom: 20px;">最後更新日：2026年02月25日</p>
-            <p>BrandDecoder／品智 AI SaaS 致力於保護企業客戶與其終端使用者之資料安全。本聲明說明本服務所採取之主要安全措施。</p>
+            <h2>資安與資料保護聲明</h2>
+            <p style="text-align: right; color: #888; font-size: 0.85rem; margin-bottom: 20px;">最後更新日：2026年07月30日</p>
+            <p>KCinemaAI 致力於保護所有代工客戶的腳本創意與影音資源安全。本工作室採取之安全防護措施如下：</p>
             
-            <h4>1. 雲端基礎設施與傳輸安全</h4>
-            <p>本服務採用主流雲端平台（如 Google Cloud）運行，具備高可用性架構與全球級網路防護。系統採用業界標準加密通訊（如 HTTPS/TLS），保護資料在傳輸過程中的安全。</p>
+            <h4>1. 專案私有化隔離保護</h4>
+            <p>您的所有影片素材、腳本和音軌皆存放在經過安全邏輯隔離的私有化工作目錄中。渲染任務完成後，影片成品僅能由經授權的專案負責人獲取，防止任何資料外洩或非授權訪問。</p>
             
-            <h4>2. 多租戶資料隔離（Multi-Tenant）</h4>
-            <p>本平台採多租戶架構，透過嚴格的邏輯隔離機制確保：<b>不同企業客戶資料彼此分離</b>，未經授權不得跨租戶存取，有效保護企業商業機密。</p>
+            <h4>2. 資料加密傳輸與儲存</h4>
+            <p>本服務在交付最終影片檔案或接受您上傳的腳本素材時，均採用加密傳輸（HTTPS/TLS）以確保數據安全。存儲設備具備實體與軟體雙重防護。</p>
             
-            <h4>3. 存取控制與系統監控</h4>
-            <p>實施身分驗證機制與最小權限原則。為維護平台穩定，本服務全天候進行操作日誌記錄、異常行為監控與錯誤追蹤分析。</p>
-            
-            <h4>4. 客戶資料責任分界</h4>
-            <ul>
-                <li><b>本公司負責：</b>平台基礎安全、雲端環境管理與系統架構隔離。</li>
-                <li><b>用戶應負責：</b>帳號密碼保管、客戶資料合法蒐集、後台權限管理與對外 AI 回覆內容之最終審核。AI 回覆為機器運算結果，用戶應自行判斷商業使用風險。</li>
-            </ul>
+            <h4>3. 用戶職責安全提醒</h4>
+            <p>客戶同意妥善保管個人聯絡資料，並應於最終交付之影片發佈前自行進行版權與侵權審查。我們僅提供技術生產之代工服務，不對您發佈至外部平台之影片內容引發的第三方版權爭議承擔責任。</p>
         </div>
     </div>
 
