@@ -227,7 +227,7 @@
             color: var(--text-bright);
             font-weight: 800;
             font-size: 1.05rem;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             box-shadow: 0 0 25px rgba(245, 158, 11, 0.05);
             animation: pulseGlow 3s infinite;
         }
@@ -241,6 +241,27 @@
             0% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.05); }
             50% { box-shadow: 0 0 35px rgba(245, 158, 11, 0.2); border-color: rgba(245, 158, 11, 0.4); }
             100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.05); }
+        }
+
+        /* Highlight Sub-header for YouTube Videos */
+        .video-highlight-header {
+            color: var(--accent-gold);
+            font-size: 1.25rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-shadow: 0 0 15px rgba(245, 158, 11, 0.35);
+            animation: textFlicker 4s infinite alternate;
+        }
+
+        @keyframes textFlicker {
+            0% { opacity: 0.9; }
+            100% { opacity: 1; text-shadow: 0 0 20px rgba(245, 158, 11, 0.6); }
         }
 
         /* Phone showcase slider grid */
@@ -473,7 +494,7 @@
             line-height: 1.7;
         }
 
-        /* --- 2. Pricing & Cost Analysis Section --- */
+        /* --- 2. Pricing & Cost Section --- */
         .pricing-section {
             background: var(--bg-dark);
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
@@ -662,6 +683,46 @@
             color: #EF4444;
             font-size: 1.2rem;
             margin-top: 2px;
+        }
+
+        .solution-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .solution-list li {
+            display: flex;
+            gap: 16px;
+        }
+
+        .sol-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(245, 158, 11, 0.08);
+            color: var(--accent-gold);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.25rem;
+            border: 1px solid rgba(245, 158, 11, 0.15);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .sol-text h4 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--text-bright);
+            margin-bottom: 5px;
+        }
+
+        .sol-text p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.65;
         }
 
         /* --- 3. Roadmap Section --- */
@@ -1058,19 +1119,7 @@
             color: #ef4444;
         }
 
-        /* --- Scroll Animation Classes --- */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(35px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* --- Responsive Queries --- */
+        /* --- Responsive Queries (RWD optimization for horizontal snap scrolling on mobile) --- */
         @media (max-width: 1024px) {
             .hero h1 { font-size: 3rem; }
             .showcase-container { gap: 20px; }
@@ -1078,11 +1127,32 @@
 
         @media (max-width: 992px) {
             .hero h1 { font-size: 2.6rem; }
+            
+            /* Responsive horizontal swipe gallery for 3 phones on mobile - HUGE RWD improvement! */
             .showcase-container {
-                grid-template-columns: 1fr;
-                max-width: 380px;
-                gap: 40px;
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 20px;
+                padding: 10px 20px 30px;
+                width: 100vw;
+                margin-left: -5%;
+                margin-right: -5%;
+                scroll-padding: 20px;
+                -webkit-overflow-scrolling: touch;
             }
+
+            /* Hide scrollbar for layout cleanliness */
+            .showcase-container::-webkit-scrollbar {
+                display: none;
+            }
+
+            .phone-mockup-frame {
+                flex: 0 0 290px; /* Constrain exact phone width in swipe viewport */
+                scroll-snap-align: center;
+                border-color: rgba(245, 158, 11, 0.15);
+            }
+
             .cost-container {
                 grid-template-columns: 1fr;
             }
@@ -1108,9 +1178,16 @@
             }
         }
 
+        @keyframes flowPulseVertical {
+            0% { transform: translateY(-5px); opacity: 0.3; }
+            50% { transform: translateY(5px); opacity: 1; color: var(--accent-gold); }
+            100% { transform: translateY(-5px); opacity: 0.3; }
+        }
+
         @media (max-width: 576px) {
             .hero h1 { font-size: 2.2rem; }
             .btn-primary-glow { width: 100%; justify-content: center; padding: 18px 25px; }
+            .delivery-guarantee { font-size: 0.95rem; padding: 10px 20px; }
         }
     </style>
 </head>
@@ -1136,8 +1213,8 @@
             <h1 class="fade-in-up">你的「一人自媒體兵工廠」——<br>KCinemaAI <span>客製化影音代工。</span></h1>
             
             <p class="lead fade-in-up">
-                經營影音內容，你最怕的是什麼？不知道要做什麼？腳本怎麼設計？不想在鏡頭前露臉？<br>
-                KCinemaAI 完美結合 **「高品質的動態視覺效果 (T2I->I2V)」** 與 **「嚴謹有所本的考究內容」**。這些核心痛點，通通都在我們一條龍的服務與可複製的系統中。只要採用這套系統，經營自媒體頻道突然變得無比輕鬆！
+                經營自媒體，你最怕的是什麼？不知道要做什麼內容？腳本怎麼設計？不想在鏡頭前露臉？<br>
+                KCinemaAI 完美結合 **「高品質的動態視覺效果」** 與 **「嚴謹有所本的考究內容」**。這些核心痛點，通通都在我們一條龍的服務與可複製的系統中。只要採用這套系統，經營自媒體頻道突然變得無比輕鬆！
             </p>
             
             <!-- 2-Day Delivery Guarantee Alert -->
@@ -1152,7 +1229,12 @@
             </div>
         </div>
 
-        <!-- 3 Side-by-Side Phone Mockups holding the 3 YouTube videos (9:16 format) -->
+        <!-- Highlight Banner above YouTube Videos -->
+        <div class="video-highlight-header fade-in-up">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> 以下影片，真正動手部份，只需要 15 分鐘！！！
+        </div>
+
+        <!-- 3 Side-by-Side Phone Mockups holding the 3 YouTube videos (9:16 format with swipeable RWD support) -->
         <div class="showcase-container fade-in-up">
             <!-- Phone 1: 巴西蛇島 -->
             <div class="phone-mockup-frame">
@@ -1213,7 +1295,7 @@
                 <div class="service-icon"><i class="bi bi-play-btn-fill"></i></div>
                 <div class="service-badge">史詩畫面生成</div>
                 <h3>2. 電影級 T2I ➔ I2V 畫面渲染</h3>
-                <p>拒絕單調的靜態卡片。KCinemaAI 使用本地頂規顯卡算力，將您的故事大綱渲染為史詩級 9:16 動態 B-roll。無論是雷電暴風、地獄窪地還是科幻未來，均能以極低成本穩定產出。</p>
+                <p>拒絕單調的靜態卡片。KCinemaAI 生產線為您渲染為史詩級 9:16 動態 B-roll。無論是雷電暴風、地獄窪地還是科幻未來，均能穩定高效產出。</p>
             </div>
 
             <!-- Service 3 -->
@@ -1221,7 +1303,7 @@
                 <div class="service-icon"><i class="bi bi-translate"></i></div>
                 <div class="service-badge">高保真配音</div>
                 <h3>3. 專屬聲線克隆與配音</h3>
-                <p>配音是影音的靈魂。我們能為您克隆出帶有豐富情緒起伏、呼吸與抑揚頓挫的高保真人聲，不再是生硬死板的 TTS 語音，大幅拉長觀眾在短影音平台的停留時間。</p>
+                <p>配音是影音的靈魂。我們能為您克隆出帶有豐富情緒起伏、呼吸與抑揚頓挫的高保真人聲，不再是生硬死板的語音，大幅拉長觀眾在短影音平台的停留時間。</p>
             </div>
 
             <!-- Service 4 -->
@@ -1253,11 +1335,11 @@
     <!-- 2. Pricing & Cost Section -->
     <section class="section pricing-section fade-in-up">
         <div class="section-h">
-            <h2>KCinemaAI <span>客製代工與算力對照</span></h2>
+            <h2>KCinemaAI <span>客製代工與系統效益</span></h2>
             <p>公開透明的客製化影音代工收費，以及與雲端 API 生成秒數扣點的真實開銷對比</p>
         </div>
 
-        <!-- Customized Production Pricing (New) -->
+        <!-- Customized Production Pricing -->
         <h3 style="color: var(--text-bright); text-align: center; font-size: 1.6rem; font-weight: 800; margin-bottom: 25px;">🎥 9:16 自媒體影片客製化生成收費標準</h3>
         <p style="text-align: center; max-width: 600px; margin: 0 auto 40px;">（以下計費以標準 10 分鐘科普/口播影片製作進行收費折算，為您一條龍交付成品）</p>
         
@@ -1311,7 +1393,7 @@
         </div>
 
         <!-- API Cost Comparison -->
-        <h3 style="color: var(--text-bright); text-align: center; font-size: 1.4rem; font-weight: 800; margin-bottom: 30px; margin-top: 80px;">💡 算力成本科普：直接調用雲端 API 的代價</h3>
+        <h3 style="color: var(--text-bright); text-align: center; font-size: 1.4rem; font-weight: 800; margin-bottom: 30px; margin-top: 80px;">💡 費用科學：直接調用雲端 API 的代價</h3>
         <div class="cost-container">
             <!-- Left Side: Cloud API Cost -->
             <div class="cost-card api-cost">
@@ -1369,24 +1451,24 @@
             <!-- Right Side: Workstation Solution -->
             <div class="cost-card workstation-solution">
                 <div class="cost-card-header">
-                    <span class="cost-badge-success"><i class="fa-solid fa-circle-check"></i> KCinemaAI 本地解決方案</span>
-                    <h3>KCinemaAI 專屬影音工作站</h3>
-                    <p>不需被雲端付費 API 綁架！我們為學員及代工部署專屬的本地算力工作站，極大降低生成內容的成本：</p>
+                    <span class="cost-badge-success"><i class="fa-solid fa-circle-check"></i> KCinemaAI 生產系統</span>
+                    <h3>KCinemaAI 專屬影音生產系統</h3>
+                    <p>不需被雲端付費 API 綁架！我們為學員及代工部署專屬的影音生產系統，極大降低生成內容的成本：</p>
                 </div>
                 
                 <ul class="solution-list">
                     <li>
                         <div class="sol-icon"><i class="bi bi-cpu-fill"></i></div>
                         <div class="sol-text">
-                            <h4>頂級本地模型算力</h4>
-                            <p>利用本地頂級顯卡算力進行影片渲染，擺脫每秒計費的昂貴扣點模式。</p>
+                            <h4>專屬算力分配技術</h4>
+                            <p>利用專屬算力技術進行影片高效渲染，擺脫每秒計費的昂貴扣點與高額帳單。</p>
                         </div>
                     </li>
                     <li>
                         <div class="sol-icon"><i class="bi bi-person-video"></i></div>
                         <div class="sol-text">
                             <h4>高流暢對嘴與語音克隆</h4>
-                            <p>完成 Text-To-Lip 口形對齊，使得 AI 主持人口播與複製人聲完美貼合，免去後期配音工作。</p>
+                            <p>完成口形對齊，使得 AI 主持人口播與複製人聲完美貼合，免去後期配音工作。</p>
                         </div>
                     </li>
                     <li>
@@ -1422,9 +1504,9 @@
             <div class="roadmap-card">
                 <div class="roadmap-badge purple">Phase 02</div>
                 <div class="roadmap-icon purple"><i class="bi bi-shield-shaded"></i></div>
-                <h3>本地工作站武裝</h3>
-                <p class="roadmap-subtitle">導入私有化 AI 影音流水線</p>
-                <p class="roadmap-desc">跨越技術鴻溝。我們為您配置專屬本地影音渲染環境，教導核心提示詞工程（Prompt Engineering）、克隆音色與時間軸對齊等全套 AI 協作，讓您以極低成本，在自己的電腦上實現無限產出。</p>
+                <h3>影片生產系統建置</h3>
+                <p class="roadmap-subtitle">導入私有化 AI 影音生產系統</p>
+                <p class="roadmap-desc">跨越技術鴻溝。我們為您配置專屬影音生產系統，教導核心提示詞工程（Prompt Engineering）、克隆音色與時間軸對齊等全套 AI 協作，讓您以極低成本，在自己的系統上實現影片無限產出。</p>
             </div>
             
             <!-- Phase 3 -->
@@ -1450,7 +1532,7 @@
                 <div class="loop-item">
                     <i class="fa-solid fa-wand-magic-sparkles"></i>
                     <h4>1. 劇本大綱 & 影片生成</h4>
-                    <p>利用專屬的「影音工作站」，將大腦想法自動轉化為高品質真實動態影片，突破體力產能極限。</p>
+                    <p>利用專屬的「影音生產系統」，將大腦想法自動轉化為高品質真實動態影片，突破體力產能極限。</p>
                 </div>
                 <div class="loop-arrow"><i class="fa-solid fa-chevron-right"></i></div>
                 
@@ -1501,7 +1583,7 @@
                     <i class="fa-solid fa-plus faq-icon"></i>
                 </div>
                 <div class="faq-body">
-                    如果使用雲端影片 API（如 Veo 3.1 Standard），一秒影片生成成本高達 $0.40 美元，高頻更新會產生極大負擔。KCinemaAI 通過我們配置的「本地私有化影音工作站」，將模型算法運行在本地高性能算力環境上，**以極低成本，渲染出高品質真實動態影片**，讓您擺脫 API 帳單黑洞。
+                    如果使用雲端影片 API（如 Veo 3.1 Standard），一秒影片生成成本高達 $0.40 美元，高頻更新會產生極大負擔。KCinemaAI 通過我們配置的「私有化影音生產系統」，將影片高效渲染，**以極低成本，渲染出高品質真實動態影片**，讓您擺脫 API 帳單黑洞。
                 </div>
             </div>
             <div class="faq-item">
@@ -1510,7 +1592,7 @@
                     <i class="fa-solid fa-plus faq-icon"></i>
                 </div>
                 <div class="faq-body">
-                    當 KC 首席製片人自己的自媒體頻道（使用 KCinemaAI 工作站運營）人數與流量爆發後，我們將全面開啟第二階段課程。屆時將以「AI 大導演 / 講師」身份，把這套經過市場檢驗的自媒體實戰起盤心法與 ComfyUI 系統建置，以 1 對 1 課程完整交給您。
+                    當 KC 首席製片人自己的自媒體頻道（使用 KCinemaAI 生產系統運營）人數與流量爆發後，我們將全面開啟第二階段課程。屆時將以「AI 大導演 / 講師」身份，把這套經過市場檢驗的自媒體實戰起盤心法與影片生產系統建置，以 1 對 1 課程完整交給您。
                 </div>
             </div>
         </div>
@@ -1672,7 +1754,7 @@
             <p>本服務採用主流雲端平台（如 Google Cloud）運行，具備高可用性架構與全球級網路防護。系統採用業界標準加密通訊（如 HTTPS/TLS），保護資料在傳輸過程中的安全。</p>
             
             <h4>2. 多租戶資料隔離（Multi-Tenant）</h4>
-            <p>本平台採多租戶架構，透過嚴格的邏輯隔離機制確保：<b>不同企業客戶資料彼此分離</b>，未經授權不得跨租戶存取，有效保護企業商業機密。</p>
+            <p>本平台採多租戶架喚，透過嚴格的邏輯隔離機制確保：<b>不同企業客戶資料彼此分離</b>，未經授權不得跨租戶存取，有效保護企業商業機密。</p>
             
             <h4>3. 存取控制與系統監控</h4>
             <p>實施身分驗證機制與最小權限原則。為維護平台穩定，本服務全天候進行操作日誌記錄、異常行為監控與錯誤追蹤分析。</p>
